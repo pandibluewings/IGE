@@ -1,0 +1,81 @@
+﻿
+
+<link rel="stylesheet" type="text/css" href="~/asset/css/bootstrap.min.css">
+<!-- plugins -->
+
+<link href="~/asset/css/plugins/datatables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/asset/css/plugins/animate.min.css" rel="stylesheet" />
+<link href="~/asset/css/plugins/font-awesome.min.css" rel="stylesheet" />
+
+<link href="~/asset/css/style.css" rel="stylesheet" />
+<div class="col-md-12 top-20 padding-0">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading"><h3>Data Tables</h3></div>
+            <div class="panel-body">
+                <div class="responsive-table" id="dvTable">
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/asset/js/jquery.min.js"></script>
+<script src="~/asset/js/jquery.ui.min.js"></script>
+<script src="~/asset/js/bootstrap.min.js"></script>
+
+<!-- plugins -->
+<script src="~/asset/js/plugins/moment.min.js"></script>
+<script src="~/asset/js/plugins/jquery.datatables.min.js"></script>
+<script src="~/asset/js/plugins/datatables.bootstrap.min.js"></script>
+<script src="~/asset/js/plugins/jquery.nicescroll.js"></script>
+
+<!-- custom -->
+<script src="~/asset/js/main.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#datatables-example').DataTable();
+        LoadMembers();
+    });
+
+    function LoadMembers() {
+        $.ajax({
+            url: "../API/Member",
+            type: "GET",
+            //data: {id:10},
+
+        }).done(function (result) {
+
+            var dvheader = '<table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0"><thead><tr><th>Member ID</th><th>Member Name</th><th>Edit</th><th>Delete</th></tr></thead><tbody>';
+            var Member = $.parseJSON(result);
+            dv = '';
+            $.each(Member, function (idx, obj) {
+                dv = dv + '<tr><td>' + obj.mem_id + '</td><td>' + obj.mem_name + '</td><td>Edit</td><td><a onclick=DeleteMember('+obj.mem_id+')>Delete</a></td></tr>';
+            });
+            dv = dvheader+dv + '</tbody></table>'
+            $('#dvTable').html('');
+            $('#dvTable').html(dv);
+            $('#datatables-example').DataTable();
+
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
+
+    function DeleteMember(memberId)
+    {
+        $.ajax({
+            url: "../API/Member/" + memberId,
+            type: "Delete",
+            //data: {id:10},
+
+        }).done(function (result) {
+            LoadMembers();
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+    }
+
+</script>

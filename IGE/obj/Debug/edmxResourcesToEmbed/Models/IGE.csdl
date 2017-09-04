@@ -1,0 +1,1200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="indgarmentsexpoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BusinessType">
+    <Key>
+      <PropertyRef Name="bt_id" />
+    </Key>
+    <Property Name="bt_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bt_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bt_cdate" Type="DateTime" Precision="3" />
+    <Property Name="bt_mdate" Type="DateTime" Precision="3" />
+    <Property Name="bt_cid" Type="Int64" />
+    <Property Name="bt_mid" Type="Int64" />
+    <NavigationProperty Name="user" Relationship="Self.FK__BusinessT__bt_ci__5FB337D6" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="Self.FK__BusinessT__bt_mi__60A75C0F" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__bt_id__66603565" FromRole="BusinessType" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="con_id" Type="Int64" />
+    <Property Name="sta_id" Type="Int64" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__City__con_id__182C9B23" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK__City__sta_id__1920BF5C" FromRole="City" ToRole="States" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK__Company__city_id__21B6055D" FromRole="City" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__city_id__6E01572D" FromRole="City" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="com_id" />
+    </Key>
+    <Property Name="com_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="com_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_invoicename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_address3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_district" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city_id" Type="Int64" />
+    <Property Name="sta_id" Type="Int64" />
+    <Property Name="con_id" Type="Int64" />
+    <Property Name="com_pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_mobileno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_tin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_cst" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_cstdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="com_panno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_servicetaxno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_isdefault" Type="Boolean" Nullable="false" />
+    <Property Name="com_logo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Company__city_id__21B6055D" FromRole="Company" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Company__con_id__239E4DCF" FromRole="Company" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="Self.FK__Company__sta_id__22AA2996" FromRole="Company" ToRole="States" />
+    <NavigationProperty Name="users" Relationship="Self.FK__users__com_id__3D5E1FD2" FromRole="Company" ToRole="users" />
+    <NavigationProperty Name="UserTypes" Relationship="Self.FK__UserType__com_id__33D4B598" FromRole="Company" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="con_id" />
+    </Key>
+    <Property Name="con_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="con_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__City__con_id__182C9B23" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK__Company__con_id__239E4DCF" FromRole="Country" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__con_id__6FE99F9F" FromRole="Country" ToRole="Member" />
+    <NavigationProperty Name="States" Relationship="Self.FK__States__con_id__145C0A3F" FromRole="Country" ToRole="States" />
+  </EntityType>
+  <EntityType Name="farm">
+    <Key>
+      <PropertyRef Name="farm_id" />
+    </Key>
+    <Property Name="farm_id" Type="Int64" Nullable="false" />
+    <Property Name="module_id" Type="Int64" />
+    <Property Name="farm_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="farm_add" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="farm_edit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="farm_delete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="farm_view" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="farm_print" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="module" Relationship="Self.FK__farm__module_id__4222D4EF" FromRole="farm" ToRole="module" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="mem_id" />
+    </Key>
+    <Property Name="mem_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mt_id" Type="Int64" />
+    <Property Name="bt_id" Type="Int64" />
+    <Property Name="mem_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_companyname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_owner" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_address1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_address2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_offaddress1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_offaddress2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city_id" Type="Int64" />
+    <Property Name="sta_id" Type="Int64" />
+    <Property Name="con_id" Type="Int64" />
+    <Property Name="mem_pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mem_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mem_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mem_offphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mem_email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_webbsite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_gstno" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_panno" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mem_logo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="mem_cdate" Type="DateTime" Precision="3" />
+    <Property Name="mem_mdate" Type="DateTime" Precision="3" />
+    <Property Name="mem_cid" Type="Int64" />
+    <Property Name="mem_mid" Type="Int64" />
+    <NavigationProperty Name="BusinessType" Relationship="Self.FK__Member__bt_id__66603565" FromRole="Member" ToRole="BusinessType" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Member__city_id__6E01572D" FromRole="Member" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__Member__con_id__6FE99F9F" FromRole="Member" ToRole="Country" />
+    <NavigationProperty Name="user" Relationship="Self.FK__Member__mem_cid__7B5B524B" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="Self.FK__Member__mem_mid__7C4F7684" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="MemberType" Relationship="Self.FK__Member__mt_id__656C112C" FromRole="Member" ToRole="MemberType" />
+    <NavigationProperty Name="State" Relationship="Self.FK__Member__sta_id__6EF57B66" FromRole="Member" ToRole="States" />
+  </EntityType>
+  <EntityType Name="MemberType">
+    <Key>
+      <PropertyRef Name="mt_id" />
+    </Key>
+    <Property Name="mt_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mt_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mt_cdate" Type="DateTime" Precision="3" />
+    <Property Name="mt_mdate" Type="DateTime" Precision="3" />
+    <Property Name="mt_cid" Type="Int64" />
+    <Property Name="mt_mid" Type="Int64" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__mt_id__656C112C" FromRole="MemberType" ToRole="Member" />
+    <NavigationProperty Name="user" Relationship="Self.FK__MemberTyp__mt_ci__5812160E" FromRole="MemberType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="Self.FK__MemberTyp__mt_mi__59063A47" FromRole="MemberType" ToRole="users" />
+  </EntityType>
+  <EntityType Name="module">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="Int64" Nullable="false" />
+    <Property Name="module_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="farms" Relationship="Self.FK__farm__module_id__4222D4EF" FromRole="module" ToRole="farm" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="sta_id" />
+    </Key>
+    <Property Name="sta_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sta_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="con_id" Type="Int64" />
+    <NavigationProperty Name="Cities" Relationship="Self.FK__City__sta_id__1920BF5C" FromRole="States" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK__Company__sta_id__22AA2996" FromRole="States" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="Self.FK__States__con_id__145C0A3F" FromRole="States" ToRole="Country" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__sta_id__6EF57B66" FromRole="States" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="users_id" />
+    </Key>
+    <Property Name="users_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="users_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="users_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="users_question" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="users_answer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="users_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="users_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ut_id" Type="Int64" />
+    <Property Name="com_id" Type="Int64" />
+    <NavigationProperty Name="BusinessTypes" Relationship="Self.FK__BusinessT__bt_ci__5FB337D6" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="BusinessTypes1" Relationship="Self.FK__BusinessT__bt_mi__60A75C0F" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__users__com_id__3D5E1FD2" FromRole="users" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="Self.FK__Member__mem_cid__7B5B524B" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="Members1" Relationship="Self.FK__Member__mem_mid__7C4F7684" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="MemberTypes" Relationship="Self.FK__MemberTyp__mt_ci__5812160E" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="MemberTypes1" Relationship="Self.FK__MemberTyp__mt_mi__59063A47" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="UserType" Relationship="Self.FK__users__ut_id__3C69FB99" FromRole="users" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="ut_id" />
+    </Key>
+    <Property Name="ut_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ut_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ut_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="com_id" Type="Int64" />
+    <NavigationProperty Name="Company" Relationship="Self.FK__UserType__com_id__33D4B598" FromRole="UserType" ToRole="Company" />
+    <NavigationProperty Name="users" Relationship="Self.FK__users__ut_id__3C69FB99" FromRole="UserType" ToRole="users" />
+  </EntityType>
+  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="BusinessType">
+        <PropertyRef Name="bt_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="BusinessType">
+        <PropertyRef Name="bt_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__bt_id__66603565">
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessType">
+        <PropertyRef Name="bt_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="bt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__con_id__182C9B23">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__sta_id__1920BF5C">
+    <End Role="States" Type="Self.State" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__city_id__21B6055D">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="city_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__city_id__6E01572D">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="city_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__con_id__239E4DCF">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__sta_id__22AA2996">
+    <End Role="States" Type="Self.State" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__com_id__3D5E1FD2">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="users" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="com_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="com_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserType__com_id__33D4B598">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="com_id" />
+      </Principal>
+      <Dependent Role="UserType">
+        <PropertyRef Name="com_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__con_id__6FE99F9F">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__States__con_id__145C0A3F">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="States" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__farm__module_id__4222D4EF">
+    <End Role="module" Type="Self.module" Multiplicity="0..1" />
+    <End Role="farm" Type="Self.farm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="module">
+        <PropertyRef Name="module_id" />
+      </Principal>
+      <Dependent Role="farm">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mem_cid__7B5B524B">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mem_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mem_mid__7C4F7684">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mem_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mt_id__656C112C">
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberType">
+        <PropertyRef Name="mt_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__sta_id__6EF57B66">
+    <End Role="States" Type="Self.State" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MemberTyp__mt_ci__5812160E">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="MemberType">
+        <PropertyRef Name="mt_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MemberTyp__mt_mi__59063A47">
+    <End Role="users" Type="Self.user" Multiplicity="0..1" />
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="MemberType">
+        <PropertyRef Name="mt_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__ut_id__3C69FB99">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="users" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="ut_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="ut_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="indgarmentsexpoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BusinessTypes" EntityType="Self.BusinessType" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="farms" EntityType="Self.farm" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="MemberTypes" EntityType="Self.MemberType" />
+    <EntitySet Name="modules" EntityType="Self.module" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="Self.FK__BusinessT__bt_ci__5FB337D6">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="Self.FK__BusinessT__bt_mi__60A75C0F">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__bt_id__66603565" Association="Self.FK__Member__bt_id__66603565">
+      <End Role="BusinessType" EntitySet="BusinessTypes" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__con_id__182C9B23" Association="Self.FK__City__con_id__182C9B23">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="Self.FK__City__sta_id__1920BF5C">
+      <End Role="States" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="Self.FK__Company__city_id__21B6055D">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__city_id__6E01572D" Association="Self.FK__Member__city_id__6E01572D">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="Self.FK__Company__con_id__239E4DCF">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="Self.FK__Company__sta_id__22AA2996">
+      <End Role="States" EntitySet="States" />
+      <End Role="Company" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="Self.FK__users__com_id__3D5E1FD2">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="Self.FK__UserType__com_id__33D4B598">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="UserType" EntitySet="UserTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__con_id__6FE99F9F" Association="Self.FK__Member__con_id__6FE99F9F">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="Self.FK__States__con_id__145C0A3F">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="Self.FK__farm__module_id__4222D4EF">
+      <End Role="module" EntitySet="modules" />
+      <End Role="farm" EntitySet="farms" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_cid__7B5B524B" Association="Self.FK__Member__mem_cid__7B5B524B">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_mid__7C4F7684" Association="Self.FK__Member__mem_mid__7C4F7684">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mt_id__656C112C" Association="Self.FK__Member__mt_id__656C112C">
+      <End Role="MemberType" EntitySet="MemberTypes" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__sta_id__6EF57B66" Association="Self.FK__Member__sta_id__6EF57B66">
+      <End Role="States" EntitySet="States" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="Self.FK__MemberTyp__mt_ci__5812160E">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="Self.FK__MemberTyp__mt_mi__59063A47">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="Self.FK__users__ut_id__3C69FB99">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <FunctionImport Name="usp_BusinessTypeDelete">
+      <Parameter Name="bt_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BusinessTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeInsert_Result)">
+      <Parameter Name="bt_name" Mode="In" Type="String" />
+      <Parameter Name="bt_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="bt_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="bt_cid" Mode="In" Type="Int64" />
+      <Parameter Name="bt_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BusinessTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeSelect_Result)">
+      <Parameter Name="bt_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_BusinessTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeUpdate_Result)">
+      <Parameter Name="bt_id" Mode="In" Type="Int64" />
+      <Parameter Name="bt_name" Mode="In" Type="String" />
+      <Parameter Name="bt_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="bt_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="bt_cid" Mode="In" Type="Int64" />
+      <Parameter Name="bt_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CityDelete">
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CityInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CityInsert_Result)">
+      <Parameter Name="city_name" Mode="In" Type="String" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CitySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CitySelect_Result)">
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CityUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CityUpdate_Result)">
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+      <Parameter Name="city_name" Mode="In" Type="String" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CompanyDelete">
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CompanyInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CompanyInsert_Result)">
+      <Parameter Name="com_name" Mode="In" Type="String" />
+      <Parameter Name="com_invoicename" Mode="In" Type="String" />
+      <Parameter Name="com_address1" Mode="In" Type="String" />
+      <Parameter Name="com_address2" Mode="In" Type="String" />
+      <Parameter Name="com_address3" Mode="In" Type="String" />
+      <Parameter Name="com_district" Mode="In" Type="String" />
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="com_pincode" Mode="In" Type="String" />
+      <Parameter Name="com_mobileno" Mode="In" Type="String" />
+      <Parameter Name="com_website" Mode="In" Type="String" />
+      <Parameter Name="com_phone" Mode="In" Type="String" />
+      <Parameter Name="com_email" Mode="In" Type="String" />
+      <Parameter Name="com_tin" Mode="In" Type="String" />
+      <Parameter Name="com_cst" Mode="In" Type="String" />
+      <Parameter Name="com_cstdate" Mode="In" Type="DateTime" />
+      <Parameter Name="com_panno" Mode="In" Type="String" />
+      <Parameter Name="com_servicetaxno" Mode="In" Type="String" />
+      <Parameter Name="com_isdefault" Mode="In" Type="Boolean" />
+      <Parameter Name="com_logo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CompanySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CompanySelect_Result)">
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CompanyUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CompanyUpdate_Result)">
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+      <Parameter Name="com_name" Mode="In" Type="String" />
+      <Parameter Name="com_invoicename" Mode="In" Type="String" />
+      <Parameter Name="com_address1" Mode="In" Type="String" />
+      <Parameter Name="com_address2" Mode="In" Type="String" />
+      <Parameter Name="com_address3" Mode="In" Type="String" />
+      <Parameter Name="com_district" Mode="In" Type="String" />
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="com_pincode" Mode="In" Type="String" />
+      <Parameter Name="com_mobileno" Mode="In" Type="String" />
+      <Parameter Name="com_website" Mode="In" Type="String" />
+      <Parameter Name="com_phone" Mode="In" Type="String" />
+      <Parameter Name="com_email" Mode="In" Type="String" />
+      <Parameter Name="com_tin" Mode="In" Type="String" />
+      <Parameter Name="com_cst" Mode="In" Type="String" />
+      <Parameter Name="com_cstdate" Mode="In" Type="DateTime" />
+      <Parameter Name="com_panno" Mode="In" Type="String" />
+      <Parameter Name="com_servicetaxno" Mode="In" Type="String" />
+      <Parameter Name="com_isdefault" Mode="In" Type="Boolean" />
+      <Parameter Name="com_logo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CountryDelete">
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CountryInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CountryInsert_Result)">
+      <Parameter Name="con_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CountrySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CountrySelect_Result)">
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CountryUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CountryUpdate_Result)">
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="con_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_farmDelete">
+      <Parameter Name="farm_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_farmInsert" ReturnType="Collection(indgarmentsexpoModel.usp_farmInsert_Result)">
+      <Parameter Name="farm_id" Mode="In" Type="Int64" />
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+      <Parameter Name="farm_name" Mode="In" Type="String" />
+      <Parameter Name="farm_add" Mode="In" Type="String" />
+      <Parameter Name="farm_edit" Mode="In" Type="String" />
+      <Parameter Name="farm_delete" Mode="In" Type="String" />
+      <Parameter Name="farm_view" Mode="In" Type="String" />
+      <Parameter Name="farm_print" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_farmSelect" ReturnType="Collection(indgarmentsexpoModel.usp_farmSelect_Result)">
+      <Parameter Name="farm_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_farmUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_farmUpdate_Result)">
+      <Parameter Name="farm_id" Mode="In" Type="Int64" />
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+      <Parameter Name="farm_name" Mode="In" Type="String" />
+      <Parameter Name="farm_add" Mode="In" Type="String" />
+      <Parameter Name="farm_edit" Mode="In" Type="String" />
+      <Parameter Name="farm_delete" Mode="In" Type="String" />
+      <Parameter Name="farm_view" Mode="In" Type="String" />
+      <Parameter Name="farm_print" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberDelete">
+      <Parameter Name="mem_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberInsert" ReturnType="Collection(indgarmentsexpoModel.usp_MemberInsert_Result)">
+      <Parameter Name="mt_id" Mode="In" Type="Int64" />
+      <Parameter Name="bt_id" Mode="In" Type="Int64" />
+      <Parameter Name="mem_name" Mode="In" Type="String" />
+      <Parameter Name="mem_companyname" Mode="In" Type="String" />
+      <Parameter Name="mem_owner" Mode="In" Type="String" />
+      <Parameter Name="mem_address1" Mode="In" Type="String" />
+      <Parameter Name="mem_address2" Mode="In" Type="String" />
+      <Parameter Name="mem_offaddress1" Mode="In" Type="String" />
+      <Parameter Name="mem_offaddress2" Mode="In" Type="String" />
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="mem_pincode" Mode="In" Type="String" />
+      <Parameter Name="mem_mobile" Mode="In" Type="String" />
+      <Parameter Name="mem_phone" Mode="In" Type="String" />
+      <Parameter Name="mem_offphone" Mode="In" Type="String" />
+      <Parameter Name="mem_email" Mode="In" Type="String" />
+      <Parameter Name="mem_webbsite" Mode="In" Type="String" />
+      <Parameter Name="mem_gstno" Mode="In" Type="String" />
+      <Parameter Name="mem_panno" Mode="In" Type="String" />
+      <Parameter Name="mem_logo" Mode="In" Type="String" />
+      <Parameter Name="mem_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mem_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mem_cid" Mode="In" Type="Int64" />
+      <Parameter Name="mem_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberSelect" ReturnType="Collection(indgarmentsexpoModel.usp_MemberSelect_Result)">
+      <Parameter Name="mem_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberTypeDelete">
+      <Parameter Name="mt_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeInsert_Result)">
+      <Parameter Name="mt_name" Mode="In" Type="String" />
+      <Parameter Name="mt_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mt_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mt_cid" Mode="In" Type="Int64" />
+      <Parameter Name="mt_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeSelect_Result)">
+      <Parameter Name="mt_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeUpdate_Result)">
+      <Parameter Name="mt_id" Mode="In" Type="Int64" />
+      <Parameter Name="mt_name" Mode="In" Type="String" />
+      <Parameter Name="mt_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mt_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mt_cid" Mode="In" Type="Int64" />
+      <Parameter Name="mt_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_MemberUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_MemberUpdate_Result)">
+      <Parameter Name="mem_id" Mode="In" Type="Int64" />
+      <Parameter Name="mt_id" Mode="In" Type="Int64" />
+      <Parameter Name="bt_id" Mode="In" Type="Int64" />
+      <Parameter Name="mem_name" Mode="In" Type="String" />
+      <Parameter Name="mem_companyname" Mode="In" Type="String" />
+      <Parameter Name="mem_owner" Mode="In" Type="String" />
+      <Parameter Name="mem_address1" Mode="In" Type="String" />
+      <Parameter Name="mem_address2" Mode="In" Type="String" />
+      <Parameter Name="mem_offaddress1" Mode="In" Type="String" />
+      <Parameter Name="mem_offaddress2" Mode="In" Type="String" />
+      <Parameter Name="city_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+      <Parameter Name="mem_pincode" Mode="In" Type="String" />
+      <Parameter Name="mem_mobile" Mode="In" Type="String" />
+      <Parameter Name="mem_phone" Mode="In" Type="String" />
+      <Parameter Name="mem_offphone" Mode="In" Type="String" />
+      <Parameter Name="mem_email" Mode="In" Type="String" />
+      <Parameter Name="mem_webbsite" Mode="In" Type="String" />
+      <Parameter Name="mem_gstno" Mode="In" Type="String" />
+      <Parameter Name="mem_panno" Mode="In" Type="String" />
+      <Parameter Name="mem_logo" Mode="In" Type="String" />
+      <Parameter Name="mem_cdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mem_mdate" Mode="In" Type="DateTime" />
+      <Parameter Name="mem_cid" Mode="In" Type="Int64" />
+      <Parameter Name="mem_mid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_moduleDelete">
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_moduleInsert" ReturnType="Collection(indgarmentsexpoModel.usp_moduleInsert_Result)">
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+      <Parameter Name="module_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_moduleSelect" ReturnType="Collection(indgarmentsexpoModel.usp_moduleSelect_Result)">
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_moduleUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_moduleUpdate_Result)">
+      <Parameter Name="module_id" Mode="In" Type="Int64" />
+      <Parameter Name="module_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_rightsDelete">
+      <Parameter Name="users_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_rightsInsert">
+      <Parameter Name="farm_id" Mode="In" Type="Int32" />
+      <Parameter Name="users_id" Mode="In" Type="Int32" />
+      <Parameter Name="farm_add" Mode="In" Type="String" />
+      <Parameter Name="farm_edit" Mode="In" Type="String" />
+      <Parameter Name="farm_delete" Mode="In" Type="String" />
+      <Parameter Name="farm_view" Mode="In" Type="String" />
+      <Parameter Name="farm_print" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_rightsSelect" ReturnType="Collection(indgarmentsexpoModel.usp_rightsSelect_Result)">
+      <Parameter Name="rusers_id" Mode="In" Type="Int32" />
+      <Parameter Name="users_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_StatesDelete">
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_StatesInsert" ReturnType="Collection(indgarmentsexpoModel.usp_StatesInsert_Result)">
+      <Parameter Name="sta_name" Mode="In" Type="String" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_StatesSelect" ReturnType="Collection(indgarmentsexpoModel.usp_StatesSelect_Result)">
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_StatesUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_StatesUpdate_Result)">
+      <Parameter Name="sta_id" Mode="In" Type="Int64" />
+      <Parameter Name="sta_name" Mode="In" Type="String" />
+      <Parameter Name="con_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_usersDelete">
+      <Parameter Name="users_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_usersInsert" ReturnType="Collection(indgarmentsexpoModel.usp_usersInsert_Result)">
+      <Parameter Name="users_name" Mode="In" Type="String" />
+      <Parameter Name="users_password" Mode="In" Type="String" />
+      <Parameter Name="users_question" Mode="In" Type="String" />
+      <Parameter Name="users_answer" Mode="In" Type="String" />
+      <Parameter Name="users_email" Mode="In" Type="String" />
+      <Parameter Name="users_phone" Mode="In" Type="String" />
+      <Parameter Name="ut_id" Mode="In" Type="Int64" />
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_usersSelect" ReturnType="Collection(indgarmentsexpoModel.usp_usersSelect_Result)">
+      <Parameter Name="users_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_usersUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_usersUpdate_Result)">
+      <Parameter Name="users_id" Mode="In" Type="Int64" />
+      <Parameter Name="users_name" Mode="In" Type="String" />
+      <Parameter Name="users_password" Mode="In" Type="String" />
+      <Parameter Name="users_question" Mode="In" Type="String" />
+      <Parameter Name="users_answer" Mode="In" Type="String" />
+      <Parameter Name="users_email" Mode="In" Type="String" />
+      <Parameter Name="users_phone" Mode="In" Type="String" />
+      <Parameter Name="ut_id" Mode="In" Type="Int64" />
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UserTypeDelete">
+      <Parameter Name="ut_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UserTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeInsert_Result)">
+      <Parameter Name="ut_code" Mode="In" Type="String" />
+      <Parameter Name="ut_name" Mode="In" Type="String" />
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UserTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeSelect_Result)">
+      <Parameter Name="ut_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UserTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeUpdate_Result)">
+      <Parameter Name="ut_id" Mode="In" Type="Int64" />
+      <Parameter Name="ut_code" Mode="In" Type="String" />
+      <Parameter Name="ut_name" Mode="In" Type="String" />
+      <Parameter Name="com_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_BusinessTypeInsert_Result">
+    <Property Type="Int64" Name="bt_id" Nullable="false" />
+    <Property Type="String" Name="bt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="bt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="bt_cid" Nullable="true" />
+    <Property Type="Int64" Name="bt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_BusinessTypeSelect_Result">
+    <Property Type="Int64" Name="bt_id" Nullable="false" />
+    <Property Type="String" Name="bt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="bt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="bt_cid" Nullable="true" />
+    <Property Type="Int64" Name="bt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_BusinessTypeUpdate_Result">
+    <Property Type="Int64" Name="bt_id" Nullable="false" />
+    <Property Type="String" Name="bt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="bt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="bt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="bt_cid" Nullable="true" />
+    <Property Type="Int64" Name="bt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CityInsert_Result">
+    <Property Type="Int64" Name="city_id" Nullable="false" />
+    <Property Type="String" Name="city_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CitySelect_Result">
+    <Property Type="Int64" Name="city_id" Nullable="false" />
+    <Property Type="String" Name="city_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CityUpdate_Result">
+    <Property Type="Int64" Name="city_id" Nullable="false" />
+    <Property Type="String" Name="city_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_CompanyInsert_Result">
+    <Property Type="Int64" Name="com_id" Nullable="false" />
+    <Property Type="String" Name="com_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_invoicename" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_district" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="com_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_mobileno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_website" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_tin" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_cst" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="com_cstdate" Nullable="false" />
+    <Property Type="String" Name="com_panno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_servicetaxno" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="com_isdefault" Nullable="false" />
+    <Property Type="String" Name="com_logo" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="usp_CompanySelect_Result">
+    <Property Type="Int64" Name="com_id" Nullable="false" />
+    <Property Type="String" Name="com_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_invoicename" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_district" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="com_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_mobileno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_website" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_tin" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_cst" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="com_cstdate" Nullable="false" />
+    <Property Type="String" Name="com_panno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_servicetaxno" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="com_isdefault" Nullable="false" />
+    <Property Type="String" Name="com_logo" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="usp_CompanyUpdate_Result">
+    <Property Type="Int64" Name="com_id" Nullable="false" />
+    <Property Type="String" Name="com_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_invoicename" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="com_district" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="com_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_mobileno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_website" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="com_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_tin" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_cst" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="com_cstdate" Nullable="false" />
+    <Property Type="String" Name="com_panno" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="com_servicetaxno" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="com_isdefault" Nullable="false" />
+    <Property Type="String" Name="com_logo" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="usp_CountryInsert_Result">
+    <Property Type="Int64" Name="con_id" Nullable="false" />
+    <Property Type="String" Name="con_name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CountrySelect_Result">
+    <Property Type="Int64" Name="con_id" Nullable="false" />
+    <Property Type="String" Name="con_name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CountryUpdate_Result">
+    <Property Type="Int64" Name="con_id" Nullable="false" />
+    <Property Type="String" Name="con_name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_farmInsert_Result">
+    <Property Type="Int64" Name="farm_id" Nullable="false" />
+    <Property Type="Int64" Name="module_id" Nullable="true" />
+    <Property Type="String" Name="farm_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="farm_add" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_edit" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_delete" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_view" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_print" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_farmSelect_Result">
+    <Property Type="Int64" Name="farm_id" Nullable="false" />
+    <Property Type="Int64" Name="module_id" Nullable="true" />
+    <Property Type="String" Name="farm_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="farm_add" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_edit" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_delete" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_view" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_print" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_farmUpdate_Result">
+    <Property Type="Int64" Name="farm_id" Nullable="false" />
+    <Property Type="Int64" Name="module_id" Nullable="true" />
+    <Property Type="String" Name="farm_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="farm_add" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_edit" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_delete" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_view" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_print" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberInsert_Result">
+    <Property Type="Int64" Name="mem_id" Nullable="false" />
+    <Property Type="Int64" Name="mt_id" Nullable="true" />
+    <Property Type="Int64" Name="bt_id" Nullable="true" />
+    <Property Type="String" Name="mem_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_companyname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_owner" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress2" Nullable="false" MaxLength="250" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="mem_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_offphone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_gstno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_panno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_logo" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="mem_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mem_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mem_cid" Nullable="true" />
+    <Property Type="Int64" Name="mem_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberSelect_Result">
+    <Property Type="Int64" Name="mem_id" Nullable="false" />
+    <Property Type="Int64" Name="mt_id" Nullable="true" />
+    <Property Type="Int64" Name="bt_id" Nullable="true" />
+    <Property Type="String" Name="mem_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_companyname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_owner" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress2" Nullable="false" MaxLength="250" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="mem_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_offphone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_gstno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_panno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_logo" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="mem_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mem_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mem_cid" Nullable="true" />
+    <Property Type="Int64" Name="mem_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberTypeInsert_Result">
+    <Property Type="Int64" Name="mt_id" Nullable="false" />
+    <Property Type="String" Name="mt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="mt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mt_cid" Nullable="true" />
+    <Property Type="Int64" Name="mt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberTypeSelect_Result">
+    <Property Type="Int64" Name="mt_id" Nullable="false" />
+    <Property Type="String" Name="mt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="mt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mt_cid" Nullable="true" />
+    <Property Type="Int64" Name="mt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberTypeUpdate_Result">
+    <Property Type="Int64" Name="mt_id" Nullable="false" />
+    <Property Type="String" Name="mt_name" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="mt_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mt_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mt_cid" Nullable="true" />
+    <Property Type="Int64" Name="mt_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_MemberUpdate_Result">
+    <Property Type="Int64" Name="mem_id" Nullable="false" />
+    <Property Type="Int64" Name="mt_id" Nullable="true" />
+    <Property Type="Int64" Name="bt_id" Nullable="true" />
+    <Property Type="String" Name="mem_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_companyname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_owner" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="mem_offaddress2" Nullable="false" MaxLength="250" />
+    <Property Type="Int64" Name="city_id" Nullable="true" />
+    <Property Type="Int64" Name="sta_id" Nullable="true" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+    <Property Type="String" Name="mem_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_offphone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="mem_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_gstno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_panno" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="mem_logo" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="mem_cdate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="mem_mdate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="mem_cid" Nullable="true" />
+    <Property Type="Int64" Name="mem_mid" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_moduleInsert_Result">
+    <Property Type="Int64" Name="module_id" Nullable="false" />
+    <Property Type="String" Name="module_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_moduleSelect_Result">
+    <Property Type="Int64" Name="module_id" Nullable="false" />
+    <Property Type="String" Name="module_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_moduleUpdate_Result">
+    <Property Type="Int64" Name="module_id" Nullable="false" />
+    <Property Type="String" Name="module_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_rightsSelect_Result">
+    <Property Type="String" Name="module_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="farm_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="farm_add" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_edit" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_delete" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_view" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="farm_print" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RAdd" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="REdit" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RDelete" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RView" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RPrint" Nullable="true" MaxLength="1" />
+    <Property Type="Int64" Name="module_id" Nullable="true" />
+    <Property Type="Int64" Name="farm_id" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_StatesInsert_Result">
+    <Property Type="Int64" Name="sta_id" Nullable="false" />
+    <Property Type="String" Name="sta_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_StatesSelect_Result">
+    <Property Type="Int64" Name="sta_id" Nullable="false" />
+    <Property Type="String" Name="sta_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_StatesUpdate_Result">
+    <Property Type="Int64" Name="sta_id" Nullable="false" />
+    <Property Type="String" Name="sta_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="con_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_usersInsert_Result">
+    <Property Type="Int64" Name="users_id" Nullable="false" />
+    <Property Type="String" Name="users_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_question" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_answer" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="users_phone" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ut_id" Nullable="true" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_usersSelect_Result">
+    <Property Type="Int64" Name="users_id" Nullable="false" />
+    <Property Type="String" Name="users_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_question" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_answer" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="users_phone" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ut_id" Nullable="true" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_usersUpdate_Result">
+    <Property Type="Int64" Name="users_id" Nullable="false" />
+    <Property Type="String" Name="users_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="users_question" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_answer" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="users_email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="users_phone" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ut_id" Nullable="true" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_UserTypeInsert_Result">
+    <Property Type="Int64" Name="ut_id" Nullable="false" />
+    <Property Type="String" Name="ut_code" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ut_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_UserTypeSelect_Result">
+    <Property Type="Int64" Name="ut_id" Nullable="false" />
+    <Property Type="String" Name="ut_code" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ut_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_UserTypeUpdate_Result">
+    <Property Type="Int64" Name="ut_id" Nullable="false" />
+    <Property Type="String" Name="ut_code" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="ut_name" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="com_id" Nullable="true" />
+  </ComplexType>
+</Schema>

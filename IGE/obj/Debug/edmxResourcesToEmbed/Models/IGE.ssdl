@@ -1,0 +1,817 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="indgarmentsexpoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BusinessType">
+    <Key>
+      <PropertyRef Name="bt_id" />
+    </Key>
+    <Property Name="bt_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bt_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="bt_cdate" Type="datetime" />
+    <Property Name="bt_mdate" Type="datetime" />
+    <Property Name="bt_cid" Type="bigint" />
+    <Property Name="bt_mid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="con_id" Type="bigint" />
+    <Property Name="sta_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="com_id" />
+    </Key>
+    <Property Name="com_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="com_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="com_invoicename" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="com_address1" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="com_address2" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="com_address3" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="com_district" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="city_id" Type="bigint" />
+    <Property Name="sta_id" Type="bigint" />
+    <Property Name="con_id" Type="bigint" />
+    <Property Name="com_pincode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_mobileno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_website" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="com_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_tin" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_cst" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_cstdate" Type="date" Nullable="false" />
+    <Property Name="com_panno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_servicetaxno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_isdefault" Type="bit" Nullable="false" />
+    <Property Name="com_logo" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="con_id" />
+    </Key>
+    <Property Name="con_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="con_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="farm">
+    <Key>
+      <PropertyRef Name="farm_id" />
+    </Key>
+    <Property Name="farm_id" Type="bigint" Nullable="false" />
+    <Property Name="module_id" Type="bigint" />
+    <Property Name="farm_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="farm_add" Type="char" MaxLength="1" />
+    <Property Name="farm_edit" Type="char" MaxLength="1" />
+    <Property Name="farm_delete" Type="char" MaxLength="1" />
+    <Property Name="farm_view" Type="char" MaxLength="1" />
+    <Property Name="farm_print" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="mem_id" />
+    </Key>
+    <Property Name="mem_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mt_id" Type="bigint" />
+    <Property Name="bt_id" Type="bigint" />
+    <Property Name="mem_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_companyname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_owner" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_address1" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="mem_address2" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="mem_offaddress1" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="mem_offaddress2" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="city_id" Type="bigint" />
+    <Property Name="sta_id" Type="bigint" />
+    <Property Name="con_id" Type="bigint" />
+    <Property Name="mem_pincode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mem_mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mem_phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mem_offphone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mem_email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_webbsite" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_gstno" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_panno" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_logo" Type="nvarchar" MaxLength="500" />
+    <Property Name="mem_cdate" Type="datetime" />
+    <Property Name="mem_mdate" Type="datetime" />
+    <Property Name="mem_cid" Type="bigint" />
+    <Property Name="mem_mid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="MemberType">
+    <Key>
+      <PropertyRef Name="mt_id" />
+    </Key>
+    <Property Name="mt_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mt_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mt_cdate" Type="datetime" />
+    <Property Name="mt_mdate" Type="datetime" />
+    <Property Name="mt_cid" Type="bigint" />
+    <Property Name="mt_mid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="module">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="bigint" Nullable="false" />
+    <Property Name="module_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="rights">
+          <Property Name="farm_id" Type="bigint" />
+          <Property Name="users_id" Type="bigint" />
+          <Property Name="farm_add" Type="char" MaxLength="1" />
+          <Property Name="farm_edit" Type="char" MaxLength="1" />
+          <Property Name="farm_delete" Type="char" MaxLength="1" />
+          <Property Name="farm_view" Type="char" MaxLength="1" />
+          <Property Name="farm_print" Type="char" MaxLength="1" />
+        </EntityType>-->
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="sta_id" />
+    </Key>
+    <Property Name="sta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sta_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="con_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="users_id" />
+    </Key>
+    <Property Name="users_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="users_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="users_password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="users_question" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="users_answer" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="users_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="users_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ut_id" Type="bigint" />
+    <Property Name="com_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="ut_id" />
+    </Key>
+    <Property Name="ut_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ut_code" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ut_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="com_id" Type="bigint" />
+  </EntityType>
+  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="BusinessType">
+        <PropertyRef Name="bt_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="BusinessType">
+        <PropertyRef Name="bt_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__con_id__182C9B23">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__City__sta_id__1920BF5C">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__city_id__21B6055D">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="city_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__con_id__239E4DCF">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Company__sta_id__22AA2996">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__farm__module_id__4222D4EF">
+    <End Role="module" Type="Self.module" Multiplicity="0..1" />
+    <End Role="farm" Type="Self.farm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="module">
+        <PropertyRef Name="module_id" />
+      </Principal>
+      <Dependent Role="farm">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__bt_id__66603565">
+    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BusinessType">
+        <PropertyRef Name="bt_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="bt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__city_id__6E01572D">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="city_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__con_id__6FE99F9F">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mem_cid__7B5B524B">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mem_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mem_mid__7C4F7684">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mem_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__mt_id__656C112C">
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MemberType">
+        <PropertyRef Name="mt_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="mt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Member__sta_id__6EF57B66">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="sta_id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="sta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MemberTyp__mt_ci__5812160E">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="MemberType">
+        <PropertyRef Name="mt_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MemberTyp__mt_mi__59063A47">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="users_id" />
+      </Principal>
+      <Dependent Role="MemberType">
+        <PropertyRef Name="mt_mid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__rights__farm_id__48CFD27E" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__rights__users_id__49C3F6B7" />-->
+  <Association Name="FK__States__con_id__145C0A3F">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="States" Type="Self.States" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="con_id" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="con_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__com_id__3D5E1FD2">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="com_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="com_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__ut_id__3C69FB99">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="ut_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="ut_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserType__com_id__33D4B598">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="com_id" />
+      </Principal>
+      <Dependent Role="UserType">
+        <PropertyRef Name="com_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="usp_BusinessTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bt_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_BusinessTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bt_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="bt_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="bt_cid" Type="bigint" Mode="In" />
+    <Parameter Name="bt_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_BusinessTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bt_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_BusinessTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bt_id" Type="bigint" Mode="In" />
+    <Parameter Name="bt_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="bt_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="bt_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="bt_cid" Type="bigint" Mode="In" />
+    <Parameter Name="bt_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CityDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CityInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="city_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CitySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CityUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="city_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CompanyDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CompanyInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="com_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_invoicename" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="com_pincode" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_mobileno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_website" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_tin" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_cst" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_cstdate" Type="date" Mode="In" />
+    <Parameter Name="com_panno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_servicetaxno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_isdefault" Type="bit" Mode="In" />
+    <Parameter Name="com_logo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CompanySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CompanyUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+    <Parameter Name="com_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_invoicename" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="com_pincode" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_mobileno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_website" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_tin" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_cst" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_cstdate" Type="date" Mode="In" />
+    <Parameter Name="com_panno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_servicetaxno" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_isdefault" Type="bit" Mode="In" />
+    <Parameter Name="com_logo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CountryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CountryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="con_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CountrySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CountryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_farmDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farm_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_farmInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farm_id" Type="bigint" Mode="In" />
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+    <Parameter Name="farm_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="farm_add" Type="char" Mode="In" />
+    <Parameter Name="farm_edit" Type="char" Mode="In" />
+    <Parameter Name="farm_delete" Type="char" Mode="In" />
+    <Parameter Name="farm_view" Type="char" Mode="In" />
+    <Parameter Name="farm_print" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_farmSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farm_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_farmUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farm_id" Type="bigint" Mode="In" />
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+    <Parameter Name="farm_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="farm_add" Type="char" Mode="In" />
+    <Parameter Name="farm_edit" Type="char" Mode="In" />
+    <Parameter Name="farm_delete" Type="char" Mode="In" />
+    <Parameter Name="farm_view" Type="char" Mode="In" />
+    <Parameter Name="farm_print" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mem_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mt_id" Type="bigint" Mode="In" />
+    <Parameter Name="bt_id" Type="bigint" Mode="In" />
+    <Parameter Name="mem_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_companyname" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_owner" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_offaddress1" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_offaddress2" Type="nvarchar" Mode="In" />
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="mem_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="mem_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="mem_phone" Type="varchar" Mode="In" />
+    <Parameter Name="mem_offphone" Type="varchar" Mode="In" />
+    <Parameter Name="mem_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_gstno" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_panno" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_logo" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="mem_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="mem_cid" Type="bigint" Mode="In" />
+    <Parameter Name="mem_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mem_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mt_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mt_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="mt_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="mt_cid" Type="bigint" Mode="In" />
+    <Parameter Name="mt_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mt_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mt_id" Type="bigint" Mode="In" />
+    <Parameter Name="mt_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mt_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="mt_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="mt_cid" Type="bigint" Mode="In" />
+    <Parameter Name="mt_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_MemberUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mem_id" Type="bigint" Mode="In" />
+    <Parameter Name="mt_id" Type="bigint" Mode="In" />
+    <Parameter Name="bt_id" Type="bigint" Mode="In" />
+    <Parameter Name="mem_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_companyname" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_owner" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_offaddress1" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_offaddress2" Type="nvarchar" Mode="In" />
+    <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+    <Parameter Name="mem_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="mem_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="mem_phone" Type="varchar" Mode="In" />
+    <Parameter Name="mem_offphone" Type="varchar" Mode="In" />
+    <Parameter Name="mem_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_gstno" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_panno" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_logo" Type="nvarchar" Mode="In" />
+    <Parameter Name="mem_cdate" Type="datetime" Mode="In" />
+    <Parameter Name="mem_mdate" Type="datetime" Mode="In" />
+    <Parameter Name="mem_cid" Type="bigint" Mode="In" />
+    <Parameter Name="mem_mid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_moduleDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_moduleInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+    <Parameter Name="module_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_moduleSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_moduleUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+    <Parameter Name="module_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_rightsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="users_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_rightsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farm_id" Type="int" Mode="In" />
+    <Parameter Name="users_id" Type="int" Mode="In" />
+    <Parameter Name="farm_add" Type="char" Mode="In" />
+    <Parameter Name="farm_edit" Type="char" Mode="In" />
+    <Parameter Name="farm_delete" Type="char" Mode="In" />
+    <Parameter Name="farm_view" Type="char" Mode="In" />
+    <Parameter Name="farm_print" Type="char" Mode="In" />
+  </Function>
+  <Function Name="usp_rightsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rusers_id" Type="int" Mode="In" />
+    <Parameter Name="users_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="usp_StatesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_StatesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sta_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_usersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="users_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_usersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="users_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_password" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_question" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_answer" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="ut_id" Type="bigint" Mode="In" />
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_usersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="users_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_usersUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="users_id" Type="bigint" Mode="In" />
+    <Parameter Name="users_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_password" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_question" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_answer" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="users_phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="ut_id" Type="bigint" Mode="In" />
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_UserTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ut_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_UserTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ut_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="ut_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_UserTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ut_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_UserTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ut_id" Type="bigint" Mode="In" />
+    <Parameter Name="ut_code" Type="nvarchar" Mode="In" />
+    <Parameter Name="ut_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="com_id" Type="bigint" Mode="In" />
+  </Function>
+  <EntityContainer Name="indgarmentsexpoModelStoreContainer">
+    <EntitySet Name="BusinessType" EntityType="Self.BusinessType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="farm" EntityType="Self.farm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberType" EntityType="Self.MemberType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="module" EntityType="Self.module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="Self.FK__BusinessT__bt_ci__5FB337D6">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="Self.FK__BusinessT__bt_mi__60A75C0F">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__con_id__182C9B23" Association="Self.FK__City__con_id__182C9B23">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="Self.FK__City__sta_id__1920BF5C">
+      <End Role="States" EntitySet="States" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="Self.FK__Company__city_id__21B6055D">
+      <End Role="City" EntitySet="City" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="Self.FK__Company__con_id__239E4DCF">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="Self.FK__Company__sta_id__22AA2996">
+      <End Role="States" EntitySet="States" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="Self.FK__farm__module_id__4222D4EF">
+      <End Role="module" EntitySet="module" />
+      <End Role="farm" EntitySet="farm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__bt_id__66603565" Association="Self.FK__Member__bt_id__66603565">
+      <End Role="BusinessType" EntitySet="BusinessType" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__city_id__6E01572D" Association="Self.FK__Member__city_id__6E01572D">
+      <End Role="City" EntitySet="City" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__con_id__6FE99F9F" Association="Self.FK__Member__con_id__6FE99F9F">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_cid__7B5B524B" Association="Self.FK__Member__mem_cid__7B5B524B">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_mid__7C4F7684" Association="Self.FK__Member__mem_mid__7C4F7684">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mt_id__656C112C" Association="Self.FK__Member__mt_id__656C112C">
+      <End Role="MemberType" EntitySet="MemberType" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__sta_id__6EF57B66" Association="Self.FK__Member__sta_id__6EF57B66">
+      <End Role="States" EntitySet="States" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="Self.FK__MemberTyp__mt_ci__5812160E">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="Self.FK__MemberTyp__mt_mi__59063A47">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="Self.FK__States__con_id__145C0A3F">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="Self.FK__users__com_id__3D5E1FD2">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="Self.FK__users__ut_id__3C69FB99">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="Self.FK__UserType__com_id__33D4B598">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="UserType" EntitySet="UserType" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
