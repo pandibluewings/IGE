@@ -245,61 +245,16 @@
          
         </div>
     </div>
-
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="~/asset/js/jquery.min.js"></script>
-    <script src="~/asset/js/jquery.ui.min.js"></script>
-   
-
-    <script src="~/asset/js/bootstrap.min.js"></script>
-
-    <!-- plugins -->
-    <script src="~/asset/js/plugins/moment.min.js"></script>
-    <script src="~/asset/js/plugins/jquery.knob.js"></script>
-    <script src="~/asset/js/plugins/ion.rangeSlider.min.js"></script>
-    <script src="~/asset/js/plugins/bootstrap-material-datetimepicker.js"></script>
-    <script src="~/asset/js/plugins/jquery.nicescroll.js"></script>
-    <script src="~/asset/js/plugins/jquery.mask.min.js"></script>
-    <script src="~/asset/js/plugins/select2.full.min.js"></script>
-    <script src="~/asset/js/plugins/nouislider.min.js"></script>
-    <script src="~/asset/js/plugins/jquery.validate.min.js"></script>
-
-    <!-- custom -->
-    <script src="~/asset/js/main.js"></script>
-
-
-    <!-- plugins -->
-  
-
-  
-
-
-
-
-
-
     <script type="text/javascript">
         $(document).ready(function () {
             //$(".select2-A").select2({
             //    placeholder: "Select a state",
             //    allowClear: true
             //});
+            alert("hii")
+
+            debugger;
             LoadMemberType();
             LoadBusinessType();
             LoadCountry();
@@ -309,65 +264,58 @@
         });
 
         function LoadMemberType() {
-            var member = new FormData()
-            member.append('mt_id', 2);
-            member.append('mt_name', 'ram');
-            $.ajax({
-                url: '/../API/Member',
-                type: 'POST',
-                dataType: 'json',
-                data: member,
-                processData: false,
-                contentType: false,// not json
-                complete: function (data) {
-                    var mediaId = $.parseJSON(data.responseText); //?
-
-                },
-                error: function (response) {
-                    console.log(response.responseText);
-                }
-            });
-
-
-
-
-
-
-
+            //var member = new FormData()
+            //member.append('mt_id', 2);
+            //member.append('mt_name', 'ram');
             //$.ajax({
-            //    url: '../API/MemberType',
+            //    url: '/../API/Member',
             //    type: 'POST',
             //    dataType: 'json',
             //    data: member,
-            //    success: function (data, textStatus, xhr) {
-            //        console.log(data);
+            //    processData: false,
+            //    contentType: false,// not json
+            //    complete: function (data) {
+            //        var mediaId = $.parseJSON(data.responseText); //?
+
             //    },
-            //    error: function (xhr, textStatus, errorThrown) {
-            //        console.log('Error in Operation');
+            //    error: function (response) {
+            //        console.log(response.responseText);
             //    }
             //});
+            debugger;
+            alert("hii");
+            try {
 
+                $.ajax({
+                    async: true,
+                    crossDomain: true,
+                    url: "" + apiSettings.baseUrl + "/api/MemberType",
+                    method: "GET",
+                    headers: {
+                        "content-type": "application/x-www-form-urlencoded"
+                        //Authorization: AuthorisationKey
+                    },
+                    success: function (data) {
+                        debugger;
+                        var newJ = $.parseJSON(data);
+                        $('#ddlMemberType').empty();
+                        $('#ddlMemberType').append('<option value= "0">' + "Select" + '</option>');
+                        $.each(newJ, function (idx, obj) {
+                            $('#ddlMemberType').append('<option value=' + obj.mt_id + '>' + obj.mt_name + '</option>');
+                        });
+                    },
 
-
-
-
-
-            $.ajax({
-                url: "../API/MemberType",
-                type: "GET",
-                //data: {id:10},
-
-            }).done(function (result) {
-                var newJ = $.parseJSON(result);
-                $('#ddlMemberType').empty();
-                $('#ddlMemberType').append('<option value= "0">' + "Select Member Type" + '</option>');
-                $.each(newJ, function (idx, obj) {
-                    $('#ddlMemberType').append('<option value=' + obj.mt_id + '>' + obj.mt_name + '</option>');
+                    error: function (e) {
+                        $('#divPleaseWaitModal').modal('hide')
+                        Common.ShowError(e.responseText, "Error")
+                    }
                 });
+            }
+            catch (ex) {
+                $('#divPleaseWaitModal').modal('hide');
+                Common.ShowError(ex.message, "Error")
+            }
 
-            }).fail(function (error) {
-                errorMsg("Unable to load your Request. Please try again later.");
-            });
         }
 
         function LoadBusinessType()
