@@ -10,49 +10,45 @@ namespace IGE.API.Member
 {
     public class MemberController : ApiController
     {
+
         // GET api/<controller>
-        public string Get()
+        public IEnumerable<usp_MemberSelect_Result> Get()
         {
-            List<Models.Member> Members = new List<Models.Member>();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            Members = objEntities.Members.ToList();
-            string json = "[";
-            foreach (var member in Members)
-            {
-                json = json + "{\"mem_id\":" + member.mem_id + ",\"mem_name\":\"" + member.mem_name + "\"}";
-            }
-            json = json + "]";
-            return json; ;
-          
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_MemberSelect(null);
+            return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public string Get(long id)
+        public IEnumerable<usp_MemberSelect_Result> Get(long id)
         {
-            Models.Member Member = new Models.Member();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            Member = objEntities.Members.Where(x=>x.mem_id==id).SingleOrDefault();
-            string json = "[";
-            json = json + "{\"mem_id\":" + Member.mem_id + ",\"mem_name\":\"" + Member.mem_name + "\"}";
-            json = json + "]";
-            return json; ;
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_MemberSelect(id);
+            return result.AsEnumerable();
         }
 
         // POST api/<controller>
-        public string Post(Models.Member member)
+        public Dictionary<string, string> Post(Models.Member member)
         {
+            Dictionary<string, string> objDic = new Dictionary<string, string>();
             try
             {
-                indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-                objEntities.usp_MemberInsert(member.mt_id, member.bt_id, member.mem_name, member.mem_companyname, member.mem_owner, member.mem_address1, member.mem_address2, member.mem_offaddress1, member.mem_offaddress2, member.city_id, member.sta_id, member.con_id, member.mem_pincode, member.mem_mobile, member.mem_phone, member.mem_offphone, member.mem_email, member.mem_webbsite, member.mem_gstno, member.mem_panno, member.mem_logo, DateTime.Now, DateTime.Now, member.mem_cid, member.mem_mid);
-                return "Member record Inserted Successfully.";
-                          
+                indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+                var data = db.usp_MemberInsert(member.mt_id, member.bt_id, member.mem_name, member.mem_companyname, member.mem_owner, member.mem_address1, member.mem_address2, member.mem_offaddress1, member.mem_offaddress2, member.city_id, member.sta_id, member.con_id, member.mem_pincode, member.mem_mobile, member.mem_phone, member.mem_offphone, member.mem_email, member.mem_webbsite, member.mem_gstno, member.mem_panno, member.mem_logo, DateTime.Now, DateTime.Now, member.mem_cid, member.mem_mid);
+                var uid = data.Select(x => x.mem_id).SingleOrDefault();
+                objDic.Add("status", "1");
+                objDic.Add("uid", uid.ToString ());
+                objDic.Add("message", "1");
+                return objDic;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return "Member record Insertion Failed.";    
+                objDic.Add("status", "0");
+                objDic.Add("uid", "0");
+                objDic.Add("message", ex.Message);
+                return objDic;
             }
-            
+
         }
 
         // PUT api/<controller>/5
@@ -65,18 +61,18 @@ namespace IGE.API.Member
         {
             try
             {
-                indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-                objEntities.usp_MemberDelete(id);
+                indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+                db.usp_MemberDelete(id);
                 return "Member Deleted Successfully.";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "Member Deleted Failed.";
             }
-          
-            
+
+
         }
 
-       
+
     }
 }

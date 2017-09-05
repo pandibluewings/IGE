@@ -11,24 +11,19 @@ namespace IGE.API
     public class StateController : ApiController
     {
         // GET api/<controller>
-        public string Get()
+        public IEnumerable<usp_StatesSelect_Result > Get()
         {
-            List<State> States = new List<State>();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            States = objEntities.States.ToList();
-            string json = "[";
-            foreach (var state in States)
-            {
-                json = json + "{\"sta_id\":" + state.sta_id + ",\"sta_name\":\"" + state.sta_name + "\"},";
-            }
-            json = json.Substring(0,(json.Length-1)) + "]";
-            return json;
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_StatesSelect(null);
+            return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IEnumerable<usp_StatesSelect_Result> Get(long id)
         {
-            return "value";
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_StatesSelect(id);
+            return result.AsEnumerable();
         }
 
         // POST api/<controller>

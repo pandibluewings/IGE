@@ -11,24 +11,19 @@ namespace IGE.API
     public class CountryController : ApiController
     {
         // GET api/<controller>
-        public string Get()
+        public IEnumerable <usp_CountrySelect_Result > Get()
         {
-            List<Country> Countries = new List<Country>();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            Countries = objEntities.Countries.ToList();
-            string json = "[";
-            foreach (var country in Countries)
-            {
-                json = json + "{\"con_id\":" + country.con_id + ",\"con_name\":\"" + country.con_name + "\"}";
-            }
-            json = json + "]";
-            return json;
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_CountrySelect (null);
+            return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IEnumerable<usp_CountrySelect_Result> Get(long id)
         {
-            return "value";
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_CountrySelect(id );
+            return result.AsEnumerable();
         }
 
         // POST api/<controller>

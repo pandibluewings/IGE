@@ -13,35 +13,23 @@ namespace IGE.API
 {
     public class MemberTypeController : ApiController
     {
-      
+
 
 
         // GET api/<controller>
-        public  string Get()
-        
+        public IEnumerable<usp_MemberTypeSelect_Result> Get()
         {
-            List<Models.MemberType> Membertypes = new List<MemberType>();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            Membertypes = objEntities.MemberTypes.ToList();
-            string json = "[";
-            foreach (var member in Membertypes)
-            {
-                json = json + "{\"mt_id\":" + member.mt_id + ",\"mt_name\":\"" + member.mt_name + "\"},";
-            }
-            json = json.Substring(0, (json.Length - 1)) + "]";
-            return json;
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_MemberTypeSelect(null);
+            return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IEnumerable<usp_MemberTypeSelect_Result> Get(long id)
         {
-            Models.MemberType Membertypes = new Models.MemberType();
-            indgarmentsexpoEntities objEntities = new indgarmentsexpoEntities();
-            Membertypes=objEntities.MemberTypes.Where(x=>x.mt_id==id).SingleOrDefault();
-            string json ="[";
-            json = json + "{\"md_id\":" + Membertypes.mt_id + ",\"mt_name\":\"" + Membertypes.mt_name + "\"}";
-            json = json + "]";
-            return json;
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_MemberTypeSelect(id);
+            return result.AsEnumerable();
         }
 
         // POST api/<controller>
@@ -60,10 +48,10 @@ namespace IGE.API
 
         }
 
-        
-        
 
 
-      
+
+
+
     }
 }
