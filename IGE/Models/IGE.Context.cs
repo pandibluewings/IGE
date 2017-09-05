@@ -1102,6 +1102,5 @@ namespace IGE.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_UserTypeUpdate_Result>("usp_UserTypeUpdate", ut_idParameter, ut_codeParameter, ut_nameParameter, com_idParameter);
         }
-
     }
 }
