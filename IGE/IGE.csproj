@@ -186,6 +186,7 @@
     <Compile Include="Models\Country.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\dtoBusinessType.cs" />
     <Compile Include="Models\farm.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
@@ -699,23 +700,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\IGE.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IGE.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\IGE.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IGE.edmx</DependentUpon>
-      <LastGenOutput>IGE.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\IGE.edmx.diagram">
-      <DependentUpon>IGE.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\IGE.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>IGE.edmx</DependentUpon>
-      <LastGenOutput>IGE.cs</LastGenOutput>
-    </Content>
     <Content Include="asset\fonts\fontawesome-webfont.eot" />
     <Content Include="asset\fonts\fontawesome-webfont.ttf" />
     <Content Include="asset\fonts\fontawesome-webfont.woff" />
@@ -757,6 +741,23 @@
     <Content Include="asset\js\plugins\flot\examples\axes-time-zones\tz\systemv" />
     <Content Include="asset\js\plugins\flot\examples\axes-time-zones\tz\yearistype.sh" />
     <Content Include="asset\js\plugins\flot\examples\axes-time-zones\tz\zone.tab" />
+    <EntityDeploy Include="Models\IGE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IGE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\IGE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IGE.edmx</DependentUpon>
+      <LastGenOutput>IGE.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\IGE.edmx.diagram">
+      <DependentUpon>IGE.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\IGE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IGE.edmx</DependentUpon>
+      <LastGenOutput>IGE.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
