@@ -1,4 +1,21 @@
-﻿<div class="col-md-12">
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/asset/css/plugins/select2.min.css" />
+
+<div class="panel box-shadow-none content-header">
+    <div class="panel-body">
+        <div class="col-md-12">
+            <h3 class="animated fadeInLeft">Membership</h3>
+            <p class="animated fadeInDown">
+                Firm <span class="fa-angle-right fa"></span>Register your information
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+
     <div class="col-md-12 panel">
         <div class="col-md-12 panel-heading">
             <h4>Member</h4>
@@ -6,25 +23,23 @@
         <div class="col-md-12 panel-body">
             <div class="col-md-12">
                 <div class="col-md-2">
-                    <div class="form-group"><label>Member Type</label></div>
+                    <div class="form-group">
+                        <label>Member Type</label></div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group form-animate-text">
-                        <select class="select2-A" style="width:100% !important" id="ddlMemberType">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
+                        <select class="select2-A" style="width: 100% !important" id="ddlMemberType">
                         </select>
                     </div>
                 </div>
 
                 <div class="col-md-2">
-                    <div class="form-group" ><label>Business Type</label></div>
+                    <div class="form-group">
+                        <label>Business Type</label></div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group form-animate-text">
-                        <select class="select2-A" style="width:100% !important" id="ddlBusinessType">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
+                        <select class="select2-A" style="width: 100% !important" id="ddlBusinessType">
                         </select>
                     </div>
                 </div>
@@ -38,23 +53,23 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="form-group" >
-                        <input type="text" class="form-control" id="txtName"/>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtName" />
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <div class="form-group" >
+                    <div class="form-group">
                         <label class="control-label">Company Name</label>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="txtCompany"/>
+                        <input type="text" class="form-control" id="txtCompany" />
                     </div>
                 </div>
 
-              </div>
+            </div>
 
             <div class="col-md-12">
                 <div class="col-md-2">
@@ -112,24 +127,22 @@
 
             <div class="col-md-12">
                 <div class="col-md-2">
-                    <div class="form-group"><label>City</label></div>
+                    <div class="form-group">
+                        <label>City</label></div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group form-animate-text">
-                        <select class="select2-A" style="width:100% !important" id="ddlCity">
-                           
-                        </select>
+                        <select class="select2-A" style="width: 100% !important" id="ddlCity"></select>
                     </div>
                 </div>
 
                 <div class="col-md-2">
-                    <div class="form-group"><label>State</label></div>
+                    <div class="form-group">
+                        <label>State</label></div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group form-animate-text">
-                        <select class="select2-A" style="width:100% !important" id="ddlState">
-                           
-                        </select>
+                        <select class="select2-A" style="width: 100% !important" id="ddlState"></select>
                     </div>
                 </div>
 
@@ -140,22 +153,22 @@
 
             <div class="col-md-12">
                 <div class="col-md-2">
-                    <div class="form-group"><label>Country</label></div>
+                    <div class="form-group">
+                        <label>Country</label></div>
                 </div>
-                <div class="col-md-4" >
+                <div class="col-md-4">
                     <div class="form-group form-animate-text">
-                        <select class="select2-A" style="width:100% !important" id="ddlCountry">
-                          
-                        </select>
+                        <select class="select2-A" style="width: 100% !important" id="ddlCountry"></select>
                     </div>
                 </div>
 
                 <div class="col-md-2">
-                    <div class="form-group"><label>PinCode</label></div>
+                    <div class="form-group">
+                        <label>PinCode</label></div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="txtPincode"/>
+                        <input type="text" class="form-control" id="txtPincode" />
                     </div>
                 </div>
 
@@ -214,202 +227,191 @@
 
             </div>
 
-           
 
-        <div class="col-md-12">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label class="control-label">Website</label>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Website</label>
+                    </div>
                 </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtWebsite">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">GST Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtGst">
+                    </div>
+                </div>
+
+
             </div>
 
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="txtWebsite">
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label class="control-label">GST Number</label>
-                </div>
+            <div class="col-md-12">
+                <input class="submit btn btn-danger right" type="submit" value="Register">
             </div>
 
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="txtGst">
-                </div>
-            </div>
 
         </div>
-        
-         
-        </div>
+
+
     </div>
-    
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //$(".select2-A").select2({
-            //    placeholder: "Select a state",
-            //    allowClear: true
-            //});
-            alert("hii")
+</div>
 
-            debugger;
-            LoadMemberType();
-            LoadBusinessType();
-            LoadCountry();
-            LoadState();
-            LoadCity();
-            
+@*<script src="~/asset/js/plugins/moment.min.js"></script>*@
+<script src="~/asset/js/plugins/select2.full.min.js"></script>
+<script src="~/asset/js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".select2-A").select2({
+            placeholder: "Select",
+            allowClear: true
+        });
+        debugger;
+        LoadMemberType();
+        LoadBusinessType();
+        LoadCountry();
+        LoadState();
+        LoadCity();
+
+    });
+
+    function LoadMemberType() {
+        try {
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                url: "../api/MemberType",
+                method: "GET",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                success: function (data) {
+                    debugger;
+                    var newJ = data;
+                    $('#ddlMemberType').empty();
+                    $('#ddlMemberType').append('<option value= "0">' + "Select" + '</option>');
+                    $.each(newJ, function (idx, obj) {
+                        $('#ddlMemberType').append('<option value=' + obj.mt_id + '>' + obj.mt_name + '</option>');
+                    });
+
+                },
+
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+        }
+        catch (ex) {
+            $('#divPleaseWaitModal').modal('hide');
+            Common.ShowError(ex.message, "Error")
+        }
+
+    }
+
+    function LoadBusinessType() {
+        $.ajax({
+            url: "../API/BusinessType",
+            type: "GET",
+            //data: {id:10},
+
+        }).done(function (result) {
+            var newJ = result;
+            $('#ddlBusinessType').empty();
+            $('#ddlBusinessType').append('<option value= "0">' + "Select Business Type" + '</option>');
+            $.each(newJ, function (idx, obj) {
+                $('#ddlBusinessType').append('<option value=' + obj.bt_id + '>' + obj.bt_name + '</option>');
+            });
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
         });
 
-        function LoadMemberType() {
-            //var member = new FormData()
-            //member.append('mt_id', 2);
-            //member.append('mt_name', 'ram');
-            //$.ajax({
-            //    url: '/../API/Member',
-            //    type: 'POST',
-            //    dataType: 'json',
-            //    data: member,
-            //    processData: false,
-            //    contentType: false,// not json
-            //    complete: function (data) {
-            //        var mediaId = $.parseJSON(data.responseText); //?
+    }
 
-            //    },
-            //    error: function (response) {
-            //        console.log(response.responseText);
-            //    }
-            //});
+
+    function LoadCountry() {
+        $.ajax({
+            url: "../API/Country",
+            type: "GET",
+            //data: {id:10},
+
+        }).done(function (result) {
+
+            var country = result;
+
+            $('#ddlCountry').empty();
+            $('#ddlCountry').append('<option value= "0">' + "Select Country" + '</option>');
+            $.each(country, function (idx, obj) {
+                $('#ddlCountry').append('<option value=' + obj.con_id + '>' + obj.con_name + '</option>');
+            });
+
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
+
+
+
+    function LoadState() {
+        $.ajax({
+            url: "../API/State",
+            type: "GET",
+            //data: {id:10},
+
+        }).done(function (result) {
             debugger;
-            alert("hii");
-            try {
-
-                $.ajax({
-                    async: true,
-                    crossDomain: true,
-                    url: "" + apiSettings.baseUrl + "/api/MemberType",
-                    method: "GET",
-                    headers: {
-                        "content-type": "application/x-www-form-urlencoded"
-                        //Authorization: AuthorisationKey
-                    },
-                    success: function (data) {
-                        debugger;
-                        var newJ = $.parseJSON(data);
-                        $('#ddlMemberType').empty();
-                        $('#ddlMemberType').append('<option value= "0">' + "Select" + '</option>');
-                        $.each(newJ, function (idx, obj) {
-                            $('#ddlMemberType').append('<option value=' + obj.mt_id + '>' + obj.mt_name + '</option>');
-                        });
-                    },
-
-                    error: function (e) {
-                        $('#divPleaseWaitModal').modal('hide')
-                        Common.ShowError(e.responseText, "Error")
-                    }
-                });
-            }
-            catch (ex) {
-                $('#divPleaseWaitModal').modal('hide');
-                Common.ShowError(ex.message, "Error")
-            }
-
-        }
-
-        function LoadBusinessType()
-        {
-            $.ajax({
-                url: "../API/BusinessType",
-                type: "GET",
-                //data: {id:10},
-
-            }).done(function (result) {
-                var newJ = $.parseJSON(result);
-                $('#ddlBusinessType').empty();
-                $('#ddlBusinessType').append('<option value= "0">' + "Select Business Type" + '</option>');
-                $.each(newJ, function (idx, obj) {
-                    $('#ddlBusinessType').append('<option value=' + obj.bt_id + '>' + obj.bt_name + '</option>');
-                });
-
-            }).fail(function (error) {
-                errorMsg("Unable to load your Request. Please try again later.");
+            var state = result;
+            debugger;
+            $('#ddlState').empty();
+            $('#ddlState').append('<option value= "0">' + "Select State" + '</option>');
+            $.each(state, function (idx, obj) {
+                $('#ddlState').append('<option value=' + obj.sta_id + '>' + obj.sta_name + '</option>');
             });
 
-        }
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
 
+    }
 
-        function LoadCountry() {
-            $.ajax({
-                url: "../API/Country",
-                type: "GET",
-                //data: {id:10},
+    function LoadCity() {
+        $.ajax({
+            url: "../API/City",
+            type: "GET",
+            //data: {id:10},
 
-            }).done(function (result) {
-               
-                var country = $.parseJSON(result);
-
-                $('#ddlCountry').empty();
-                $('#ddlCountry').append('<option value= "0">' + "Select Country" + '</option>');
-                $.each(country, function (idx, obj) {
-                    $('#ddlCountry').append('<option value=' + obj.con_id + '>' + obj.con_name + '</option>');
-                });
-
-            }).fail(function (error) {
-                errorMsg("Unable to load your Request. Please try again later.");
+        }).done(function (result) {
+            var city = result;
+            $('#ddlCity').empty();
+            $('#ddlCity').append('<option value= "0">' + "Select City" + '</option>');
+            $.each(city, function (idx, obj) {
+                $('#ddlCity').append('<option value=' + obj.city_id + '>' + obj.city_name + '</option>');
             });
 
-        }
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
 
 
 
-        function LoadState() {
-            $.ajax({
-                url: "../API/State",
-                type: "GET",
-                //data: {id:10},
-
-            }).done(function (result) {
-                debugger;
-                var state = $.parseJSON(result);
-                debugger;
-                $('#ddlState').empty();
-                $('#ddlState').append('<option value= "0">' + "Select State" + '</option>');
-                $.each(state, function (idx, obj) {
-                    $('#ddlState').append('<option value=' + obj.sta_id + '>' + obj.sta_name + '</option>');
-                });
-
-            }).fail(function (error) {
-                errorMsg("Unable to load your Request. Please try again later.");
-            });
-
-        }
-
-        function LoadCity() {
-            $.ajax({
-                url: "../API/City",
-                type: "GET",
-                //data: {id:10},
-
-            }).done(function (result) {
-                var city = $.parseJSON(result);
-                $('#ddlCity').empty();
-                $('#ddlCity').append('<option value= "0">' + "Select City" + '</option>');
-                $.each(city, function (idx, obj) {
-                    $('#ddlCity').append('<option value=' + obj.city_id + '>' + obj.city_name + '</option>');
-                });
-
-            }).fail(function (error) {
-                errorMsg("Unable to load your Request. Please try again later.");
-            });
-
-        }
 
 
 
-            
 
-        
-
-    </script>
+</script>
