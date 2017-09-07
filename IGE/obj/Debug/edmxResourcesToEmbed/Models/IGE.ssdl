@@ -1,11 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="indgarmentsexpoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="indgarmentsexpoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="indgarmentsexpoModelStoreContainer">
+    <EntitySet Name="BusinessType" EntityType="indgarmentsexpoModel.Store.BusinessType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="City" EntityType="indgarmentsexpoModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="indgarmentsexpoModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country" EntityType="indgarmentsexpoModel.Store.Country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="farm" EntityType="indgarmentsexpoModel.Store.farm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Member" EntityType="indgarmentsexpoModel.Store.Member" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberType" EntityType="indgarmentsexpoModel.Store.MemberType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="module" EntityType="indgarmentsexpoModel.Store.module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="indgarmentsexpoModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="indgarmentsexpoModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserType" EntityType="indgarmentsexpoModel.Store.UserType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__BusinessT__bt_ci__656C112C" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_ci__656C112C">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BusinessT__bt_mi__66603565" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_mi__66603565">
+      <End Role="users" EntitySet="users" />
+      <End Role="BusinessType" EntitySet="BusinessType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__con_id__0CBAE877" Association="indgarmentsexpoModel.Store.FK__City__con_id__0CBAE877">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__City__sta_id__0DAF0CB0" Association="indgarmentsexpoModel.Store.FK__City__sta_id__0DAF0CB0">
+      <End Role="States" EntitySet="States" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__city_id__182C9B23" Association="indgarmentsexpoModel.Store.FK__Company__city_id__182C9B23">
+      <End Role="City" EntitySet="City" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__con_id__1A14E395" Association="indgarmentsexpoModel.Store.FK__Company__con_id__1A14E395">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Company__sta_id__1920BF5C" Association="indgarmentsexpoModel.Store.FK__Company__sta_id__1920BF5C">
+      <End Role="States" EntitySet="States" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK__farm__module_id__403A8C7D" Association="indgarmentsexpoModel.Store.FK__farm__module_id__403A8C7D">
+      <End Role="module" EntitySet="module" />
+      <End Role="farm" EntitySet="farm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__bt_id__71D1E811" Association="indgarmentsexpoModel.Store.FK__Member__bt_id__71D1E811">
+      <End Role="BusinessType" EntitySet="BusinessType" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__city_id__797309D9" Association="indgarmentsexpoModel.Store.FK__Member__city_id__797309D9">
+      <End Role="City" EntitySet="City" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__con_id__7B5B524B" Association="indgarmentsexpoModel.Store.FK__Member__con_id__7B5B524B">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_cid__06CD04F7" Association="indgarmentsexpoModel.Store.FK__Member__mem_cid__06CD04F7">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mem_mid__07C12930" Association="indgarmentsexpoModel.Store.FK__Member__mem_mid__07C12930">
+      <End Role="users" EntitySet="users" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__mt_id__70DDC3D8" Association="indgarmentsexpoModel.Store.FK__Member__mt_id__70DDC3D8">
+      <End Role="MemberType" EntitySet="MemberType" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Member__sta_id__7A672E12" Association="indgarmentsexpoModel.Store.FK__Member__sta_id__7A672E12">
+      <End Role="States" EntitySet="States" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_ci__59FA5E80" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_ci__59FA5E80">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MemberTyp__mt_mi__5AEE82B9" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_mi__5AEE82B9">
+      <End Role="users" EntitySet="users" />
+      <End Role="MemberType" EntitySet="MemberType" />
+    </AssociationSet>
+    <AssociationSet Name="FK__States__con_id__07020F21" Association="indgarmentsexpoModel.Store.FK__States__con_id__07020F21">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__com_id__37A5467C" Association="indgarmentsexpoModel.Store.FK__users__com_id__37A5467C">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__ut_id__36B12243" Association="indgarmentsexpoModel.Store.FK__users__ut_id__36B12243">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserType__com_id__2C3393D0" Association="indgarmentsexpoModel.Store.FK__UserType__com_id__2C3393D0">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="UserType" EntitySet="UserType" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="BusinessType">
     <Key>
       <PropertyRef Name="bt_id" />
     </Key>
-    <Property Name="bt_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="bt_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="bt_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bt_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="bt_cdate" Type="datetime" />
     <Property Name="bt_mdate" Type="datetime" />
     <Property Name="bt_cid" Type="bigint" />
@@ -15,8 +112,8 @@
     <Key>
       <PropertyRef Name="city_id" />
     </Key>
-    <Property Name="city_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="city_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="city_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="con_id" Type="bigint" />
     <Property Name="sta_id" Type="bigint" />
   </EntityType>
@@ -24,35 +121,35 @@
     <Key>
       <PropertyRef Name="com_id" />
     </Key>
-    <Property Name="com_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="com_name" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="com_invoicename" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="com_address1" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="com_address2" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="com_address3" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="com_district" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="com_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="com_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="com_invoicename" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="com_address1" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="com_address2" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="com_address3" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="com_district" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="city_id" Type="bigint" />
     <Property Name="sta_id" Type="bigint" />
     <Property Name="con_id" Type="bigint" />
-    <Property Name="com_pincode" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_mobileno" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_website" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="com_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_tin" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_cst" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_pincode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_mobileno" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_website" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="com_phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_tin" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_cst" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="com_cstdate" Type="date" Nullable="false" />
-    <Property Name="com_panno" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="com_servicetaxno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="com_panno" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="com_servicetaxno" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="com_isdefault" Type="bit" Nullable="false" />
-    <Property Name="com_logo" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="com_logo" Type="nvarchar" Nullable="false" MaxLength="500" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
       <PropertyRef Name="con_id" />
     </Key>
-    <Property Name="con_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="con_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="con_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="con_name" Type="nvarchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="farm">
     <Key>
@@ -71,27 +168,27 @@
     <Key>
       <PropertyRef Name="mem_id" />
     </Key>
-    <Property Name="mem_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mem_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="mt_id" Type="bigint" />
     <Property Name="bt_id" Type="bigint" />
-    <Property Name="mem_name" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_companyname" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_owner" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_address1" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="mem_address2" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="mem_offaddress1" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="mem_offaddress2" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="mem_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_companyname" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_owner" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_address1" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="mem_address2" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="mem_offaddress1" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="mem_offaddress2" Type="nvarchar" Nullable="false" MaxLength="250" />
     <Property Name="city_id" Type="bigint" />
     <Property Name="sta_id" Type="bigint" />
     <Property Name="con_id" Type="bigint" />
-    <Property Name="mem_pincode" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="mem_mobile" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="mem_phone" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="mem_offphone" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="mem_email" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_webbsite" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_gstno" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="mem_panno" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mem_pincode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="mem_mobile" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="mem_phone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="mem_offphone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="mem_email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_webbsite" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_gstno" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="mem_panno" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="mem_logo" Type="nvarchar" MaxLength="500" />
     <Property Name="mem_cdate" Type="datetime" />
     <Property Name="mem_mdate" Type="datetime" />
@@ -102,8 +199,8 @@
     <Key>
       <PropertyRef Name="mt_id" />
     </Key>
-    <Property Name="mt_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="mt_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="mt_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mt_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="mt_cdate" Type="datetime" />
     <Property Name="mt_mdate" Type="datetime" />
     <Property Name="mt_cid" Type="bigint" />
@@ -116,36 +213,25 @@
     <Property Name="module_id" Type="bigint" Nullable="false" />
     <Property Name="module_name" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="rights">
-          <Property Name="farm_id" Type="bigint" />
-          <Property Name="users_id" Type="bigint" />
-          <Property Name="farm_add" Type="char" MaxLength="1" />
-          <Property Name="farm_edit" Type="char" MaxLength="1" />
-          <Property Name="farm_delete" Type="char" MaxLength="1" />
-          <Property Name="farm_view" Type="char" MaxLength="1" />
-          <Property Name="farm_print" Type="char" MaxLength="1" />
-        </EntityType>-->
   <EntityType Name="States">
     <Key>
       <PropertyRef Name="sta_id" />
     </Key>
-    <Property Name="sta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="sta_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="sta_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sta_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="con_id" Type="bigint" />
   </EntityType>
   <EntityType Name="users">
     <Key>
       <PropertyRef Name="users_id" />
     </Key>
-    <Property Name="users_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="users_name" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="users_password" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="users_question" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="users_answer" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="users_email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="users_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="users_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="users_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="users_password" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="users_question" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="users_answer" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="users_email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="users_phone" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="ut_id" Type="bigint" />
     <Property Name="com_id" Type="bigint" />
   </EntityType>
@@ -153,14 +239,14 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
     <Key>
       <PropertyRef Name="ut_id" />
     </Key>
-    <Property Name="ut_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ut_code" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="ut_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ut_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ut_code" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ut_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="com_id" Type="bigint" />
   </EntityType>
-  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_ci__656C112C">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -170,9 +256,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_mi__66603565">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -182,9 +268,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__con_id__182C9B23">
-    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
-    <End Role="City" Type="Self.City" Multiplicity="*" />
+  <Association Name="FK__City__con_id__0CBAE877">
+    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
+    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -194,9 +280,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__sta_id__1920BF5C">
-    <End Role="States" Type="Self.States" Multiplicity="0..1" />
-    <End Role="City" Type="Self.City" Multiplicity="*" />
+  <Association Name="FK__City__sta_id__0DAF0CB0">
+    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
+    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -206,9 +292,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__city_id__21B6055D">
-    <End Role="City" Type="Self.City" Multiplicity="0..1" />
-    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+  <Association Name="FK__Company__city_id__182C9B23">
+    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
+    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -218,9 +304,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__con_id__239E4DCF">
-    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
-    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+  <Association Name="FK__Company__con_id__1A14E395">
+    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
+    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -230,9 +316,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__sta_id__22AA2996">
-    <End Role="States" Type="Self.States" Multiplicity="0..1" />
-    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+  <Association Name="FK__Company__sta_id__1920BF5C">
+    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
+    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -242,9 +328,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__farm__module_id__4222D4EF">
-    <End Role="module" Type="Self.module" Multiplicity="0..1" />
-    <End Role="farm" Type="Self.farm" Multiplicity="*" />
+  <Association Name="FK__farm__module_id__403A8C7D">
+    <End Role="module" Type="indgarmentsexpoModel.Store.module" Multiplicity="0..1" />
+    <End Role="farm" Type="indgarmentsexpoModel.Store.farm" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="module">
         <PropertyRef Name="module_id" />
@@ -254,9 +340,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__bt_id__66603565">
-    <End Role="BusinessType" Type="Self.BusinessType" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__bt_id__71D1E811">
+    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BusinessType">
         <PropertyRef Name="bt_id" />
@@ -266,9 +352,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__city_id__6E01572D">
-    <End Role="City" Type="Self.City" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__city_id__797309D9">
+    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -278,9 +364,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__con_id__6FE99F9F">
-    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__con_id__7B5B524B">
+    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -290,9 +376,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_cid__7B5B524B">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_cid__06CD04F7">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -302,9 +388,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_mid__7C4F7684">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_mid__07C12930">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -314,9 +400,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mt_id__656C112C">
-    <End Role="MemberType" Type="Self.MemberType" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mt_id__70DDC3D8">
+    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MemberType">
         <PropertyRef Name="mt_id" />
@@ -326,9 +412,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__sta_id__6EF57B66">
-    <End Role="States" Type="Self.States" Multiplicity="0..1" />
-    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+  <Association Name="FK__Member__sta_id__7A672E12">
+    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
+    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -338,9 +424,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_ci__5812160E">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_ci__59FA5E80">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -350,9 +436,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_mi__59063A47">
-    <End Role="users" Type="Self.users" Multiplicity="0..1" />
-    <End Role="MemberType" Type="Self.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_mi__5AEE82B9">
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -362,15 +448,9 @@ warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__rights__farm_id__48CFD27E" />-->
-  <!--Errors Found During Generation:
-error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__rights__users_id__49C3F6B7" />-->
-  <Association Name="FK__States__con_id__145C0A3F">
-    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
-    <End Role="States" Type="Self.States" Multiplicity="*" />
+  <Association Name="FK__States__con_id__07020F21">
+    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
+    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -380,9 +460,9 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__com_id__3D5E1FD2">
-    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
-    <End Role="users" Type="Self.users" Multiplicity="*" />
+  <Association Name="FK__users__com_id__37A5467C">
+    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -392,9 +472,9 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__ut_id__3C69FB99">
-    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
-    <End Role="users" Type="Self.users" Multiplicity="*" />
+  <Association Name="FK__users__ut_id__36B12243">
+    <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="0..1" />
+    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserType">
         <PropertyRef Name="ut_id" />
@@ -404,9 +484,9 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserType__com_id__33D4B598">
-    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
-    <End Role="UserType" Type="Self.UserType" Multiplicity="*" />
+  <Association Name="FK__UserType__com_id__2C3393D0">
+    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
+    <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -447,6 +527,8 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
   </Function>
   <Function Name="usp_CitySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_id" Type="bigint" Mode="In" />
+    <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
   <Function Name="usp_CityUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_id" Type="bigint" Mode="In" />
@@ -667,6 +749,7 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
   </Function>
   <Function Name="usp_StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
+    <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
   <Function Name="usp_StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
@@ -717,101 +800,16 @@ error 6004: The table 'indgarmentsexpo.dbo.rights' is referenced by a relationsh
     <Parameter Name="ut_name" Type="nvarchar" Mode="In" />
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <EntityContainer Name="indgarmentsexpoModelStoreContainer">
-    <EntitySet Name="BusinessType" EntityType="Self.BusinessType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="farm" EntityType="Self.farm" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MemberType" EntityType="Self.MemberType" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="module" EntityType="Self.module" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="Self.FK__BusinessT__bt_ci__5FB337D6">
-      <End Role="users" EntitySet="users" />
-      <End Role="BusinessType" EntitySet="BusinessType" />
-    </AssociationSet>
-    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="Self.FK__BusinessT__bt_mi__60A75C0F">
-      <End Role="users" EntitySet="users" />
-      <End Role="BusinessType" EntitySet="BusinessType" />
-    </AssociationSet>
-    <AssociationSet Name="FK__City__con_id__182C9B23" Association="Self.FK__City__con_id__182C9B23">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="City" EntitySet="City" />
-    </AssociationSet>
-    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="Self.FK__City__sta_id__1920BF5C">
-      <End Role="States" EntitySet="States" />
-      <End Role="City" EntitySet="City" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="Self.FK__Company__city_id__21B6055D">
-      <End Role="City" EntitySet="City" />
-      <End Role="Company" EntitySet="Company" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="Self.FK__Company__con_id__239E4DCF">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="Company" EntitySet="Company" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="Self.FK__Company__sta_id__22AA2996">
-      <End Role="States" EntitySet="States" />
-      <End Role="Company" EntitySet="Company" />
-    </AssociationSet>
-    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="Self.FK__farm__module_id__4222D4EF">
-      <End Role="module" EntitySet="module" />
-      <End Role="farm" EntitySet="farm" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__bt_id__66603565" Association="Self.FK__Member__bt_id__66603565">
-      <End Role="BusinessType" EntitySet="BusinessType" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__city_id__6E01572D" Association="Self.FK__Member__city_id__6E01572D">
-      <End Role="City" EntitySet="City" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__con_id__6FE99F9F" Association="Self.FK__Member__con_id__6FE99F9F">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_cid__7B5B524B" Association="Self.FK__Member__mem_cid__7B5B524B">
-      <End Role="users" EntitySet="users" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_mid__7C4F7684" Association="Self.FK__Member__mem_mid__7C4F7684">
-      <End Role="users" EntitySet="users" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__mt_id__656C112C" Association="Self.FK__Member__mt_id__656C112C">
-      <End Role="MemberType" EntitySet="MemberType" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Member__sta_id__6EF57B66" Association="Self.FK__Member__sta_id__6EF57B66">
-      <End Role="States" EntitySet="States" />
-      <End Role="Member" EntitySet="Member" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="Self.FK__MemberTyp__mt_ci__5812160E">
-      <End Role="users" EntitySet="users" />
-      <End Role="MemberType" EntitySet="MemberType" />
-    </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="Self.FK__MemberTyp__mt_mi__59063A47">
-      <End Role="users" EntitySet="users" />
-      <End Role="MemberType" EntitySet="MemberType" />
-    </AssociationSet>
-    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="Self.FK__States__con_id__145C0A3F">
-      <End Role="Country" EntitySet="Country" />
-      <End Role="States" EntitySet="States" />
-    </AssociationSet>
-    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="Self.FK__users__com_id__3D5E1FD2">
-      <End Role="Company" EntitySet="Company" />
-      <End Role="users" EntitySet="users" />
-    </AssociationSet>
-    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="Self.FK__users__ut_id__3C69FB99">
-      <End Role="UserType" EntitySet="UserType" />
-      <End Role="users" EntitySet="users" />
-    </AssociationSet>
-    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="Self.FK__UserType__com_id__33D4B598">
-      <End Role="Company" EntitySet="Company" />
-      <End Role="UserType" EntitySet="UserType" />
-    </AssociationSet>
-  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'indgarmentsexpo.dbo.rights' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="rights">
+        <Property Name="farm_id" Type="bigint" />
+        <Property Name="users_id" Type="bigint" />
+        <Property Name="farm_add" Type="char" MaxLength="1" />
+        <Property Name="farm_edit" Type="char" MaxLength="1" />
+        <Property Name="farm_delete" Type="char" MaxLength="1" />
+        <Property Name="farm_view" Type="char" MaxLength="1" />
+        <Property Name="farm_print" Type="char" MaxLength="1" />
+      </EntityType>-->
 </Schema>

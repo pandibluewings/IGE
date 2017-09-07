@@ -532,6 +532,8 @@
         </Function>
         <Function Name="usp_CitySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="city_id" Type="bigint" Mode="In" />
+          <Parameter Name="sta_id" Type="bigint" Mode="In" />
+          <Parameter Name="con_id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="usp_CityUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="city_id" Type="bigint" Mode="In" />
@@ -752,6 +754,7 @@
         </Function>
         <Function Name="usp_StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="sta_id" Type="bigint" Mode="In" />
+          <Parameter Name="con_id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="usp_StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="sta_id" Type="bigint" Mode="In" />
@@ -946,6 +949,8 @@
           </FunctionImport>
           <FunctionImport Name="usp_CitySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CitySelect_Result)">
             <Parameter Name="city_id" Mode="In" Type="Int64" />
+            <Parameter Name="sta_id" Mode="In" Type="Int64" />
+            <Parameter Name="con_id" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="usp_CityUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CityUpdate_Result)">
             <Parameter Name="city_id" Mode="In" Type="Int64" />
@@ -1166,6 +1171,7 @@
           </FunctionImport>
           <FunctionImport Name="usp_StatesSelect" ReturnType="Collection(indgarmentsexpoModel.usp_StatesSelect_Result)">
             <Parameter Name="sta_id" Mode="In" Type="Int64" />
+            <Parameter Name="con_id" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="usp_StatesUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_StatesUpdate_Result)">
             <Parameter Name="sta_id" Mode="In" Type="Int64" />

@@ -11,19 +11,32 @@ namespace IGE.API
     public class CityController : ApiController
     {
         // GET api/<controller>
-        public IEnumerable <usp_CitySelect_Result > Get()
+        public IEnumerable<usp_CitySelect_Result> Get()
         {
             indgarmentsexpoEntities db = new indgarmentsexpoEntities();
-            var result = db.usp_CitySelect (null);
+            var result = db.usp_CitySelect(null, null, null);
             return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public IEnumerable<usp_CitySelect_Result> Get(long stateid)
         {
-            return "value";
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_CitySelect(null, stateid, null);
+            return result.AsEnumerable();
         }
-
+        public IEnumerable<usp_CitySelect_Result> Get(long stateid, long countryid)
+        {
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_CitySelect(null, stateid, countryid);
+            return result.AsEnumerable();
+        }
+        public IEnumerable<usp_CitySelect_Result> Get(long cityid, long stateid, long countryid)
+        {
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_CitySelect(cityid, stateid, countryid);
+            return result.AsEnumerable();
+        }
         // POST api/<controller>
         public void Post([FromBody]string value)
         {

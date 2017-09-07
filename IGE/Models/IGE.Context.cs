@@ -138,13 +138,21 @@ namespace IGE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CityInsert_Result>("usp_CityInsert", city_nameParameter, con_idParameter, sta_idParameter);
         }
     
-        public virtual ObjectResult<usp_CitySelect_Result> usp_CitySelect(Nullable<long> city_id)
+        public virtual ObjectResult<usp_CitySelect_Result> usp_CitySelect(Nullable<long> city_id, Nullable<long> sta_id, Nullable<long> con_id)
         {
             var city_idParameter = city_id.HasValue ?
                 new ObjectParameter("city_id", city_id) :
                 new ObjectParameter("city_id", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CitySelect_Result>("usp_CitySelect", city_idParameter);
+            var sta_idParameter = sta_id.HasValue ?
+                new ObjectParameter("sta_id", sta_id) :
+                new ObjectParameter("sta_id", typeof(long));
+    
+            var con_idParameter = con_id.HasValue ?
+                new ObjectParameter("con_id", con_id) :
+                new ObjectParameter("con_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CitySelect_Result>("usp_CitySelect", city_idParameter, sta_idParameter, con_idParameter);
         }
     
         public virtual ObjectResult<usp_CityUpdate_Result> usp_CityUpdate(Nullable<long> city_id, string city_name, Nullable<long> con_id, Nullable<long> sta_id)
@@ -925,13 +933,17 @@ namespace IGE.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_StatesInsert_Result>("usp_StatesInsert", sta_nameParameter, con_idParameter);
         }
     
-        public virtual ObjectResult<usp_StatesSelect_Result> usp_StatesSelect(Nullable<long> sta_id)
+        public virtual ObjectResult<usp_StatesSelect_Result> usp_StatesSelect(Nullable<long> sta_id, Nullable<long> con_id)
         {
             var sta_idParameter = sta_id.HasValue ?
                 new ObjectParameter("sta_id", sta_id) :
                 new ObjectParameter("sta_id", typeof(long));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_StatesSelect_Result>("usp_StatesSelect", sta_idParameter);
+            var con_idParameter = con_id.HasValue ?
+                new ObjectParameter("con_id", con_id) :
+                new ObjectParameter("con_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_StatesSelect_Result>("usp_StatesSelect", sta_idParameter, con_idParameter);
         }
     
         public virtual ObjectResult<usp_StatesUpdate_Result> usp_StatesUpdate(Nullable<long> sta_id, string sta_name, Nullable<long> con_id)

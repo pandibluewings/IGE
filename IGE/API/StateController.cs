@@ -14,17 +14,26 @@ namespace IGE.API
         public IEnumerable<usp_StatesSelect_Result > Get()
         {
             indgarmentsexpoEntities db = new indgarmentsexpoEntities();
-            var result = db.usp_StatesSelect(null);
+            var result = db.usp_StatesSelect(null,null);
             return result.AsEnumerable();
         }
 
         // GET api/<controller>/5
-        public IEnumerable<usp_StatesSelect_Result> Get(long id)
+        public IEnumerable<usp_StatesSelect_Result> Get(long countryid)
         {
             indgarmentsexpoEntities db = new indgarmentsexpoEntities();
-            var result = db.usp_StatesSelect(id);
+            var result = db.usp_StatesSelect(null , countryid);
             return result.AsEnumerable();
         }
+    
+        // GET api/<controller>/5
+        public IEnumerable<usp_StatesSelect_Result> Get(long stateid,long countryid)
+        {
+            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            var result = db.usp_StatesSelect(stateid, countryid);
+            return result.AsEnumerable();
+        }
+
 
         // POST api/<controller>
         public void Post([FromBody]string value)

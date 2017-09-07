@@ -186,7 +186,6 @@
     <Compile Include="Models\Country.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\dtoBusinessType.cs" />
     <Compile Include="Models\farm.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
@@ -329,6 +328,80 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Assets_Main\css\animate.css" />
+    <Content Include="Assets_Main\css\bootstrap.min.css" />
+    <Content Include="Assets_Main\css\font-awesome.min.css" />
+    <Content Include="Assets_Main\css\main.css" />
+    <Content Include="Assets_Main\css\prettyPhoto.css" />
+    <Content Include="Assets_Main\css\price-range.css" />
+    <Content Include="Assets_Main\css\responsive.css" />
+    <Content Include="Assets_Main\images\404\404.png" />
+    <Content Include="Assets_Main\images\blog\blog-one.jpg" />
+    <Content Include="Assets_Main\images\blog\blog-three.jpg" />
+    <Content Include="Assets_Main\images\blog\blog-two.jpg" />
+    <Content Include="Assets_Main\images\blog\man-four.jpg" />
+    <Content Include="Assets_Main\images\blog\man-one.jpg" />
+    <Content Include="Assets_Main\images\blog\man-three.jpg" />
+    <Content Include="Assets_Main\images\blog\man-two.jpg" />
+    <Content Include="Assets_Main\images\blog\socials.png" />
+    <Content Include="Assets_Main\images\cart\one.png" />
+    <Content Include="Assets_Main\images\cart\three.png" />
+    <Content Include="Assets_Main\images\cart\two.png" />
+    <Content Include="Assets_Main\images\home\bg_border.png" />
+    <Content Include="Assets_Main\images\home\gallery1.jpg" />
+    <Content Include="Assets_Main\images\home\gallery2.jpg" />
+    <Content Include="Assets_Main\images\home\gallery3.jpg" />
+    <Content Include="Assets_Main\images\home\gallery4.jpg" />
+    <Content Include="Assets_Main\images\home\girl1.jpg" />
+    <Content Include="Assets_Main\images\home\girl2.jpg" />
+    <Content Include="Assets_Main\images\home\girl3.jpg" />
+    <Content Include="Assets_Main\images\home\iframe1.png" />
+    <Content Include="Assets_Main\images\home\iframe2.png" />
+    <Content Include="Assets_Main\images\home\iframe3.png" />
+    <Content Include="Assets_Main\images\home\iframe4.png" />
+    <Content Include="Assets_Main\images\home\logo.png" />
+    <Content Include="Assets_Main\images\home\map.png" />
+    <Content Include="Assets_Main\images\home\new.png" />
+    <Content Include="Assets_Main\images\home\partner1.png" />
+    <Content Include="Assets_Main\images\home\partner2.png" />
+    <Content Include="Assets_Main\images\home\partner3.png" />
+    <Content Include="Assets_Main\images\home\partner4.png" />
+    <Content Include="Assets_Main\images\home\pricing.png" />
+    <Content Include="Assets_Main\images\home\product1.jpg" />
+    <Content Include="Assets_Main\images\home\product2.jpg" />
+    <Content Include="Assets_Main\images\home\product3.jpg" />
+    <Content Include="Assets_Main\images\home\product4.jpg" />
+    <Content Include="Assets_Main\images\home\product5.jpg" />
+    <Content Include="Assets_Main\images\home\product6.jpg" />
+    <Content Include="Assets_Main\images\home\recommend1.jpg" />
+    <Content Include="Assets_Main\images\home\recommend2.jpg" />
+    <Content Include="Assets_Main\images\home\recommend3.jpg" />
+    <Content Include="Assets_Main\images\home\sale.png" />
+    <Content Include="Assets_Main\images\home\searchicon.png" />
+    <Content Include="Assets_Main\images\home\shipping.jpg" />
+    <Content Include="Assets_Main\images\product-details\1.jpg" />
+    <Content Include="Assets_Main\images\product-details\new.jpg" />
+    <Content Include="Assets_Main\images\product-details\rating.png" />
+    <Content Include="Assets_Main\images\product-details\share.png" />
+    <Content Include="Assets_Main\images\product-details\similar1.jpg" />
+    <Content Include="Assets_Main\images\product-details\similar2.jpg" />
+    <Content Include="Assets_Main\images\product-details\similar3.jpg" />
+    <Content Include="Assets_Main\images\shop\advertisement.jpg" />
+    <Content Include="Assets_Main\images\shop\product10.jpg" />
+    <Content Include="Assets_Main\images\shop\product11.jpg" />
+    <Content Include="Assets_Main\images\shop\product12.jpg" />
+    <Content Include="Assets_Main\images\shop\product7.jpg" />
+    <Content Include="Assets_Main\images\shop\product8.jpg" />
+    <Content Include="Assets_Main\images\shop\product9.jpg" />
+    <Content Include="Assets_Main\js\bootstrap.min.js" />
+    <Content Include="Assets_Main\js\contact.js" />
+    <Content Include="Assets_Main\js\gmaps.js" />
+    <Content Include="Assets_Main\js\html5shiv.js" />
+    <Content Include="Assets_Main\js\jquery.js" />
+    <Content Include="Assets_Main\js\jquery.prettyPhoto.js" />
+    <Content Include="Assets_Main\js\jquery.scrollUp.min.js" />
+    <Content Include="Assets_Main\js\main.js" />
+    <Content Include="Assets_Main\js\price-range.js" />
     <Content Include="asset\css\bootstrap.min.css" />
     <Content Include="asset\css\jquery.ui.min.css" />
     <Content Include="asset\css\plugins\animate.min.css" />
@@ -758,6 +831,11 @@
       <DependentUpon>IGE.edmx</DependentUpon>
       <LastGenOutput>IGE.cs</LastGenOutput>
     </Content>
+    <Content Include="Assets_Main\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets_Main\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets_Main\fonts\FontAwesome.otf" />
+    <Content Include="Assets_Main\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets_Main\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -806,6 +884,8 @@
     <Content Include="Views\Admin\Member.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\MemberList.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
