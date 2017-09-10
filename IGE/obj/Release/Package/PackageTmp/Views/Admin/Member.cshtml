@@ -1,0 +1,480 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/asset/css/plugins/select2.min.css" />
+
+<div class="panel box-shadow-none content-header">
+    <div class="panel-body">
+        <div class="col-md-12">
+            <h3 class="animated fadeInLeft">Membership</h3>
+            <p class="animated fadeInDown">
+                Firm <span class="fa-angle-right fa"></span>Register your information
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+
+    <div class="col-md-12 panel">
+        <div class="col-md-12 panel-heading">
+            <h4>Member</h4>
+        </div>
+        <div class="col-md-12 panel-body">
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Member Type</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-animate-text">
+                        <select class="select2-A" style="width: 100% !important" id="ddlMemberType">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Business Type</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-animate-text">
+                        <select class="select2-A" style="width: 100% !important" id="ddlBusinessType">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtName" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Company Name</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtCompany" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Owner</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtOwner">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">PAN Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtPanNumber">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Address1</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <textarea class="form-control" id="txtAddress1"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Address2</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <textarea class="form-control" id="txtAddress2"></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Country</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-animate-text">
+                        <select class="select2-A" style="width: 100% !important" id="ddlCountry"></select>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>State</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-animate-text">
+                        <select class="select2-A" style="width: 100% !important" id="ddlState"></select>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="col-md-12">
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>City</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-animate-text">
+                        <select class="select2-A" style="width: 100% !important" id="ddlCity"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>PinCode</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtPincode" />
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Mobile Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtMobileNumber">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Phone Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtPhoneNumber">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Office Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtOfficeNumber">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtEmail">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">Website</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtWebsite">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label class="control-label">GST Number</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtGst">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12">
+                <input class="submit btn btn-danger right" type="button" value="Register" id="btnSubmit">
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+@*<script src="~/asset/js/plugins/moment.min.js"></script>*@
+<script src="~/asset/js/plugins/select2.full.min.js"></script>
+<script src="~/asset/js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".select2-A").select2({
+            placeholder: "",
+            allowClear: true
+        });
+        debugger;
+        LoadMemberType();
+        LoadBusinessType();
+        LoadCountry();
+        LoadState();
+        LoadCity();
+
+    });
+    $(function () {
+
+        $("#ddlCountry").change(function () {
+
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                url: "../api/State?countryid=" + $("option:selected", this).val(),
+                method: "GET",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                success: function (data) {
+                    var state = result;
+                    $('#ddlState').empty();
+                    $.each(state, function (idx, obj) {
+                        $('#ddlState').append('<option value=' + obj.sta_id + '>' + obj.sta_name + '</option>');
+                    });
+
+                },
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+
+        });
+    });
+    $(function () {
+
+        $("#ddlState").change(function () {
+            var stateid = $("option:selected", this).val();
+            var conid = $("#ddlCountry option:selected").val();
+            alert(stateid);
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                url: "../api/city?stateid=" + stateid + "&countryid=" + conid,
+                method: "GET",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                success: function (data) {
+                    $('#ddlCity').empty();
+                    $.each(data, function (idx, obj) {
+                        $('#ddlCity').append('<option value=' + obj.city_id + '>' + obj.city_name + '</option>');
+                    });
+                },
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+
+        });
+    });
+    function LoadMemberType() {
+        try {
+            $.ajax({
+                async: true,
+                crossDomain: true,
+                url: "../api/MemberType",
+                method: "GET",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                success: function (result) {
+                    $('#ddlMemberType').empty();
+                    $('#ddlMemberType').append('<option value=0>select</option>');
+                    $.each(result, function (idx, obj) {
+                        $('#ddlMemberType').append('<option value=' + obj.mt_id + '>' + obj.mt_name + '</option>');
+                    });
+
+                },
+
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+        }
+        catch (ex) {
+            $('#divPleaseWaitModal').modal('hide');
+            Common.ShowError(ex.message, "Error")
+        }
+
+    }
+    function LoadBusinessType() {
+        $.ajax({
+            url: "../API/BusinessType",
+            type: "GET",
+        }).done(function (result) {
+            $('#ddlBusinessType').empty();
+            $('#ddlBusinessType').append('<option value=0>select</option>');
+            $.each(result, function (idx, obj) {
+                $('#ddlBusinessType').append('<option value=' + obj.bt_id + '>' + obj.bt_name + '</option>');
+            });
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
+    function LoadCountry() {
+        $.ajax({
+            url: "../API/Country",
+            type: "GET",
+        }).done(function (result) {
+            $('#ddlCountry').empty();
+            $.each(result, function (idx, obj) {
+                $('#ddlCountry').append('<option value=' + obj.con_id + '>' + obj.con_name + '</option>');
+            });
+
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
+    function LoadState() {
+        $.ajax({
+            url: "../API/State",
+            type: "GET",
+        }).done(function (result) {
+            $('#ddlState').empty();
+            $.each(result, function (idx, obj) {
+                $('#ddlState').append('<option value=' + obj.sta_id + '>' + obj.sta_name + '</option>');
+            });
+
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+    }
+    function LoadCity() {
+        $.ajax({
+            url: "../API/City",
+            type: "GET",
+        }).done(function (result) {
+            $('#ddlCity').empty();
+            $.each(result, function (idx, obj) {
+                $('#ddlCity').append('<option value=' + obj.city_id + '>' + obj.city_name + '</option>');
+            });
+
+        }).fail(function (error) {
+            errorMsg("Unable to load your Request. Please try again later.");
+        });
+
+    }
+    $(function () {
+        $("#btnSubmit").click(function () {
+            alert($("#txtMember").text());
+            var tblMember = { mt_id: 0, bt_id: 0, mem_name: $("#txtName").val(), mem_companyname: $("#txtCompany").val(), mem_owner: $("#txtOwner").val(), mem_address1: $("#txtAddress1").val(), mem_address2: $("#txtAddress2").val(), mem_offaddress1: $("#txtAddress1").val(), mem_offaddress2: $("#txtAddress2").val(), city_id: $("#ddlCity option:selected").val(), sta_id: $("#ddlState option:selected").val(), con_id: $("#ddlCountry option:selected").val(), mem_pincode: $("#txtPincode").val(), mem_mobile: $("#txtMobileNumber").val(), mem_phone: $("#txtPhoneNumber").val(), mem_offphone: $("#txtOfficeNumber").val(), mem_email: $("#txtEmail").val(), mem_webbsite: $("#txtWebsite").val(), mem_gstno: $("#txtGst").val(), mem_panno: $("#txtPanNumber").val(), mem_logo: $("#txtName").val(), mem_cdate: "", mem_mdate: "", mem_cid: 1, mem_mid: 1 };
+            alert(tblMember);
+            $.ajax({
+
+                async: true,
+                crossDomain: true,
+                url: "../api/Member",
+                method: "POST",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                data: tblMember
+                ,
+                success: function (data) {
+                    debugger;
+
+                    alert(data);
+                   
+
+                },
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+        });
+    });
+</script>

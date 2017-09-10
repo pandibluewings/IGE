@@ -7,9 +7,10 @@ go
 USE [indgarmentsexpo]
 go
 
-IF OBJECT_ID('[dbo].[Country]') IS NOT NULL
+
+IF OBJECT_ID(' [Country]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].[Country] 
+    DROP TABLE  [Country] 
 END 
 GO
 create table Country 
@@ -18,17 +19,17 @@ create table Country
 	con_name nvarchar(100) NOT NULL DEFAULT ''
 )
 GO
-SET IDENTITY_INSERT [dbo].Country ON
+SET IDENTITY_INSERT  Country ON
 DBCC CHECKIDENT (Country, reseed,-1)   
 insert into Country   (con_id,[con_name]) VALUES (0,'---Select---')
-SET IDENTITY_INSERT [dbo].Country OFF
+SET IDENTITY_INSERT  Country OFF
 insert into Country   ([con_name]) VALUES ('India')
 GO
 
 
-IF OBJECT_ID('[dbo].[States]') IS NOT NULL
+IF OBJECT_ID(' [States]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].[States] 
+    DROP TABLE  [States] 
 END 
 GO
 create table States
@@ -38,7 +39,7 @@ create table States
 	con_id bigint Foreign Key References Country(con_id)
 )
 GO
-SET IDENTITY_INSERT [dbo].States ON
+SET IDENTITY_INSERT  States ON
 DBCC CHECKIDENT (States, reseed,-1)   
 insert into States   (sta_id,[sta_name],con_id ) VALUES (0,'---Select---',0)
 
@@ -80,12 +81,12 @@ INSERT into States (sta_id, sta_name,con_id) VALUES
 (34, 'Uttar Pradesh',1),
 (35, 'West Bengal',1),
 (36, 'Telangana',1);
-SET IDENTITY_INSERT [dbo].States OFF
+SET IDENTITY_INSERT  States OFF
 GO
 
-IF OBJECT_ID('[dbo].[City]') IS NOT NULL
+IF OBJECT_ID(' [City]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].[City] 
+    DROP TABLE  [City] 
 END 
 GO
 create table City
@@ -96,7 +97,7 @@ create table City
 	sta_id bigint Foreign Key References States(sta_id),
 )
 GO
-SET IDENTITY_INSERT [dbo].City ON
+SET IDENTITY_INSERT  City ON
 DBCC CHECKIDENT (City, reseed,-1)   
 insert into City   (city_id,[city_name],con_id ,sta_id  ) VALUES (0,'---Select---',0,0)
 
@@ -1074,9 +1075,9 @@ INSERT into City (city_id, city_name, con_id,sta_id) VALUES
 (996, 'Rairangpur', 1,26),
 (997, 'Rajagangapur', 1,26),
 (998, 'Raurkela', 1,26);
-SET IDENTITY_INSERT [dbo].City OFF
+SET IDENTITY_INSERT  City OFF
 
-SET IDENTITY_INSERT [dbo].City ON
+SET IDENTITY_INSERT  City ON
 INSERT into City (city_id, city_name, con_id,sta_id) VALUES
 (999, 'Rayagada', 1,26),
 (1000, 'Sambalpur', 1,26),
@@ -1586,13 +1587,13 @@ INSERT into City (city_id, city_name, con_id,sta_id) VALUES
 (1504, 'Dharwad', 1,18),
 (1505, 'Gadag', 1,18),
 (1506, 'Calcutta', 1,35);
-SET IDENTITY_INSERT [dbo].City OFF
+SET IDENTITY_INSERT  City OFF
 GO
 
 
-IF OBJECT_ID('[dbo].[Company]') IS NOT NULL
+IF OBJECT_ID(' [Company]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].[Company] 
+    DROP TABLE  [Company] 
 END 
 GO
 create table Company 
@@ -1641,11 +1642,15 @@ CREATE TABLE UserType
 	com_id bigint Foreign Key References Company(com_id)	
  )
 go
-/****** Object:  Table [dbo].[UserTypeMaster]    Script Date: 07/31/2013 18:16:40 ******/
-SET IDENTITY_INSERT [dbo].[UserType] ON
- 	INSERT [dbo].[UserType] ([ut_id],[ut_code], [ut_name], [com_id])
+/****** Object:  Table  [UserTypeMaster]    Script Date: 07/31/2013 18:16:40 ******/
+SET IDENTITY_INSERT  [UserType] ON
+ 	INSERT  [UserType] ([ut_id],[ut_code], [ut_name], [com_id])
 	VALUES (1,N'001', N'Admin',1)
-SET IDENTITY_INSERT [dbo].[UserType] OFF
+	
+	INSERT  [UserType] ([ut_id],[ut_code], [ut_name], [com_id])
+	VALUES (2,N'002', N'Member',1)
+	
+SET IDENTITY_INSERT  [UserType] OFF
 GO
 
 IF (EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES 
@@ -1668,17 +1673,17 @@ create table users
 	com_id bigint Foreign Key References Company(com_id)
 )
 GO
-/****** Object:  Table [dbo].[UserMaster]    Script Date: 07/31/2013 18:16:40 ******/
-SET IDENTITY_INSERT [dbo].[users] ON
-INSERT [dbo].[users] ([users_id], [users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone],[ut_id], [com_id]) VALUES (1, N'admin', N'admin', N'admin', N'admin', N'admin@gmail.com', N'555656',1, 1)
-SET IDENTITY_INSERT [dbo].[users] OFF
+/****** Object:  Table  [UserMaster]    Script Date: 07/31/2013 18:16:40 ******/
+SET IDENTITY_INSERT  [users] ON
+INSERT  [users] ([users_id], [users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone],[ut_id], [com_id]) VALUES (1, N'admin', N'admin', N'admin', N'admin', N'admin@gmail.com', N'555656',1, 1)
+SET IDENTITY_INSERT  [users] OFF
 GO
 
 
 /*module*/
-IF OBJECT_ID('[dbo].[module]') IS NOT NULL
+IF OBJECT_ID(' [module]') IS NOT NULL
 BEGIN
-    DROP TABLE [dbo].module
+    DROP TABLE  module
 END
 GO
 create table module
@@ -1688,9 +1693,9 @@ create table module
 )
 GO
 /*farm*/
-IF OBJECT_ID('[dbo].[farm]') IS NOT NULL
+IF OBJECT_ID(' [farm]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].farm
+    DROP TABLE  farm
 END
 GO
 create table farm 
@@ -1706,9 +1711,9 @@ create table farm
 )
 GO
 /*rights*/
-IF OBJECT_ID('[dbo].[rights]') IS NOT NULL
+IF OBJECT_ID(' [rights]') IS NOT NULL
 BEGIN 
-    DROP TABLE [dbo].rights
+    DROP TABLE  rights
 END
 GO
 create table rights
@@ -1722,9 +1727,9 @@ create table rights
 	farm_print Char(1) Default('N')
 )
 GO
-IF OBJECT_ID('[dbo].[usp_rightsInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_rightsInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_rightsInsert]
+    DROP PROC  [usp_rightsInsert]
 END 
 GO
 create proc usp_rightsInsert
@@ -1760,9 +1765,9 @@ AS
 	
 	COMMIT TRAN
 GO
-IF OBJECT_ID('[dbo].[usp_rightsDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_rightsDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_rightsDelete]
+    DROP PROC  [usp_rightsDelete]
 END 
 GO
 CREATE PROCEDURE usp_rightsDelete
@@ -1772,12 +1777,12 @@ BEGIN TRAN
 	DELETE FROM rights WHERE users_id=@users_id
 COMMIT TRAN
 GO
-IF OBJECT_ID('[dbo].[usp_rightsSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_rightsSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_rightsSelect]
+    DROP PROC  [usp_rightsSelect]
 END 
 GO
-CREATE PROC [dbo].[usp_rightsSelect]
+CREATE PROC  [usp_rightsSelect]
     @rusers_id INT=null,
     @users_id INT=null
 AS
@@ -1799,7 +1804,11 @@ AS
 	COMMIT
 GO
 
-
+IF OBJECT_ID(' [MemberType]') IS NOT NULL
+BEGIN 
+    DROP TABLE  MemberType
+END
+GO
 create table MemberType 
 (
 mt_id bigint identity primary key not null,
@@ -1809,6 +1818,16 @@ mt_mdate datetime  default getdate(),
 mt_cid bigint Foreign Key References users (users_id) ,
 mt_mid bigint Foreign Key References users (users_id) ,
 )
+GO
+SET IDENTITY_INSERT  MemberType ON
+DBCC CHECKIDENT (MemberType, reseed,-1)   
+insert into MemberType   (mt_id,[mt_name]) VALUES (0,'---Select---')
+SET IDENTITY_INSERT  MemberType OFF
+GO
+IF OBJECT_ID(' [BusinessType]') IS NOT NULL
+BEGIN 
+    DROP TABLE  BusinessType
+END
 GO
 create table BusinessType 
 (
@@ -1820,13 +1839,23 @@ bt_cid bigint Foreign Key References users (users_id) ,
 bt_mid bigint Foreign Key References users (users_id) ,
 )
 GO
+SET IDENTITY_INSERT  BusinessType ON
+DBCC CHECKIDENT (BusinessType, reseed,-1)   
+insert into BusinessType   (bt_id,[bt_name]) VALUES (0,'---Select---')
+SET IDENTITY_INSERT  BusinessType OFF
+GO
+IF OBJECT_ID(' [Member]') IS NOT NULL
+BEGIN 
+    DROP TABLE  Member
+END
+GO
 create table Member 
 (
 mem_id bigint identity primary key not null,
 mt_id bigint Foreign Key References MemberType (mt_id) ,
 bt_id bigint Foreign Key References BusinessType (bt_id) ,
 mem_name nvarchar(100) not null unique  default '',
-mem_companyname nvarchar(100) not null unique  default '',
+mem_companyname nvarchar(100) not null   default '',
 mem_owner nvarchar(100) not null default '',
 mem_address1 nvarchar(250) NOT NULL DEFAULT '',
 mem_address2 nvarchar(250) NOT NULL DEFAULT '',

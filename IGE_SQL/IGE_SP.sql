@@ -1,12 +1,12 @@
 USE [indgarmentsexpo];
 GO
 
-IF OBJECT_ID('[dbo].[usp_BusinessTypeSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_BusinessTypeSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_BusinessTypeSelect] 
+    DROP PROC  [usp_BusinessTypeSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_BusinessTypeSelect] 
+CREATE PROC  [usp_BusinessTypeSelect] 
     @bt_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -15,17 +15,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [bt_id], [bt_name], [bt_cdate], [bt_mdate], [bt_cid], [bt_mid] 
-	FROM   [dbo].[BusinessType] 
+	FROM    [BusinessType] 
 	WHERE  ([bt_id] = @bt_id OR @bt_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_BusinessTypeInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_BusinessTypeInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_BusinessTypeInsert] 
+    DROP PROC  [usp_BusinessTypeInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_BusinessTypeInsert] 
+CREATE PROC  [usp_BusinessTypeInsert] 
     @bt_name nvarchar(100),
     @bt_cdate datetime = NULL,
     @bt_mdate datetime = NULL,
@@ -37,23 +37,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[BusinessType] ([bt_name], [bt_cdate], [bt_mdate], [bt_cid], [bt_mid])
+	INSERT INTO  [BusinessType] ([bt_name], [bt_cdate], [bt_mdate], [bt_cid], [bt_mid])
 	SELECT @bt_name, @bt_cdate, @bt_mdate, @bt_cid, @bt_mid
 	
 	-- Begin Return Select <- do not remove
 	SELECT [bt_id], [bt_name], [bt_cdate], [bt_mdate], [bt_cid], [bt_mid]
-	FROM   [dbo].[BusinessType]
+	FROM    [BusinessType]
 	WHERE  [bt_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_BusinessTypeUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_BusinessTypeUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_BusinessTypeUpdate] 
+    DROP PROC  [usp_BusinessTypeUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_BusinessTypeUpdate] 
+CREATE PROC  [usp_BusinessTypeUpdate] 
     @bt_id bigint,
     @bt_name nvarchar(100),
     @bt_cdate datetime = NULL,
@@ -66,24 +66,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[BusinessType]
+	UPDATE  [BusinessType]
 	SET    [bt_name] = @bt_name, [bt_cdate] = @bt_cdate, [bt_mdate] = @bt_mdate, [bt_cid] = @bt_cid, [bt_mid] = @bt_mid
 	WHERE  [bt_id] = @bt_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [bt_id], [bt_name], [bt_cdate], [bt_mdate], [bt_cid], [bt_mid]
-	FROM   [dbo].[BusinessType]
+	FROM    [BusinessType]
 	WHERE  [bt_id] = @bt_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_BusinessTypeDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_BusinessTypeDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_BusinessTypeDelete] 
+    DROP PROC  [usp_BusinessTypeDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_BusinessTypeDelete] 
+CREATE PROC  [usp_BusinessTypeDelete] 
     @bt_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -92,7 +92,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[BusinessType]
+	FROM    [BusinessType]
 	WHERE  [bt_id] = @bt_id
 
 	COMMIT
@@ -101,108 +101,12 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_CitySelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_CompanySelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CitySelect] 
+    DROP PROC  [usp_CompanySelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_CitySelect] 
-    @city_id bigint
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-
-	BEGIN TRAN
-
-	SELECT [city_id], [city_name], [con_id], [sta_id] 
-	FROM   [dbo].[City] 
-	WHERE  ([city_id] = @city_id OR @city_id IS NULL) 
-
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_CityInsert]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_CityInsert] 
-END 
-GO
-CREATE PROC [dbo].[usp_CityInsert] 
-    @city_name nvarchar(100),
-    @con_id bigint = NULL,
-    @sta_id bigint = NULL
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-	
-	INSERT INTO [dbo].[City] ([city_name], [con_id], [sta_id])
-	SELECT @city_name, @con_id, @sta_id
-	
-	-- Begin Return Select <- do not remove
-	SELECT [city_id], [city_name], [con_id], [sta_id]
-	FROM   [dbo].[City]
-	WHERE  [city_id] = SCOPE_IDENTITY()
-	-- End Return Select <- do not remove
-               
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_CityUpdate]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_CityUpdate] 
-END 
-GO
-CREATE PROC [dbo].[usp_CityUpdate] 
-    @city_id bigint,
-    @city_name nvarchar(100),
-    @con_id bigint = NULL,
-    @sta_id bigint = NULL
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-
-	UPDATE [dbo].[City]
-	SET    [city_name] = @city_name, [con_id] = @con_id, [sta_id] = @sta_id
-	WHERE  [city_id] = @city_id
-	
-	-- Begin Return Select <- do not remove
-	SELECT [city_id], [city_name], [con_id], [sta_id]
-	FROM   [dbo].[City]
-	WHERE  [city_id] = @city_id	
-	-- End Return Select <- do not remove
-
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_CityDelete]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_CityDelete] 
-END 
-GO
-CREATE PROC [dbo].[usp_CityDelete] 
-    @city_id bigint
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-
-	DELETE
-	FROM   [dbo].[City]
-	WHERE  [city_id] = @city_id
-
-	COMMIT
-GO
-
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-
-IF OBJECT_ID('[dbo].[usp_CompanySelect]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_CompanySelect] 
-END 
-GO
-CREATE PROC [dbo].[usp_CompanySelect] 
+CREATE PROC  [usp_CompanySelect] 
     @com_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -211,17 +115,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [com_id], [com_name], [com_invoicename], [com_address1], [com_address2], [com_address3], [com_district], [city_id], [sta_id], [con_id], [com_pincode], [com_mobileno], [com_website], [com_phone], [com_email], [com_tin], [com_cst], [com_cstdate], [com_panno], [com_servicetaxno], [com_isdefault], [com_logo] 
-	FROM   [dbo].[Company] 
+	FROM    [Company] 
 	WHERE  ([com_id] = @com_id OR @com_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CompanyInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_CompanyInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CompanyInsert] 
+    DROP PROC  [usp_CompanyInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_CompanyInsert] 
+CREATE PROC  [usp_CompanyInsert] 
     @com_name nvarchar(100),
     @com_invoicename nvarchar(100),
     @com_address1 nvarchar(250),
@@ -249,23 +153,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[Company] ([com_name], [com_invoicename], [com_address1], [com_address2], [com_address3], [com_district], [city_id], [sta_id], [con_id], [com_pincode], [com_mobileno], [com_website], [com_phone], [com_email], [com_tin], [com_cst], [com_cstdate], [com_panno], [com_servicetaxno], [com_isdefault], [com_logo])
+	INSERT INTO  [Company] ([com_name], [com_invoicename], [com_address1], [com_address2], [com_address3], [com_district], [city_id], [sta_id], [con_id], [com_pincode], [com_mobileno], [com_website], [com_phone], [com_email], [com_tin], [com_cst], [com_cstdate], [com_panno], [com_servicetaxno], [com_isdefault], [com_logo])
 	SELECT @com_name, @com_invoicename, @com_address1, @com_address2, @com_address3, @com_district, @city_id, @sta_id, @con_id, @com_pincode, @com_mobileno, @com_website, @com_phone, @com_email, @com_tin, @com_cst, @com_cstdate, @com_panno, @com_servicetaxno, @com_isdefault, @com_logo
 	
 	-- Begin Return Select <- do not remove
 	SELECT [com_id], [com_name], [com_invoicename], [com_address1], [com_address2], [com_address3], [com_district], [city_id], [sta_id], [con_id], [com_pincode], [com_mobileno], [com_website], [com_phone], [com_email], [com_tin], [com_cst], [com_cstdate], [com_panno], [com_servicetaxno], [com_isdefault], [com_logo]
-	FROM   [dbo].[Company]
+	FROM    [Company]
 	WHERE  [com_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CompanyUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_CompanyUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CompanyUpdate] 
+    DROP PROC  [usp_CompanyUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_CompanyUpdate] 
+CREATE PROC  [usp_CompanyUpdate] 
     @com_id bigint,
     @com_name nvarchar(100),
     @com_invoicename nvarchar(100),
@@ -294,24 +198,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[Company]
+	UPDATE  [Company]
 	SET    [com_name] = @com_name, [com_invoicename] = @com_invoicename, [com_address1] = @com_address1, [com_address2] = @com_address2, [com_address3] = @com_address3, [com_district] = @com_district, [city_id] = @city_id, [sta_id] = @sta_id, [con_id] = @con_id, [com_pincode] = @com_pincode, [com_mobileno] = @com_mobileno, [com_website] = @com_website, [com_phone] = @com_phone, [com_email] = @com_email, [com_tin] = @com_tin, [com_cst] = @com_cst, [com_cstdate] = @com_cstdate, [com_panno] = @com_panno, [com_servicetaxno] = @com_servicetaxno, [com_isdefault] = @com_isdefault, [com_logo] = @com_logo
 	WHERE  [com_id] = @com_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [com_id], [com_name], [com_invoicename], [com_address1], [com_address2], [com_address3], [com_district], [city_id], [sta_id], [con_id], [com_pincode], [com_mobileno], [com_website], [com_phone], [com_email], [com_tin], [com_cst], [com_cstdate], [com_panno], [com_servicetaxno], [com_isdefault], [com_logo]
-	FROM   [dbo].[Company]
+	FROM    [Company]
 	WHERE  [com_id] = @com_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CompanyDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_CompanyDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CompanyDelete] 
+    DROP PROC  [usp_CompanyDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_CompanyDelete] 
+CREATE PROC  [usp_CompanyDelete] 
     @com_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -320,7 +224,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[Company]
+	FROM    [Company]
 	WHERE  [com_id] = @com_id
 
 	COMMIT
@@ -329,13 +233,13 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_CountrySelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_CountrySelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CountrySelect] 
+    DROP PROC  [usp_CountrySelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_CountrySelect] 
-    @con_id bigint
+CREATE PROC  [usp_CountrySelect] 
+    @con_id bigint=null
 AS 
 	SET NOCOUNT ON 
 	SET XACT_ABORT ON  
@@ -343,17 +247,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [con_id], [con_name] 
-	FROM   [dbo].[Country] 
+	FROM    [Country] 
 	WHERE  ([con_id] = @con_id OR @con_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CountryInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_CountryInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CountryInsert] 
+    DROP PROC  [usp_CountryInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_CountryInsert] 
+CREATE PROC  [usp_CountryInsert] 
     @con_name nvarchar(100)
 AS 
 	SET NOCOUNT ON 
@@ -361,23 +265,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[Country] ([con_name])
+	INSERT INTO  [Country] ([con_name])
 	SELECT @con_name
 	
 	-- Begin Return Select <- do not remove
 	SELECT [con_id], [con_name]
-	FROM   [dbo].[Country]
+	FROM    [Country]
 	WHERE  [con_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CountryUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_CountryUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CountryUpdate] 
+    DROP PROC  [usp_CountryUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_CountryUpdate] 
+CREATE PROC  [usp_CountryUpdate] 
     @con_id bigint,
     @con_name nvarchar(100)
 AS 
@@ -386,24 +290,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[Country]
+	UPDATE  [Country]
 	SET    [con_name] = @con_name
 	WHERE  [con_id] = @con_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [con_id], [con_name]
-	FROM   [dbo].[Country]
+	FROM    [Country]
 	WHERE  [con_id] = @con_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_CountryDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_CountryDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_CountryDelete] 
+    DROP PROC  [usp_CountryDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_CountryDelete] 
+CREATE PROC  [usp_CountryDelete] 
     @con_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -412,7 +316,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[Country]
+	FROM    [Country]
 	WHERE  [con_id] = @con_id
 
 	COMMIT
@@ -421,12 +325,207 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_farmSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_StatesSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_farmSelect] 
+    DROP PROC  [usp_StatesSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_farmSelect] 
+CREATE PROC  [usp_StatesSelect] 
+    @sta_id bigint=null,
+    @con_id bigint=null
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+
+	BEGIN TRAN
+
+	SELECT [sta_id], [sta_name], [con_id] 
+	FROM    [States] 
+	WHERE  ([sta_id] = @sta_id OR @sta_id IS NULL) 
+	AND  ([con_id]  = @con_id  OR @con_id  IS NULL) 
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_StatesInsert]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_StatesInsert] 
+END 
+GO
+CREATE PROC  [usp_StatesInsert] 
+    @sta_name nvarchar(100),
+    @con_id bigint = NULL
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+	
+	INSERT INTO  [States] ([sta_name], [con_id])
+	SELECT @sta_name, @con_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [sta_id], [sta_name], [con_id]
+	FROM    [States]
+	WHERE  [sta_id] = SCOPE_IDENTITY()
+	-- End Return Select <- do not remove
+               
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_StatesUpdate]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_StatesUpdate] 
+END 
+GO
+CREATE PROC  [usp_StatesUpdate] 
+    @sta_id bigint,
+    @sta_name nvarchar(100),
+    @con_id bigint = NULL
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	UPDATE  [States]
+	SET    [sta_name] = @sta_name, [con_id] = @con_id
+	WHERE  [sta_id] = @sta_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [sta_id], [sta_name], [con_id]
+	FROM    [States]
+	WHERE  [sta_id] = @sta_id	
+	-- End Return Select <- do not remove
+
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_StatesDelete]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_StatesDelete] 
+END 
+GO
+CREATE PROC  [usp_StatesDelete] 
+    @sta_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	DELETE
+	FROM    [States]
+	WHERE  [sta_id] = @sta_id
+
+	COMMIT
+GO
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+IF OBJECT_ID(' [usp_CitySelect]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CitySelect] 
+END 
+GO
+CREATE PROC  [usp_CitySelect] 
+    @city_id bigint=null,
+    @sta_id bigint=null,
+    @con_id bigint=null
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+
+	BEGIN TRAN
+
+	SELECT [city_id], [city_name], [con_id], [sta_id] 
+	FROM    [City] 
+	WHERE  ([city_id] = @city_id OR @city_id IS NULL) 
+	AND ([sta_id]  = @sta_id  OR @sta_id  IS NULL) 
+	AND ([con_id]  = @con_id OR @con_id  IS NULL) 
+
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_CityInsert]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CityInsert] 
+END 
+GO
+CREATE PROC  [usp_CityInsert] 
+    @city_name nvarchar(100),
+    @con_id bigint = NULL,
+    @sta_id bigint = NULL
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+	
+	INSERT INTO  [City] ([city_name], [con_id], [sta_id])
+	SELECT @city_name, @con_id, @sta_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [city_id], [city_name], [con_id], [sta_id]
+	FROM    [City]
+	WHERE  [city_id] = SCOPE_IDENTITY()
+	-- End Return Select <- do not remove
+               
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_CityUpdate]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CityUpdate] 
+END 
+GO
+CREATE PROC  [usp_CityUpdate] 
+    @city_id bigint,
+    @city_name nvarchar(100),
+    @con_id bigint = NULL,
+    @sta_id bigint = NULL
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	UPDATE  [City]
+	SET    [city_name] = @city_name, [con_id] = @con_id, [sta_id] = @sta_id
+	WHERE  [city_id] = @city_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [city_id], [city_name], [con_id], [sta_id]
+	FROM    [City]
+	WHERE  [city_id] = @city_id	
+	-- End Return Select <- do not remove
+
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_CityDelete]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CityDelete] 
+END 
+GO
+CREATE PROC  [usp_CityDelete] 
+    @city_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	DELETE
+	FROM    [City]
+	WHERE  [city_id] = @city_id
+
+	COMMIT
+GO
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+IF OBJECT_ID(' [usp_farmSelect]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_farmSelect] 
+END 
+GO
+CREATE PROC  [usp_farmSelect] 
     @farm_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -435,17 +534,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [farm_id], [module_id], [farm_name], [farm_add], [farm_edit], [farm_delete], [farm_view], [farm_print] 
-	FROM   [dbo].[farm] 
+	FROM    [farm] 
 	WHERE  ([farm_id] = @farm_id OR @farm_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_farmInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_farmInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_farmInsert] 
+    DROP PROC  [usp_farmInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_farmInsert] 
+CREATE PROC  [usp_farmInsert] 
     @farm_id bigint,
     @module_id bigint = NULL,
     @farm_name nvarchar(50) = NULL,
@@ -460,23 +559,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[farm] ([farm_id], [module_id], [farm_name], [farm_add], [farm_edit], [farm_delete], [farm_view], [farm_print])
+	INSERT INTO  [farm] ([farm_id], [module_id], [farm_name], [farm_add], [farm_edit], [farm_delete], [farm_view], [farm_print])
 	SELECT @farm_id, @module_id, @farm_name, @farm_add, @farm_edit, @farm_delete, @farm_view, @farm_print
 	
 	-- Begin Return Select <- do not remove
 	SELECT [farm_id], [module_id], [farm_name], [farm_add], [farm_edit], [farm_delete], [farm_view], [farm_print]
-	FROM   [dbo].[farm]
+	FROM    [farm]
 	WHERE  [farm_id] = @farm_id
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_farmUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_farmUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_farmUpdate] 
+    DROP PROC  [usp_farmUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_farmUpdate] 
+CREATE PROC  [usp_farmUpdate] 
     @farm_id bigint,
     @module_id bigint = NULL,
     @farm_name nvarchar(50) = NULL,
@@ -491,24 +590,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[farm]
+	UPDATE  [farm]
 	SET    [farm_id] = @farm_id, [module_id] = @module_id, [farm_name] = @farm_name, [farm_add] = @farm_add, [farm_edit] = @farm_edit, [farm_delete] = @farm_delete, [farm_view] = @farm_view, [farm_print] = @farm_print
 	WHERE  [farm_id] = @farm_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [farm_id], [module_id], [farm_name], [farm_add], [farm_edit], [farm_delete], [farm_view], [farm_print]
-	FROM   [dbo].[farm]
+	FROM    [farm]
 	WHERE  [farm_id] = @farm_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_farmDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_farmDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_farmDelete] 
+    DROP PROC  [usp_farmDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_farmDelete] 
+CREATE PROC  [usp_farmDelete] 
     @farm_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -517,7 +616,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[farm]
+	FROM    [farm]
 	WHERE  [farm_id] = @farm_id
 
 	COMMIT
@@ -526,12 +625,12 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_MemberSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberSelect] 
+    DROP PROC  [usp_MemberSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberSelect] 
+CREATE PROC  [usp_MemberSelect] 
     @mem_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -540,17 +639,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [mem_id], [mt_id], [bt_id], [mem_name], [mem_companyname], [mem_owner], [mem_address1], [mem_address2], [mem_offaddress1], [mem_offaddress2], [city_id], [sta_id], [con_id], [mem_pincode], [mem_mobile], [mem_phone], [mem_offphone], [mem_email], [mem_webbsite], [mem_gstno], [mem_panno], [mem_logo], [mem_cdate], [mem_mdate], [mem_cid], [mem_mid] 
-	FROM   [dbo].[Member] 
+	FROM    [Member] 
 	WHERE  ([mem_id] = @mem_id OR @mem_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberInsert] 
+    DROP PROC  [usp_MemberInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberInsert] 
+CREATE PROC  [usp_MemberInsert] 
     @mt_id bigint = NULL,
     @bt_id bigint = NULL,
     @mem_name nvarchar(100),
@@ -582,23 +681,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[Member] ([mt_id], [bt_id], [mem_name], [mem_companyname], [mem_owner], [mem_address1], [mem_address2], [mem_offaddress1], [mem_offaddress2], [city_id], [sta_id], [con_id], [mem_pincode], [mem_mobile], [mem_phone], [mem_offphone], [mem_email], [mem_webbsite], [mem_gstno], [mem_panno], [mem_logo], [mem_cdate], [mem_mdate], [mem_cid], [mem_mid])
+	INSERT INTO  [Member] ([mt_id], [bt_id], [mem_name], [mem_companyname], [mem_owner], [mem_address1], [mem_address2], [mem_offaddress1], [mem_offaddress2], [city_id], [sta_id], [con_id], [mem_pincode], [mem_mobile], [mem_phone], [mem_offphone], [mem_email], [mem_webbsite], [mem_gstno], [mem_panno], [mem_logo], [mem_cdate], [mem_mdate], [mem_cid], [mem_mid])
 	SELECT @mt_id, @bt_id, @mem_name, @mem_companyname, @mem_owner, @mem_address1, @mem_address2, @mem_offaddress1, @mem_offaddress2, @city_id, @sta_id, @con_id, @mem_pincode, @mem_mobile, @mem_phone, @mem_offphone, @mem_email, @mem_webbsite, @mem_gstno, @mem_panno, @mem_logo, @mem_cdate, @mem_mdate, @mem_cid, @mem_mid
 	
 	-- Begin Return Select <- do not remove
 	SELECT [mem_id], [mt_id], [bt_id], [mem_name], [mem_companyname], [mem_owner], [mem_address1], [mem_address2], [mem_offaddress1], [mem_offaddress2], [city_id], [sta_id], [con_id], [mem_pincode], [mem_mobile], [mem_phone], [mem_offphone], [mem_email], [mem_webbsite], [mem_gstno], [mem_panno], [mem_logo], [mem_cdate], [mem_mdate], [mem_cid], [mem_mid]
-	FROM   [dbo].[Member]
+	FROM    [Member]
 	WHERE  [mem_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberUpdate] 
+    DROP PROC  [usp_MemberUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberUpdate] 
+CREATE PROC  [usp_MemberUpdate] 
     @mem_id bigint,
     @mt_id bigint = NULL,
     @bt_id bigint = NULL,
@@ -631,24 +730,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[Member]
+	UPDATE  [Member]
 	SET    [mt_id] = @mt_id, [bt_id] = @bt_id, [mem_name] = @mem_name, [mem_companyname] = @mem_companyname, [mem_owner] = @mem_owner, [mem_address1] = @mem_address1, [mem_address2] = @mem_address2, [mem_offaddress1] = @mem_offaddress1, [mem_offaddress2] = @mem_offaddress2, [city_id] = @city_id, [sta_id] = @sta_id, [con_id] = @con_id, [mem_pincode] = @mem_pincode, [mem_mobile] = @mem_mobile, [mem_phone] = @mem_phone, [mem_offphone] = @mem_offphone, [mem_email] = @mem_email, [mem_webbsite] = @mem_webbsite, [mem_gstno] = @mem_gstno, [mem_panno] = @mem_panno, [mem_logo] = @mem_logo, [mem_cdate] = @mem_cdate, [mem_mdate] = @mem_mdate, [mem_cid] = @mem_cid, [mem_mid] = @mem_mid
 	WHERE  [mem_id] = @mem_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [mem_id], [mt_id], [bt_id], [mem_name], [mem_companyname], [mem_owner], [mem_address1], [mem_address2], [mem_offaddress1], [mem_offaddress2], [city_id], [sta_id], [con_id], [mem_pincode], [mem_mobile], [mem_phone], [mem_offphone], [mem_email], [mem_webbsite], [mem_gstno], [mem_panno], [mem_logo], [mem_cdate], [mem_mdate], [mem_cid], [mem_mid]
-	FROM   [dbo].[Member]
+	FROM    [Member]
 	WHERE  [mem_id] = @mem_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberDelete] 
+    DROP PROC  [usp_MemberDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberDelete] 
+CREATE PROC  [usp_MemberDelete] 
     @mem_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -657,7 +756,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[Member]
+	FROM    [Member]
 	WHERE  [mem_id] = @mem_id
 
 	COMMIT
@@ -666,12 +765,12 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_MemberTypeSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberTypeSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberTypeSelect] 
+    DROP PROC  [usp_MemberTypeSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberTypeSelect] 
+CREATE PROC  [usp_MemberTypeSelect] 
     @mt_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -680,17 +779,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [mt_id], [mt_name], [mt_cdate], [mt_mdate], [mt_cid], [mt_mid] 
-	FROM   [dbo].[MemberType] 
+	FROM    [MemberType] 
 	WHERE  ([mt_id] = @mt_id OR @mt_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberTypeInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberTypeInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberTypeInsert] 
+    DROP PROC  [usp_MemberTypeInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberTypeInsert] 
+CREATE PROC  [usp_MemberTypeInsert] 
     @mt_name nvarchar(100),
     @mt_cdate datetime = NULL,
     @mt_mdate datetime = NULL,
@@ -702,23 +801,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[MemberType] ([mt_name], [mt_cdate], [mt_mdate], [mt_cid], [mt_mid])
+	INSERT INTO  [MemberType] ([mt_name], [mt_cdate], [mt_mdate], [mt_cid], [mt_mid])
 	SELECT @mt_name, @mt_cdate, @mt_mdate, @mt_cid, @mt_mid
 	
 	-- Begin Return Select <- do not remove
 	SELECT [mt_id], [mt_name], [mt_cdate], [mt_mdate], [mt_cid], [mt_mid]
-	FROM   [dbo].[MemberType]
+	FROM    [MemberType]
 	WHERE  [mt_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberTypeUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberTypeUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberTypeUpdate] 
+    DROP PROC  [usp_MemberTypeUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberTypeUpdate] 
+CREATE PROC  [usp_MemberTypeUpdate] 
     @mt_id bigint,
     @mt_name nvarchar(100),
     @mt_cdate datetime = NULL,
@@ -731,24 +830,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[MemberType]
+	UPDATE  [MemberType]
 	SET    [mt_name] = @mt_name, [mt_cdate] = @mt_cdate, [mt_mdate] = @mt_mdate, [mt_cid] = @mt_cid, [mt_mid] = @mt_mid
 	WHERE  [mt_id] = @mt_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [mt_id], [mt_name], [mt_cdate], [mt_mdate], [mt_cid], [mt_mid]
-	FROM   [dbo].[MemberType]
+	FROM    [MemberType]
 	WHERE  [mt_id] = @mt_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_MemberTypeDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_MemberTypeDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_MemberTypeDelete] 
+    DROP PROC  [usp_MemberTypeDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_MemberTypeDelete] 
+CREATE PROC  [usp_MemberTypeDelete] 
     @mt_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -757,7 +856,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[MemberType]
+	FROM    [MemberType]
 	WHERE  [mt_id] = @mt_id
 
 	COMMIT
@@ -766,12 +865,12 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_moduleSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_moduleSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_moduleSelect] 
+    DROP PROC  [usp_moduleSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_moduleSelect] 
+CREATE PROC  [usp_moduleSelect] 
     @module_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -780,17 +879,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [module_id], [module_name] 
-	FROM   [dbo].[module] 
+	FROM    [module] 
 	WHERE  ([module_id] = @module_id OR @module_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_moduleInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_moduleInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_moduleInsert] 
+    DROP PROC  [usp_moduleInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_moduleInsert] 
+CREATE PROC  [usp_moduleInsert] 
     @module_id bigint,
     @module_name nvarchar(50) = NULL
 AS 
@@ -799,23 +898,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[module] ([module_id], [module_name])
+	INSERT INTO  [module] ([module_id], [module_name])
 	SELECT @module_id, @module_name
 	
 	-- Begin Return Select <- do not remove
 	SELECT [module_id], [module_name]
-	FROM   [dbo].[module]
+	FROM    [module]
 	WHERE  [module_id] = @module_id
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_moduleUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_moduleUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_moduleUpdate] 
+    DROP PROC  [usp_moduleUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_moduleUpdate] 
+CREATE PROC  [usp_moduleUpdate] 
     @module_id bigint,
     @module_name nvarchar(50) = NULL
 AS 
@@ -824,24 +923,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[module]
+	UPDATE  [module]
 	SET    [module_id] = @module_id, [module_name] = @module_name
 	WHERE  [module_id] = @module_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [module_id], [module_name]
-	FROM   [dbo].[module]
+	FROM    [module]
 	WHERE  [module_id] = @module_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_moduleDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_moduleDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_moduleDelete] 
+    DROP PROC  [usp_moduleDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_moduleDelete] 
+CREATE PROC  [usp_moduleDelete] 
     @module_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -850,115 +949,22 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[module]
+	FROM    [module]
 	WHERE  [module_id] = @module_id
 
 	COMMIT
 GO
 
-----------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------
-
-IF OBJECT_ID('[dbo].[usp_StatesSelect]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_StatesSelect] 
-END 
-GO
-CREATE PROC [dbo].[usp_StatesSelect] 
-    @sta_id bigint
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-
-	BEGIN TRAN
-
-	SELECT [sta_id], [sta_name], [con_id] 
-	FROM   [dbo].[States] 
-	WHERE  ([sta_id] = @sta_id OR @sta_id IS NULL) 
-
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_StatesInsert]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_StatesInsert] 
-END 
-GO
-CREATE PROC [dbo].[usp_StatesInsert] 
-    @sta_name nvarchar(100),
-    @con_id bigint = NULL
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-	
-	INSERT INTO [dbo].[States] ([sta_name], [con_id])
-	SELECT @sta_name, @con_id
-	
-	-- Begin Return Select <- do not remove
-	SELECT [sta_id], [sta_name], [con_id]
-	FROM   [dbo].[States]
-	WHERE  [sta_id] = SCOPE_IDENTITY()
-	-- End Return Select <- do not remove
-               
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_StatesUpdate]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_StatesUpdate] 
-END 
-GO
-CREATE PROC [dbo].[usp_StatesUpdate] 
-    @sta_id bigint,
-    @sta_name nvarchar(100),
-    @con_id bigint = NULL
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-
-	UPDATE [dbo].[States]
-	SET    [sta_name] = @sta_name, [con_id] = @con_id
-	WHERE  [sta_id] = @sta_id
-	
-	-- Begin Return Select <- do not remove
-	SELECT [sta_id], [sta_name], [con_id]
-	FROM   [dbo].[States]
-	WHERE  [sta_id] = @sta_id	
-	-- End Return Select <- do not remove
-
-	COMMIT
-GO
-IF OBJECT_ID('[dbo].[usp_StatesDelete]') IS NOT NULL
-BEGIN 
-    DROP PROC [dbo].[usp_StatesDelete] 
-END 
-GO
-CREATE PROC [dbo].[usp_StatesDelete] 
-    @sta_id bigint
-AS 
-	SET NOCOUNT ON 
-	SET XACT_ABORT ON  
-	
-	BEGIN TRAN
-
-	DELETE
-	FROM   [dbo].[States]
-	WHERE  [sta_id] = @sta_id
-
-	COMMIT
-GO
 
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_usersSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_usersSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_usersSelect] 
+    DROP PROC  [usp_usersSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_usersSelect] 
+CREATE PROC  [usp_usersSelect] 
     @users_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -967,17 +973,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [users_id], [users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone], [ut_id], [com_id] 
-	FROM   [dbo].[users] 
+	FROM    [users] 
 	WHERE  ([users_id] = @users_id OR @users_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_usersInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_usersInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_usersInsert] 
+    DROP PROC  [usp_usersInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_usersInsert] 
+CREATE PROC  [usp_usersInsert] 
     @users_name nvarchar(100),
     @users_password nvarchar(100),
     @users_question nvarchar(250),
@@ -992,23 +998,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[users] ([users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone], [ut_id], [com_id])
+	INSERT INTO  [users] ([users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone], [ut_id], [com_id])
 	SELECT @users_name, @users_password, @users_question, @users_answer, @users_email, @users_phone, @ut_id, @com_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [users_id], [users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone], [ut_id], [com_id]
-	FROM   [dbo].[users]
+	FROM    [users]
 	WHERE  [users_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_usersUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_usersUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_usersUpdate] 
+    DROP PROC  [usp_usersUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_usersUpdate] 
+CREATE PROC  [usp_usersUpdate] 
     @users_id bigint,
     @users_name nvarchar(100),
     @users_password nvarchar(100),
@@ -1024,24 +1030,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[users]
+	UPDATE  [users]
 	SET    [users_name] = @users_name, [users_password] = @users_password, [users_question] = @users_question, [users_answer] = @users_answer, [users_email] = @users_email, [users_phone] = @users_phone, [ut_id] = @ut_id, [com_id] = @com_id
 	WHERE  [users_id] = @users_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [users_id], [users_name], [users_password], [users_question], [users_answer], [users_email], [users_phone], [ut_id], [com_id]
-	FROM   [dbo].[users]
+	FROM    [users]
 	WHERE  [users_id] = @users_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_usersDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_usersDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_usersDelete] 
+    DROP PROC  [usp_usersDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_usersDelete] 
+CREATE PROC  [usp_usersDelete] 
     @users_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -1050,7 +1056,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[users]
+	FROM    [users]
 	WHERE  [users_id] = @users_id
 
 	COMMIT
@@ -1059,12 +1065,12 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
-IF OBJECT_ID('[dbo].[usp_UserTypeSelect]') IS NOT NULL
+IF OBJECT_ID(' [usp_UserTypeSelect]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_UserTypeSelect] 
+    DROP PROC  [usp_UserTypeSelect] 
 END 
 GO
-CREATE PROC [dbo].[usp_UserTypeSelect] 
+CREATE PROC  [usp_UserTypeSelect] 
     @ut_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -1073,17 +1079,17 @@ AS
 	BEGIN TRAN
 
 	SELECT [ut_id], [ut_code], [ut_name], [com_id] 
-	FROM   [dbo].[UserType] 
+	FROM    [UserType] 
 	WHERE  ([ut_id] = @ut_id OR @ut_id IS NULL) 
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_UserTypeInsert]') IS NOT NULL
+IF OBJECT_ID(' [usp_UserTypeInsert]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_UserTypeInsert] 
+    DROP PROC  [usp_UserTypeInsert] 
 END 
 GO
-CREATE PROC [dbo].[usp_UserTypeInsert] 
+CREATE PROC  [usp_UserTypeInsert] 
     @ut_code nvarchar(100),
     @ut_name nvarchar(100),
     @com_id bigint = NULL
@@ -1093,23 +1099,23 @@ AS
 	
 	BEGIN TRAN
 	
-	INSERT INTO [dbo].[UserType] ([ut_code], [ut_name], [com_id])
+	INSERT INTO  [UserType] ([ut_code], [ut_name], [com_id])
 	SELECT @ut_code, @ut_name, @com_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [ut_id], [ut_code], [ut_name], [com_id]
-	FROM   [dbo].[UserType]
+	FROM    [UserType]
 	WHERE  [ut_id] = SCOPE_IDENTITY()
 	-- End Return Select <- do not remove
                
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_UserTypeUpdate]') IS NOT NULL
+IF OBJECT_ID(' [usp_UserTypeUpdate]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_UserTypeUpdate] 
+    DROP PROC  [usp_UserTypeUpdate] 
 END 
 GO
-CREATE PROC [dbo].[usp_UserTypeUpdate] 
+CREATE PROC  [usp_UserTypeUpdate] 
     @ut_id bigint,
     @ut_code nvarchar(100),
     @ut_name nvarchar(100),
@@ -1120,24 +1126,24 @@ AS
 	
 	BEGIN TRAN
 
-	UPDATE [dbo].[UserType]
+	UPDATE  [UserType]
 	SET    [ut_code] = @ut_code, [ut_name] = @ut_name, [com_id] = @com_id
 	WHERE  [ut_id] = @ut_id
 	
 	-- Begin Return Select <- do not remove
 	SELECT [ut_id], [ut_code], [ut_name], [com_id]
-	FROM   [dbo].[UserType]
+	FROM    [UserType]
 	WHERE  [ut_id] = @ut_id	
 	-- End Return Select <- do not remove
 
 	COMMIT
 GO
-IF OBJECT_ID('[dbo].[usp_UserTypeDelete]') IS NOT NULL
+IF OBJECT_ID(' [usp_UserTypeDelete]') IS NOT NULL
 BEGIN 
-    DROP PROC [dbo].[usp_UserTypeDelete] 
+    DROP PROC  [usp_UserTypeDelete] 
 END 
 GO
-CREATE PROC [dbo].[usp_UserTypeDelete] 
+CREATE PROC  [usp_UserTypeDelete] 
     @ut_id bigint
 AS 
 	SET NOCOUNT ON 
@@ -1146,7 +1152,7 @@ AS
 	BEGIN TRAN
 
 	DELETE
-	FROM   [dbo].[UserType]
+	FROM    [UserType]
 	WHERE  [ut_id] = @ut_id
 
 	COMMIT
