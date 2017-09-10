@@ -18,7 +18,7 @@ namespace IGE.API
             //                                 select new dtoBusinessType
             //                               {
 
-            //                                   bt_id = li.bt_id,
+            //                                   				bt_id = li.bt_id,
             //                                   bt_cdate = li.bt_cdate,
             //                                   bt_cid = li.bt_cid,
             //                                   bt_mid=li.bt_mid ,
