@@ -26,7 +26,7 @@ namespace IGE.API
             Dictionary<string, string> objDic = new Dictionary<string, string>();
             try
             {
-                indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+                Entities db = new Entities();
                 var data = db.usp_MemberInsert(0, 0, member.name, "", "", "", "", "", "", 0, 0, 0, "121321",member.phone, member.phone, member.phone, member.email, "", "", "", "", DateTime.Now, DateTime.Now, 1, 1);
                 var uid = data.Select(x => x.mem_id).SingleOrDefault();
                 var datas = db.usp_usersInsert(member.user_name,member.password,"","",member.email,member.phone,2,1);

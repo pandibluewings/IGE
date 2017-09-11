@@ -13,7 +13,7 @@ namespace IGE.API
         // GET api/<controller>
         public IEnumerable <usp_CountrySelect_Result > Get()
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CountrySelect (null);
             return result.AsEnumerable();
         }
@@ -21,7 +21,7 @@ namespace IGE.API
         // GET api/<controller>/5
         public IEnumerable<usp_CountrySelect_Result> Get(long id)
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CountrySelect(id );
             return result.AsEnumerable();
         }

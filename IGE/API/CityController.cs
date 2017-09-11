@@ -13,7 +13,7 @@ namespace IGE.API
         // GET api/<controller>
         public IEnumerable<usp_CitySelect_Result> Get()
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CitySelect(null, null, null);
             return result.AsEnumerable();
         }
@@ -21,19 +21,19 @@ namespace IGE.API
         // GET api/<controller>/5
         public IEnumerable<usp_CitySelect_Result> Get(long stateid)
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CitySelect(null, stateid, null);
             return result.AsEnumerable();
         }
         public IEnumerable<usp_CitySelect_Result> Get(long stateid, long countryid)
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CitySelect(null, stateid, countryid);
             return result.AsEnumerable();
         }
         public IEnumerable<usp_CitySelect_Result> Get(long cityid, long stateid, long countryid)
         {
-            indgarmentsexpoEntities db = new indgarmentsexpoEntities();
+            Entities db = new Entities();
             var result = db.usp_CitySelect(cityid, stateid, countryid);
             return result.AsEnumerable();
         }
