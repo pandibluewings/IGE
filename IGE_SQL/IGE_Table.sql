@@ -1,10 +1,10 @@
 
-IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'indgarmentsexpo')
-DROP DATABASE [indgarmentsexpo]
+IF  EXISTS (SELECT name FROM sys.databases WHERE name = N'AA_IGE')
+DROP DATABASE [AA_IGE]
 GO
-create database indgarmentsexpo
+create database AA_IGE
 go
-USE [indgarmentsexpo]
+USE [AA_IGE]
 go
 
 
@@ -1878,5 +1878,34 @@ mem_mdate datetime  default getdate(),
 mem_cid bigint Foreign Key References users (users_id) ,
 mem_mid bigint Foreign Key References users (users_id) ,
 )
+
+IF OBJECT_ID(' [Customer]') IS NOT NULL
+BEGIN 
+    DROP TABLE  Customer
+END
+GO
+create table Customer
+(
+cust_id bigint identity primary key not null,
+cust_code bigint  ,
+cust_type nvarchar(100)    default '',
+cust_name nvarchar(100)  unique  default '',
+cust_brand nvarchar(100)  default '',
+cust_contactperson nvarchar(100) default '',
+cust_address1 nvarchar(250)  DEFAULT '',
+cust_address2 nvarchar(250)  DEFAULT '',
+cust_address3 nvarchar(250)  DEFAULT '',
+cust_city nvarchar(100)  default '',
+cust_district nvarchar(100)   default '',
+cust_state nvarchar(100)  default '',
+cust_pincode varchar(50)  DEFAULT '',
+cust_mobile varchar(50) DEFAULT 0,
+cust_phone varchar(50)  DEFAULT '',
+cust_mobile2 varchar(50)   DEFAULT '',
+cust_email nvarchar(100)  DEFAULT '',
+cust_webbsite nvarchar(100)  DEFAULT '',
+cust_gstno nvarchar(100)  DEFAULT ''
+)
+
 
 

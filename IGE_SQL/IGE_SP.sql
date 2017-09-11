@@ -1,4 +1,4 @@
-USE [indgarmentsexpo];
+USE [AA_IGE];
 GO
 
 IF OBJECT_ID(' [usp_BusinessTypeSelect]') IS NOT NULL
@@ -20,7 +20,7 @@ AS
 
 	COMMIT
 GO
-IF OBJECT_ID(' [usp_BusinessTypeInsert]') IS NOT NULL
+IF OBJECT_ID('[usp_BusinessTypeInsert]') IS NOT NULL
 BEGIN 
     DROP PROC  [usp_BusinessTypeInsert] 
 END 
@@ -1154,6 +1154,135 @@ AS
 	DELETE
 	FROM    [UserType]
 	WHERE  [ut_id] = @ut_id
+
+	COMMIT
+GO
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+
+
+IF OBJECT_ID(' [usp_CustomerSelect]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CustomerSelect] 
+END 
+GO
+CREATE PROC  [usp_CustomerSelect] 
+    @cust_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+
+	BEGIN TRAN
+
+	SELECT [cust_id], [cust_code], [cust_type], [cust_name], [cust_brand], [cust_contactperson], [cust_address1], [cust_address2], [cust_address3], [cust_city], [cust_district], [cust_state], [cust_pincode], [cust_mobile], [cust_phone], [cust_mobile2], [cust_email], [cust_webbsite], [cust_gstno] 
+	FROM    [Customer] 
+	WHERE  ([cust_id] = @cust_id OR @cust_id IS NULL) 
+
+	COMMIT
+GO
+
+IF OBJECT_ID(' [usp_CustomerInsert]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CustomerInsert] 
+END 
+GO
+CREATE PROC  [usp_CustomerInsert] 
+    @cust_code bigint = NULL,
+    @cust_type nvarchar(100),
+    @cust_name nvarchar(100),
+    @cust_brand nvarchar(100),
+    @cust_contactperson nvarchar(100),
+    @cust_address1 nvarchar(250),
+    @cust_address2 nvarchar(250),
+    @cust_address3 nvarchar(250),
+    @cust_city nvarchar(100),
+    @cust_district nvarchar(100),
+    @cust_state nvarchar(100),
+    @cust_pincode varchar(50),
+    @cust_mobile varchar(50),
+    @cust_phone varchar(50),
+    @cust_mobile2 varchar(50),
+    @cust_email nvarchar(100),
+    @cust_webbsite nvarchar(100),
+    @cust_gstno nvarchar(100)
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+	
+	INSERT INTO  [Customer] ([cust_code], [cust_type], [cust_name], [cust_brand], [cust_contactperson], [cust_address1], [cust_address2], [cust_address3], [cust_city], [cust_district], [cust_state], [cust_pincode], [cust_mobile], [cust_phone], [cust_mobile2], [cust_email], [cust_webbsite], [cust_gstno])
+	SELECT @cust_code, @cust_type, @cust_name, @cust_brand, @cust_contactperson, @cust_address1, @cust_address2, @cust_address3, @cust_city, @cust_district, @cust_state, @cust_pincode, @cust_mobile, @cust_phone, @cust_mobile2, @cust_email, @cust_webbsite, @cust_gstno
+	
+	-- Begin Return Select <- do not remove
+	SELECT [cust_id], [cust_code], [cust_type], [cust_name], [cust_brand], [cust_contactperson], [cust_address1], [cust_address2], [cust_address3], [cust_city], [cust_district], [cust_state], [cust_pincode], [cust_mobile], [cust_phone], [cust_mobile2], [cust_email], [cust_webbsite], [cust_gstno]
+	FROM    [Customer]
+	WHERE  [cust_id] = SCOPE_IDENTITY()
+	-- End Return Select <- do not remove
+               
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_CustomerUpdate]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CustomerUpdate] 
+END 
+GO
+CREATE PROC  [usp_CustomerUpdate] 
+    @cust_id bigint,
+    @cust_code bigint = NULL,
+    @cust_type nvarchar(100),
+    @cust_name nvarchar(100),
+    @cust_brand nvarchar(100),
+    @cust_contactperson nvarchar(100),
+    @cust_address1 nvarchar(250),
+    @cust_address2 nvarchar(250),
+    @cust_address3 nvarchar(250),
+    @cust_city nvarchar(100),
+    @cust_district nvarchar(100),
+    @cust_state nvarchar(100),
+    @cust_pincode varchar(50),
+    @cust_mobile varchar(50),
+    @cust_phone varchar(50),
+    @cust_mobile2 varchar(50),
+    @cust_email nvarchar(100),
+    @cust_webbsite nvarchar(100),
+    @cust_gstno nvarchar(100)
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	UPDATE  [Customer]
+	SET    [cust_code] = @cust_code, [cust_type] = @cust_type, [cust_name] = @cust_name, [cust_brand] = @cust_brand, [cust_contactperson] = @cust_contactperson, [cust_address1] = @cust_address1, [cust_address2] = @cust_address2, [cust_address3] = @cust_address3, [cust_city] = @cust_city, [cust_district] = @cust_district, [cust_state] = @cust_state, [cust_pincode] = @cust_pincode, [cust_mobile] = @cust_mobile, [cust_phone] = @cust_phone, [cust_mobile2] = @cust_mobile2, [cust_email] = @cust_email, [cust_webbsite] = @cust_webbsite, [cust_gstno] = @cust_gstno
+	WHERE  [cust_id] = @cust_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [cust_id], [cust_code], [cust_type], [cust_name], [cust_brand], [cust_contactperson], [cust_address1], [cust_address2], [cust_address3], [cust_city], [cust_district], [cust_state], [cust_pincode], [cust_mobile], [cust_phone], [cust_mobile2], [cust_email], [cust_webbsite], [cust_gstno]
+	FROM    [Customer]
+	WHERE  [cust_id] = @cust_id	
+	-- End Return Select <- do not remove
+
+	COMMIT
+GO
+IF OBJECT_ID(' [usp_CustomerDelete]') IS NOT NULL
+BEGIN 
+    DROP PROC  [usp_CustomerDelete] 
+END 
+GO
+CREATE PROC  [usp_CustomerDelete] 
+    @cust_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	DELETE
+	FROM    [Customer]
+	WHERE  [cust_id] = @cust_id
 
 	COMMIT
 GO
