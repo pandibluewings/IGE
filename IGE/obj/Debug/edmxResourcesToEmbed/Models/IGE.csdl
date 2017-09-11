@@ -1,115 +1,116 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="indgarmentsexpoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="indgarmentsexpoEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="BusinessTypes" EntityType="indgarmentsexpoModel.BusinessType" />
-    <EntitySet Name="Cities" EntityType="indgarmentsexpoModel.City" />
-    <EntitySet Name="Companies" EntityType="indgarmentsexpoModel.Company" />
-    <EntitySet Name="Countries" EntityType="indgarmentsexpoModel.Country" />
-    <EntitySet Name="farms" EntityType="indgarmentsexpoModel.farm" />
-    <EntitySet Name="Members" EntityType="indgarmentsexpoModel.Member" />
-    <EntitySet Name="MemberTypes" EntityType="indgarmentsexpoModel.MemberType" />
-    <EntitySet Name="modules" EntityType="indgarmentsexpoModel.module" />
-    <EntitySet Name="States" EntityType="indgarmentsexpoModel.State" />
-    <EntitySet Name="users" EntityType="indgarmentsexpoModel.user" />
-    <EntitySet Name="UserTypes" EntityType="indgarmentsexpoModel.UserType" />
-    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6">
+<Schema Namespace="AA_IGEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="BusinessTypes" EntityType="AA_IGEModel.BusinessType" />
+    <EntitySet Name="Cities" EntityType="AA_IGEModel.City" />
+    <EntitySet Name="Companies" EntityType="AA_IGEModel.Company" />
+    <EntitySet Name="Countries" EntityType="AA_IGEModel.Country" />
+    <EntitySet Name="Customers" EntityType="AA_IGEModel.Customer" />
+    <EntitySet Name="farms" EntityType="AA_IGEModel.farm" />
+    <EntitySet Name="Members" EntityType="AA_IGEModel.Member" />
+    <EntitySet Name="MemberTypes" EntityType="AA_IGEModel.MemberType" />
+    <EntitySet Name="modules" EntityType="AA_IGEModel.module" />
+    <EntitySet Name="States" EntityType="AA_IGEModel.State" />
+    <EntitySet Name="users" EntityType="AA_IGEModel.user" />
+    <EntitySet Name="UserTypes" EntityType="AA_IGEModel.UserType" />
+    <AssociationSet Name="FK__BusinessT__bt_ci__656C112C" Association="AA_IGEModel.FK__BusinessT__bt_ci__656C112C">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F">
+    <AssociationSet Name="FK__BusinessT__bt_mi__66603565" Association="AA_IGEModel.FK__BusinessT__bt_mi__66603565">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__bt_id__656C112C" Association="indgarmentsexpoModel.FK__Member__bt_id__656C112C">
+    <AssociationSet Name="FK__Member__bt_id__6EF57B66" Association="AA_IGEModel.FK__Member__bt_id__6EF57B66">
       <End Role="BusinessType" EntitySet="BusinessTypes" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__con_id__182C9B23" Association="indgarmentsexpoModel.FK__City__con_id__182C9B23">
+    <AssociationSet Name="FK__City__con_id__0CBAE877" Association="AA_IGEModel.FK__City__con_id__0CBAE877">
       <End Role="Country" EntitySet="Countries" />
       <End Role="City" EntitySet="Cities" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="indgarmentsexpoModel.FK__City__sta_id__1920BF5C">
+    <AssociationSet Name="FK__City__sta_id__0DAF0CB0" Association="AA_IGEModel.FK__City__sta_id__0DAF0CB0">
       <End Role="States" EntitySet="States" />
       <End Role="City" EntitySet="Cities" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="indgarmentsexpoModel.FK__Company__city_id__21B6055D">
+    <AssociationSet Name="FK__Company__city_id__182C9B23" Association="AA_IGEModel.FK__Company__city_id__182C9B23">
       <End Role="City" EntitySet="Cities" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__city_id__6D0D32F4" Association="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4">
+    <AssociationSet Name="FK__Member__city_id__76969D2E" Association="AA_IGEModel.FK__Member__city_id__76969D2E">
       <End Role="City" EntitySet="Cities" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="indgarmentsexpoModel.FK__Company__con_id__239E4DCF">
+    <AssociationSet Name="FK__Company__con_id__1A14E395" Association="AA_IGEModel.FK__Company__con_id__1A14E395">
       <End Role="Country" EntitySet="Countries" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="indgarmentsexpoModel.FK__Company__sta_id__22AA2996">
+    <AssociationSet Name="FK__Company__sta_id__1920BF5C" Association="AA_IGEModel.FK__Company__sta_id__1920BF5C">
       <End Role="States" EntitySet="States" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2">
+    <AssociationSet Name="FK__users__com_id__37A5467C" Association="AA_IGEModel.FK__users__com_id__37A5467C">
       <End Role="Company" EntitySet="Companies" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="indgarmentsexpoModel.FK__UserType__com_id__33D4B598">
+    <AssociationSet Name="FK__UserType__com_id__2C3393D0" Association="AA_IGEModel.FK__UserType__com_id__2C3393D0">
       <End Role="Company" EntitySet="Companies" />
       <End Role="UserType" EntitySet="UserTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__con_id__6EF57B66" Association="indgarmentsexpoModel.FK__Member__con_id__6EF57B66">
+    <AssociationSet Name="FK__Member__con_id__787EE5A0" Association="AA_IGEModel.FK__Member__con_id__787EE5A0">
       <End Role="Country" EntitySet="Countries" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="indgarmentsexpoModel.FK__States__con_id__145C0A3F">
+    <AssociationSet Name="FK__States__con_id__07020F21" Association="AA_IGEModel.FK__States__con_id__07020F21">
       <End Role="Country" EntitySet="Countries" />
       <End Role="States" EntitySet="States" />
     </AssociationSet>
-    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="indgarmentsexpoModel.FK__farm__module_id__4222D4EF">
+    <AssociationSet Name="FK__farm__module_id__403A8C7D" Association="AA_IGEModel.FK__farm__module_id__403A8C7D">
       <End Role="module" EntitySet="modules" />
       <End Role="farm" EntitySet="farms" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_cid__7A672E12" Association="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12">
+    <AssociationSet Name="FK__Member__mem_cid__03F0984C" Association="AA_IGEModel.FK__Member__mem_cid__03F0984C">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_mid__7B5B524B" Association="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B">
+    <AssociationSet Name="FK__Member__mem_mid__04E4BC85" Association="AA_IGEModel.FK__Member__mem_mid__04E4BC85">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mt_id__6477ECF3" Association="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3">
+    <AssociationSet Name="FK__Member__mt_id__6E01572D" Association="AA_IGEModel.FK__Member__mt_id__6E01572D">
       <End Role="MemberType" EntitySet="MemberTypes" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__sta_id__6E01572D" Association="indgarmentsexpoModel.FK__Member__sta_id__6E01572D">
+    <AssociationSet Name="FK__Member__sta_id__778AC167" Association="AA_IGEModel.FK__Member__sta_id__778AC167">
       <End Role="States" EntitySet="States" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E">
+    <AssociationSet Name="FK__MemberTyp__mt_ci__59FA5E80" Association="AA_IGEModel.FK__MemberTyp__mt_ci__59FA5E80">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47">
+    <AssociationSet Name="FK__MemberTyp__mt_mi__5AEE82B9" Association="AA_IGEModel.FK__MemberTyp__mt_mi__5AEE82B9">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="indgarmentsexpoModel.FK__users__ut_id__3C69FB99">
+    <AssociationSet Name="FK__users__ut_id__36B12243" Association="AA_IGEModel.FK__users__ut_id__36B12243">
       <End Role="UserType" EntitySet="UserTypes" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
     <FunctionImport Name="usp_BusinessTypeDelete">
       <Parameter Name="bt_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_BusinessTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeInsert_Result)">
+    <FunctionImport Name="usp_BusinessTypeInsert" ReturnType="Collection(AA_IGEModel.usp_BusinessTypeInsert_Result)">
       <Parameter Name="bt_name" Mode="In" Type="String" />
       <Parameter Name="bt_cdate" Mode="In" Type="DateTime" />
       <Parameter Name="bt_mdate" Mode="In" Type="DateTime" />
       <Parameter Name="bt_cid" Mode="In" Type="Int64" />
       <Parameter Name="bt_mid" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_BusinessTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeSelect_Result)">
+    <FunctionImport Name="usp_BusinessTypeSelect" ReturnType="Collection(AA_IGEModel.usp_BusinessTypeSelect_Result)">
       <Parameter Name="bt_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_BusinessTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_BusinessTypeUpdate_Result)">
+    <FunctionImport Name="usp_BusinessTypeUpdate" ReturnType="Collection(AA_IGEModel.usp_BusinessTypeUpdate_Result)">
       <Parameter Name="bt_id" Mode="In" Type="Int64" />
       <Parameter Name="bt_name" Mode="In" Type="String" />
       <Parameter Name="bt_cdate" Mode="In" Type="DateTime" />
@@ -120,17 +121,17 @@
     <FunctionImport Name="usp_CityDelete">
       <Parameter Name="city_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CityInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CityInsert_Result)">
+    <FunctionImport Name="usp_CityInsert" ReturnType="Collection(AA_IGEModel.usp_CityInsert_Result)">
       <Parameter Name="city_name" Mode="In" Type="String" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
       <Parameter Name="sta_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CitySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CitySelect_Result)">
+    <FunctionImport Name="usp_CitySelect" ReturnType="Collection(AA_IGEModel.usp_CitySelect_Result)">
       <Parameter Name="city_id" Mode="In" Type="Int64" />
       <Parameter Name="sta_id" Mode="In" Type="Int64" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CityUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CityUpdate_Result)">
+    <FunctionImport Name="usp_CityUpdate" ReturnType="Collection(AA_IGEModel.usp_CityUpdate_Result)">
       <Parameter Name="city_id" Mode="In" Type="Int64" />
       <Parameter Name="city_name" Mode="In" Type="String" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
@@ -139,7 +140,7 @@
     <FunctionImport Name="usp_CompanyDelete">
       <Parameter Name="com_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CompanyInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CompanyInsert_Result)">
+    <FunctionImport Name="usp_CompanyInsert" ReturnType="Collection(AA_IGEModel.usp_CompanyInsert_Result)">
       <Parameter Name="com_name" Mode="In" Type="String" />
       <Parameter Name="com_invoicename" Mode="In" Type="String" />
       <Parameter Name="com_address1" Mode="In" Type="String" />
@@ -162,10 +163,10 @@
       <Parameter Name="com_isdefault" Mode="In" Type="Boolean" />
       <Parameter Name="com_logo" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_CompanySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CompanySelect_Result)">
+    <FunctionImport Name="usp_CompanySelect" ReturnType="Collection(AA_IGEModel.usp_CompanySelect_Result)">
       <Parameter Name="com_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CompanyUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CompanyUpdate_Result)">
+    <FunctionImport Name="usp_CompanyUpdate" ReturnType="Collection(AA_IGEModel.usp_CompanyUpdate_Result)">
       <Parameter Name="com_id" Mode="In" Type="Int64" />
       <Parameter Name="com_name" Mode="In" Type="String" />
       <Parameter Name="com_invoicename" Mode="In" Type="String" />
@@ -192,20 +193,67 @@
     <FunctionImport Name="usp_CountryDelete">
       <Parameter Name="con_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CountryInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CountryInsert_Result)">
+    <FunctionImport Name="usp_CountryInsert" ReturnType="Collection(AA_IGEModel.usp_CountryInsert_Result)">
       <Parameter Name="con_name" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_CountrySelect" ReturnType="Collection(indgarmentsexpoModel.usp_CountrySelect_Result)">
+    <FunctionImport Name="usp_CountrySelect" ReturnType="Collection(AA_IGEModel.usp_CountrySelect_Result)">
       <Parameter Name="con_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_CountryUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CountryUpdate_Result)">
+    <FunctionImport Name="usp_CountryUpdate" ReturnType="Collection(AA_IGEModel.usp_CountryUpdate_Result)">
       <Parameter Name="con_id" Mode="In" Type="Int64" />
       <Parameter Name="con_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerDelete">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerInsert" ReturnType="Collection(AA_IGEModel.usp_CustomerInsert_Result)">
+      <Parameter Name="cust_code" Mode="In" Type="Int64" />
+      <Parameter Name="cust_type" Mode="In" Type="String" />
+      <Parameter Name="cust_name" Mode="In" Type="String" />
+      <Parameter Name="cust_brand" Mode="In" Type="String" />
+      <Parameter Name="cust_contactperson" Mode="In" Type="String" />
+      <Parameter Name="cust_address1" Mode="In" Type="String" />
+      <Parameter Name="cust_address2" Mode="In" Type="String" />
+      <Parameter Name="cust_address3" Mode="In" Type="String" />
+      <Parameter Name="cust_city" Mode="In" Type="String" />
+      <Parameter Name="cust_district" Mode="In" Type="String" />
+      <Parameter Name="cust_state" Mode="In" Type="String" />
+      <Parameter Name="cust_pincode" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile" Mode="In" Type="String" />
+      <Parameter Name="cust_phone" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile2" Mode="In" Type="String" />
+      <Parameter Name="cust_email" Mode="In" Type="String" />
+      <Parameter Name="cust_webbsite" Mode="In" Type="String" />
+      <Parameter Name="cust_gstno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerSelect" ReturnType="Collection(AA_IGEModel.usp_CustomerSelect_Result)">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerUpdate" ReturnType="Collection(AA_IGEModel.usp_CustomerUpdate_Result)">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+      <Parameter Name="cust_code" Mode="In" Type="Int64" />
+      <Parameter Name="cust_type" Mode="In" Type="String" />
+      <Parameter Name="cust_name" Mode="In" Type="String" />
+      <Parameter Name="cust_brand" Mode="In" Type="String" />
+      <Parameter Name="cust_contactperson" Mode="In" Type="String" />
+      <Parameter Name="cust_address1" Mode="In" Type="String" />
+      <Parameter Name="cust_address2" Mode="In" Type="String" />
+      <Parameter Name="cust_address3" Mode="In" Type="String" />
+      <Parameter Name="cust_city" Mode="In" Type="String" />
+      <Parameter Name="cust_district" Mode="In" Type="String" />
+      <Parameter Name="cust_state" Mode="In" Type="String" />
+      <Parameter Name="cust_pincode" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile" Mode="In" Type="String" />
+      <Parameter Name="cust_phone" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile2" Mode="In" Type="String" />
+      <Parameter Name="cust_email" Mode="In" Type="String" />
+      <Parameter Name="cust_webbsite" Mode="In" Type="String" />
+      <Parameter Name="cust_gstno" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="usp_farmDelete">
       <Parameter Name="farm_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_farmInsert" ReturnType="Collection(indgarmentsexpoModel.usp_farmInsert_Result)">
+    <FunctionImport Name="usp_farmInsert" ReturnType="Collection(AA_IGEModel.usp_farmInsert_Result)">
       <Parameter Name="farm_id" Mode="In" Type="Int64" />
       <Parameter Name="module_id" Mode="In" Type="Int64" />
       <Parameter Name="farm_name" Mode="In" Type="String" />
@@ -215,10 +263,10 @@
       <Parameter Name="farm_view" Mode="In" Type="String" />
       <Parameter Name="farm_print" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_farmSelect" ReturnType="Collection(indgarmentsexpoModel.usp_farmSelect_Result)">
+    <FunctionImport Name="usp_farmSelect" ReturnType="Collection(AA_IGEModel.usp_farmSelect_Result)">
       <Parameter Name="farm_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_farmUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_farmUpdate_Result)">
+    <FunctionImport Name="usp_farmUpdate" ReturnType="Collection(AA_IGEModel.usp_farmUpdate_Result)">
       <Parameter Name="farm_id" Mode="In" Type="Int64" />
       <Parameter Name="module_id" Mode="In" Type="Int64" />
       <Parameter Name="farm_name" Mode="In" Type="String" />
@@ -231,7 +279,7 @@
     <FunctionImport Name="usp_MemberDelete">
       <Parameter Name="mem_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberInsert" ReturnType="Collection(indgarmentsexpoModel.usp_MemberInsert_Result)">
+    <FunctionImport Name="usp_MemberInsert" ReturnType="Collection(AA_IGEModel.usp_MemberInsert_Result)">
       <Parameter Name="mt_id" Mode="In" Type="Int64" />
       <Parameter Name="bt_id" Mode="In" Type="Int64" />
       <Parameter Name="mem_name" Mode="In" Type="String" />
@@ -258,23 +306,23 @@
       <Parameter Name="mem_cid" Mode="In" Type="Int64" />
       <Parameter Name="mem_mid" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberSelect" ReturnType="Collection(indgarmentsexpoModel.usp_MemberSelect_Result)">
+    <FunctionImport Name="usp_MemberSelect" ReturnType="Collection(AA_IGEModel.usp_MemberSelect_Result)">
       <Parameter Name="mem_id" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="usp_MemberTypeDelete">
       <Parameter Name="mt_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeInsert_Result)">
+    <FunctionImport Name="usp_MemberTypeInsert" ReturnType="Collection(AA_IGEModel.usp_MemberTypeInsert_Result)">
       <Parameter Name="mt_name" Mode="In" Type="String" />
       <Parameter Name="mt_cdate" Mode="In" Type="DateTime" />
       <Parameter Name="mt_mdate" Mode="In" Type="DateTime" />
       <Parameter Name="mt_cid" Mode="In" Type="Int64" />
       <Parameter Name="mt_mid" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeSelect_Result)">
+    <FunctionImport Name="usp_MemberTypeSelect" ReturnType="Collection(AA_IGEModel.usp_MemberTypeSelect_Result)">
       <Parameter Name="mt_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_MemberTypeUpdate_Result)">
+    <FunctionImport Name="usp_MemberTypeUpdate" ReturnType="Collection(AA_IGEModel.usp_MemberTypeUpdate_Result)">
       <Parameter Name="mt_id" Mode="In" Type="Int64" />
       <Parameter Name="mt_name" Mode="In" Type="String" />
       <Parameter Name="mt_cdate" Mode="In" Type="DateTime" />
@@ -282,7 +330,7 @@
       <Parameter Name="mt_cid" Mode="In" Type="Int64" />
       <Parameter Name="mt_mid" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_MemberUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_MemberUpdate_Result)">
+    <FunctionImport Name="usp_MemberUpdate" ReturnType="Collection(AA_IGEModel.usp_MemberUpdate_Result)">
       <Parameter Name="mem_id" Mode="In" Type="Int64" />
       <Parameter Name="mt_id" Mode="In" Type="Int64" />
       <Parameter Name="bt_id" Mode="In" Type="Int64" />
@@ -313,14 +361,14 @@
     <FunctionImport Name="usp_moduleDelete">
       <Parameter Name="module_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_moduleInsert" ReturnType="Collection(indgarmentsexpoModel.usp_moduleInsert_Result)">
+    <FunctionImport Name="usp_moduleInsert" ReturnType="Collection(AA_IGEModel.usp_moduleInsert_Result)">
       <Parameter Name="module_id" Mode="In" Type="Int64" />
       <Parameter Name="module_name" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_moduleSelect" ReturnType="Collection(indgarmentsexpoModel.usp_moduleSelect_Result)">
+    <FunctionImport Name="usp_moduleSelect" ReturnType="Collection(AA_IGEModel.usp_moduleSelect_Result)">
       <Parameter Name="module_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_moduleUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_moduleUpdate_Result)">
+    <FunctionImport Name="usp_moduleUpdate" ReturnType="Collection(AA_IGEModel.usp_moduleUpdate_Result)">
       <Parameter Name="module_id" Mode="In" Type="Int64" />
       <Parameter Name="module_name" Mode="In" Type="String" />
     </FunctionImport>
@@ -336,22 +384,22 @@
       <Parameter Name="farm_view" Mode="In" Type="String" />
       <Parameter Name="farm_print" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="usp_rightsSelect" ReturnType="Collection(indgarmentsexpoModel.usp_rightsSelect_Result)">
+    <FunctionImport Name="usp_rightsSelect" ReturnType="Collection(AA_IGEModel.usp_rightsSelect_Result)">
       <Parameter Name="rusers_id" Mode="In" Type="Int32" />
       <Parameter Name="users_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="usp_StatesDelete">
       <Parameter Name="sta_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_StatesInsert" ReturnType="Collection(indgarmentsexpoModel.usp_StatesInsert_Result)">
+    <FunctionImport Name="usp_StatesInsert" ReturnType="Collection(AA_IGEModel.usp_StatesInsert_Result)">
       <Parameter Name="sta_name" Mode="In" Type="String" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_StatesSelect" ReturnType="Collection(indgarmentsexpoModel.usp_StatesSelect_Result)">
+    <FunctionImport Name="usp_StatesSelect" ReturnType="Collection(AA_IGEModel.usp_StatesSelect_Result)">
       <Parameter Name="sta_id" Mode="In" Type="Int64" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_StatesUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_StatesUpdate_Result)">
+    <FunctionImport Name="usp_StatesUpdate" ReturnType="Collection(AA_IGEModel.usp_StatesUpdate_Result)">
       <Parameter Name="sta_id" Mode="In" Type="Int64" />
       <Parameter Name="sta_name" Mode="In" Type="String" />
       <Parameter Name="con_id" Mode="In" Type="Int64" />
@@ -359,7 +407,7 @@
     <FunctionImport Name="usp_usersDelete">
       <Parameter Name="users_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_usersInsert" ReturnType="Collection(indgarmentsexpoModel.usp_usersInsert_Result)">
+    <FunctionImport Name="usp_usersInsert" ReturnType="Collection(AA_IGEModel.usp_usersInsert_Result)">
       <Parameter Name="users_name" Mode="In" Type="String" />
       <Parameter Name="users_password" Mode="In" Type="String" />
       <Parameter Name="users_question" Mode="In" Type="String" />
@@ -369,10 +417,10 @@
       <Parameter Name="ut_id" Mode="In" Type="Int64" />
       <Parameter Name="com_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_usersSelect" ReturnType="Collection(indgarmentsexpoModel.usp_usersSelect_Result)">
+    <FunctionImport Name="usp_usersSelect" ReturnType="Collection(AA_IGEModel.usp_usersSelect_Result)">
       <Parameter Name="users_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_usersUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_usersUpdate_Result)">
+    <FunctionImport Name="usp_usersUpdate" ReturnType="Collection(AA_IGEModel.usp_usersUpdate_Result)">
       <Parameter Name="users_id" Mode="In" Type="Int64" />
       <Parameter Name="users_name" Mode="In" Type="String" />
       <Parameter Name="users_password" Mode="In" Type="String" />
@@ -386,15 +434,15 @@
     <FunctionImport Name="usp_UserTypeDelete">
       <Parameter Name="ut_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_UserTypeInsert" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeInsert_Result)">
+    <FunctionImport Name="usp_UserTypeInsert" ReturnType="Collection(AA_IGEModel.usp_UserTypeInsert_Result)">
       <Parameter Name="ut_code" Mode="In" Type="String" />
       <Parameter Name="ut_name" Mode="In" Type="String" />
       <Parameter Name="com_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_UserTypeSelect" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeSelect_Result)">
+    <FunctionImport Name="usp_UserTypeSelect" ReturnType="Collection(AA_IGEModel.usp_UserTypeSelect_Result)">
       <Parameter Name="ut_id" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="usp_UserTypeUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_UserTypeUpdate_Result)">
+    <FunctionImport Name="usp_UserTypeUpdate" ReturnType="Collection(AA_IGEModel.usp_UserTypeUpdate_Result)">
       <Parameter Name="ut_id" Mode="In" Type="Int64" />
       <Parameter Name="ut_code" Mode="In" Type="String" />
       <Parameter Name="ut_name" Mode="In" Type="String" />
@@ -411,9 +459,9 @@
     <Property Name="bt_mdate" Type="DateTime" Precision="3" />
     <Property Name="bt_cid" Type="Int64" />
     <Property Name="bt_mid" Type="Int64" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6" FromRole="BusinessType" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F" FromRole="BusinessType" ToRole="users" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__bt_id__656C112C" FromRole="BusinessType" ToRole="Member" />
+    <NavigationProperty Name="user" Relationship="AA_IGEModel.FK__BusinessT__bt_ci__656C112C" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="AA_IGEModel.FK__BusinessT__bt_mi__66603565" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__bt_id__6EF57B66" FromRole="BusinessType" ToRole="Member" />
   </EntityType>
   <EntityType Name="City">
     <Key>
@@ -423,10 +471,10 @@
     <Property Name="city_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="con_id" Type="Int64" />
     <Property Name="sta_id" Type="Int64" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__City__con_id__182C9B23" FromRole="City" ToRole="Country" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__City__sta_id__1920BF5C" FromRole="City" ToRole="States" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__city_id__21B6055D" FromRole="City" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4" FromRole="City" ToRole="Member" />
+    <NavigationProperty Name="Country" Relationship="AA_IGEModel.FK__City__con_id__0CBAE877" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="AA_IGEModel.FK__City__sta_id__0DAF0CB0" FromRole="City" ToRole="States" />
+    <NavigationProperty Name="Companies" Relationship="AA_IGEModel.FK__Company__city_id__182C9B23" FromRole="City" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__city_id__76969D2E" FromRole="City" ToRole="Member" />
   </EntityType>
   <EntityType Name="Company">
     <Key>
@@ -454,11 +502,11 @@
     <Property Name="com_servicetaxno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="com_isdefault" Type="Boolean" Nullable="false" />
     <Property Name="com_logo" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Company__city_id__21B6055D" FromRole="Company" ToRole="City" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Company__con_id__239E4DCF" FromRole="Company" ToRole="Country" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Company__sta_id__22AA2996" FromRole="Company" ToRole="States" />
-    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2" FromRole="Company" ToRole="users" />
-    <NavigationProperty Name="UserTypes" Relationship="indgarmentsexpoModel.FK__UserType__com_id__33D4B598" FromRole="Company" ToRole="UserType" />
+    <NavigationProperty Name="City" Relationship="AA_IGEModel.FK__Company__city_id__182C9B23" FromRole="Company" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="AA_IGEModel.FK__Company__con_id__1A14E395" FromRole="Company" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="AA_IGEModel.FK__Company__sta_id__1920BF5C" FromRole="Company" ToRole="States" />
+    <NavigationProperty Name="users" Relationship="AA_IGEModel.FK__users__com_id__37A5467C" FromRole="Company" ToRole="users" />
+    <NavigationProperty Name="UserTypes" Relationship="AA_IGEModel.FK__UserType__com_id__2C3393D0" FromRole="Company" ToRole="UserType" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -466,10 +514,34 @@
     </Key>
     <Property Name="con_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="con_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__con_id__182C9B23" FromRole="Country" ToRole="City" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__con_id__239E4DCF" FromRole="Country" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__con_id__6EF57B66" FromRole="Country" ToRole="Member" />
-    <NavigationProperty Name="States" Relationship="indgarmentsexpoModel.FK__States__con_id__145C0A3F" FromRole="Country" ToRole="States" />
+    <NavigationProperty Name="Cities" Relationship="AA_IGEModel.FK__City__con_id__0CBAE877" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="AA_IGEModel.FK__Company__con_id__1A14E395" FromRole="Country" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__con_id__787EE5A0" FromRole="Country" ToRole="Member" />
+    <NavigationProperty Name="States" Relationship="AA_IGEModel.FK__States__con_id__07020F21" FromRole="Country" ToRole="States" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="cust_code" Type="Int64" />
+    <Property Name="cust_type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_brand" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_contactperson" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address1" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address2" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address3" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_city" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_district" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_state" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_pincode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_mobile" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_mobile2" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_webbsite" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_gstno" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="farm">
     <Key>
@@ -483,7 +555,7 @@
     <Property Name="farm_delete" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
     <Property Name="farm_view" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
     <Property Name="farm_print" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <NavigationProperty Name="module" Relationship="indgarmentsexpoModel.FK__farm__module_id__4222D4EF" FromRole="farm" ToRole="module" />
+    <NavigationProperty Name="module" Relationship="AA_IGEModel.FK__farm__module_id__403A8C7D" FromRole="farm" ToRole="module" />
   </EntityType>
   <EntityType Name="Member">
     <Key>
@@ -515,13 +587,13 @@
     <Property Name="mem_mdate" Type="DateTime" Precision="3" />
     <Property Name="mem_cid" Type="Int64" />
     <Property Name="mem_mid" Type="Int64" />
-    <NavigationProperty Name="BusinessType" Relationship="indgarmentsexpoModel.FK__Member__bt_id__656C112C" FromRole="Member" ToRole="BusinessType" />
-    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4" FromRole="Member" ToRole="City" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Member__con_id__6EF57B66" FromRole="Member" ToRole="Country" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12" FromRole="Member" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B" FromRole="Member" ToRole="users" />
-    <NavigationProperty Name="MemberType" Relationship="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3" FromRole="Member" ToRole="MemberType" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Member__sta_id__6E01572D" FromRole="Member" ToRole="States" />
+    <NavigationProperty Name="BusinessType" Relationship="AA_IGEModel.FK__Member__bt_id__6EF57B66" FromRole="Member" ToRole="BusinessType" />
+    <NavigationProperty Name="City" Relationship="AA_IGEModel.FK__Member__city_id__76969D2E" FromRole="Member" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="AA_IGEModel.FK__Member__con_id__787EE5A0" FromRole="Member" ToRole="Country" />
+    <NavigationProperty Name="user" Relationship="AA_IGEModel.FK__Member__mem_cid__03F0984C" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="AA_IGEModel.FK__Member__mem_mid__04E4BC85" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="MemberType" Relationship="AA_IGEModel.FK__Member__mt_id__6E01572D" FromRole="Member" ToRole="MemberType" />
+    <NavigationProperty Name="State" Relationship="AA_IGEModel.FK__Member__sta_id__778AC167" FromRole="Member" ToRole="States" />
   </EntityType>
   <EntityType Name="MemberType">
     <Key>
@@ -533,9 +605,9 @@
     <Property Name="mt_mdate" Type="DateTime" Precision="3" />
     <Property Name="mt_cid" Type="Int64" />
     <Property Name="mt_mid" Type="Int64" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3" FromRole="MemberType" ToRole="Member" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E" FromRole="MemberType" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47" FromRole="MemberType" ToRole="users" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__mt_id__6E01572D" FromRole="MemberType" ToRole="Member" />
+    <NavigationProperty Name="user" Relationship="AA_IGEModel.FK__MemberTyp__mt_ci__59FA5E80" FromRole="MemberType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="AA_IGEModel.FK__MemberTyp__mt_mi__5AEE82B9" FromRole="MemberType" ToRole="users" />
   </EntityType>
   <EntityType Name="module">
     <Key>
@@ -543,7 +615,7 @@
     </Key>
     <Property Name="module_id" Type="Int64" Nullable="false" />
     <Property Name="module_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="farms" Relationship="indgarmentsexpoModel.FK__farm__module_id__4222D4EF" FromRole="module" ToRole="farm" />
+    <NavigationProperty Name="farms" Relationship="AA_IGEModel.FK__farm__module_id__403A8C7D" FromRole="module" ToRole="farm" />
   </EntityType>
   <EntityType Name="State">
     <Key>
@@ -552,10 +624,10 @@
     <Property Name="sta_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="sta_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="con_id" Type="Int64" />
-    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__sta_id__1920BF5C" FromRole="States" ToRole="City" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__sta_id__22AA2996" FromRole="States" ToRole="Company" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__States__con_id__145C0A3F" FromRole="States" ToRole="Country" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__sta_id__6E01572D" FromRole="States" ToRole="Member" />
+    <NavigationProperty Name="Cities" Relationship="AA_IGEModel.FK__City__sta_id__0DAF0CB0" FromRole="States" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="AA_IGEModel.FK__Company__sta_id__1920BF5C" FromRole="States" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="AA_IGEModel.FK__States__con_id__07020F21" FromRole="States" ToRole="Country" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__sta_id__778AC167" FromRole="States" ToRole="Member" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -570,14 +642,14 @@
     <Property Name="users_phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="ut_id" Type="Int64" />
     <Property Name="com_id" Type="Int64" />
-    <NavigationProperty Name="BusinessTypes" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6" FromRole="users" ToRole="BusinessType" />
-    <NavigationProperty Name="BusinessTypes1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F" FromRole="users" ToRole="BusinessType" />
-    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2" FromRole="users" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12" FromRole="users" ToRole="Member" />
-    <NavigationProperty Name="Members1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B" FromRole="users" ToRole="Member" />
-    <NavigationProperty Name="MemberTypes" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E" FromRole="users" ToRole="MemberType" />
-    <NavigationProperty Name="MemberTypes1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47" FromRole="users" ToRole="MemberType" />
-    <NavigationProperty Name="UserType" Relationship="indgarmentsexpoModel.FK__users__ut_id__3C69FB99" FromRole="users" ToRole="UserType" />
+    <NavigationProperty Name="BusinessTypes" Relationship="AA_IGEModel.FK__BusinessT__bt_ci__656C112C" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="BusinessTypes1" Relationship="AA_IGEModel.FK__BusinessT__bt_mi__66603565" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="Company" Relationship="AA_IGEModel.FK__users__com_id__37A5467C" FromRole="users" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="AA_IGEModel.FK__Member__mem_cid__03F0984C" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="Members1" Relationship="AA_IGEModel.FK__Member__mem_mid__04E4BC85" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="MemberTypes" Relationship="AA_IGEModel.FK__MemberTyp__mt_ci__59FA5E80" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="MemberTypes1" Relationship="AA_IGEModel.FK__MemberTyp__mt_mi__5AEE82B9" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="UserType" Relationship="AA_IGEModel.FK__users__ut_id__36B12243" FromRole="users" ToRole="UserType" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
@@ -587,12 +659,12 @@
     <Property Name="ut_code" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="ut_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="com_id" Type="Int64" />
-    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__UserType__com_id__33D4B598" FromRole="UserType" ToRole="Company" />
-    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__ut_id__3C69FB99" FromRole="UserType" ToRole="users" />
+    <NavigationProperty Name="Company" Relationship="AA_IGEModel.FK__UserType__com_id__2C3393D0" FromRole="UserType" ToRole="Company" />
+    <NavigationProperty Name="users" Relationship="AA_IGEModel.FK__users__ut_id__36B12243" FromRole="UserType" ToRole="users" />
   </EntityType>
-  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_ci__656C112C">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="AA_IGEModel.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -602,9 +674,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_mi__66603565">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="AA_IGEModel.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -614,9 +686,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__bt_id__656C112C">
-    <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__bt_id__6EF57B66">
+    <End Role="BusinessType" Type="AA_IGEModel.BusinessType" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BusinessType">
         <PropertyRef Name="bt_id" />
@@ -626,9 +698,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__con_id__182C9B23">
-    <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
-    <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="*" />
+  <Association Name="FK__City__con_id__0CBAE877">
+    <End Role="Country" Type="AA_IGEModel.Country" Multiplicity="0..1" />
+    <End Role="City" Type="AA_IGEModel.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -638,9 +710,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__sta_id__1920BF5C">
-    <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
-    <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="*" />
+  <Association Name="FK__City__sta_id__0DAF0CB0">
+    <End Role="States" Type="AA_IGEModel.State" Multiplicity="0..1" />
+    <End Role="City" Type="AA_IGEModel.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -650,9 +722,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__city_id__21B6055D">
-    <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
+  <Association Name="FK__Company__city_id__182C9B23">
+    <End Role="City" Type="AA_IGEModel.City" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -662,9 +734,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__city_id__6D0D32F4">
-    <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__city_id__76969D2E">
+    <End Role="City" Type="AA_IGEModel.City" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -674,9 +746,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__con_id__239E4DCF">
-    <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
+  <Association Name="FK__Company__con_id__1A14E395">
+    <End Role="Country" Type="AA_IGEModel.Country" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -686,9 +758,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__sta_id__22AA2996">
-    <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
+  <Association Name="FK__Company__sta_id__1920BF5C">
+    <End Role="States" Type="AA_IGEModel.State" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -698,9 +770,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__com_id__3D5E1FD2">
-    <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="0..1" />
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="*" />
+  <Association Name="FK__users__com_id__37A5467C">
+    <End Role="Company" Type="AA_IGEModel.Company" Multiplicity="0..1" />
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -710,9 +782,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserType__com_id__33D4B598">
-    <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="0..1" />
-    <End Role="UserType" Type="indgarmentsexpoModel.UserType" Multiplicity="*" />
+  <Association Name="FK__UserType__com_id__2C3393D0">
+    <End Role="Company" Type="AA_IGEModel.Company" Multiplicity="0..1" />
+    <End Role="UserType" Type="AA_IGEModel.UserType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -722,9 +794,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__con_id__6EF57B66">
-    <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__con_id__787EE5A0">
+    <End Role="Country" Type="AA_IGEModel.Country" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -734,9 +806,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__States__con_id__145C0A3F">
-    <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
-    <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="*" />
+  <Association Name="FK__States__con_id__07020F21">
+    <End Role="Country" Type="AA_IGEModel.Country" Multiplicity="0..1" />
+    <End Role="States" Type="AA_IGEModel.State" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -746,9 +818,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__farm__module_id__4222D4EF">
-    <End Role="module" Type="indgarmentsexpoModel.module" Multiplicity="0..1" />
-    <End Role="farm" Type="indgarmentsexpoModel.farm" Multiplicity="*" />
+  <Association Name="FK__farm__module_id__403A8C7D">
+    <End Role="module" Type="AA_IGEModel.module" Multiplicity="0..1" />
+    <End Role="farm" Type="AA_IGEModel.farm" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="module">
         <PropertyRef Name="module_id" />
@@ -758,9 +830,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_cid__7A672E12">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_cid__03F0984C">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -770,9 +842,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_mid__7B5B524B">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_mid__04E4BC85">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -782,9 +854,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mt_id__6477ECF3">
-    <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mt_id__6E01572D">
+    <End Role="MemberType" Type="AA_IGEModel.MemberType" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MemberType">
         <PropertyRef Name="mt_id" />
@@ -794,9 +866,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__sta_id__6E01572D">
-    <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
+  <Association Name="FK__Member__sta_id__778AC167">
+    <End Role="States" Type="AA_IGEModel.State" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -806,9 +878,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_ci__5812160E">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_ci__59FA5E80">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="MemberType" Type="AA_IGEModel.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -818,9 +890,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_mi__59063A47">
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
-    <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_mi__5AEE82B9">
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="0..1" />
+    <End Role="MemberType" Type="AA_IGEModel.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -830,9 +902,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__ut_id__3C69FB99">
-    <End Role="UserType" Type="indgarmentsexpoModel.UserType" Multiplicity="0..1" />
-    <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="*" />
+  <Association Name="FK__users__ut_id__36B12243">
+    <End Role="UserType" Type="AA_IGEModel.UserType" Multiplicity="0..1" />
+    <End Role="users" Type="AA_IGEModel.user" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserType">
         <PropertyRef Name="ut_id" />
@@ -967,6 +1039,69 @@
   <ComplexType Name="usp_CountryUpdate_Result">
     <Property Type="Int64" Name="con_id" Nullable="false" />
     <Property Type="String" Name="con_name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerInsert_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerSelect_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerUpdate_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
   </ComplexType>
   <ComplexType Name="usp_farmInsert_Result">
     <Property Type="Int64" Name="farm_id" Nullable="false" />

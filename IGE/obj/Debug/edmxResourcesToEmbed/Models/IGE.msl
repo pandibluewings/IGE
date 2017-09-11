@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="indgarmentsexpoModelStoreContainer" CdmEntityContainer="indgarmentsexpoEntities">
+  <EntityContainerMapping StorageEntityContainer="AA_IGEModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="BusinessTypes">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.BusinessType">
+      <EntityTypeMapping TypeName="AA_IGEModel.BusinessType">
         <MappingFragment StoreEntitySet="BusinessType">
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
           <ScalarProperty Name="bt_name" ColumnName="bt_name" />
@@ -14,7 +14,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Cities">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.City">
+      <EntityTypeMapping TypeName="AA_IGEModel.City">
         <MappingFragment StoreEntitySet="City">
           <ScalarProperty Name="city_id" ColumnName="city_id" />
           <ScalarProperty Name="city_name" ColumnName="city_name" />
@@ -24,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Companies">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.Company">
+      <EntityTypeMapping TypeName="AA_IGEModel.Company">
         <MappingFragment StoreEntitySet="Company">
           <ScalarProperty Name="com_id" ColumnName="com_id" />
           <ScalarProperty Name="com_name" ColumnName="com_name" />
@@ -52,15 +52,40 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Countries">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.Country">
+      <EntityTypeMapping TypeName="AA_IGEModel.Country">
         <MappingFragment StoreEntitySet="Country">
           <ScalarProperty Name="con_id" ColumnName="con_id" />
           <ScalarProperty Name="con_name" ColumnName="con_name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="AA_IGEModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="farms">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.farm">
+      <EntityTypeMapping TypeName="AA_IGEModel.farm">
         <MappingFragment StoreEntitySet="farm">
           <ScalarProperty Name="farm_id" ColumnName="farm_id" />
           <ScalarProperty Name="module_id" ColumnName="module_id" />
@@ -74,7 +99,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Members">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.Member">
+      <EntityTypeMapping TypeName="AA_IGEModel.Member">
         <MappingFragment StoreEntitySet="Member">
           <ScalarProperty Name="mem_id" ColumnName="mem_id" />
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
@@ -106,7 +131,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MemberTypes">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.MemberType">
+      <EntityTypeMapping TypeName="AA_IGEModel.MemberType">
         <MappingFragment StoreEntitySet="MemberType">
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="mt_name" ColumnName="mt_name" />
@@ -118,7 +143,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="modules">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.module">
+      <EntityTypeMapping TypeName="AA_IGEModel.module">
         <MappingFragment StoreEntitySet="module">
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="module_name" ColumnName="module_name" />
@@ -126,7 +151,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="States">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.State">
+      <EntityTypeMapping TypeName="AA_IGEModel.State">
         <MappingFragment StoreEntitySet="States">
           <ScalarProperty Name="sta_id" ColumnName="sta_id" />
           <ScalarProperty Name="sta_name" ColumnName="sta_name" />
@@ -135,7 +160,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="users">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.user">
+      <EntityTypeMapping TypeName="AA_IGEModel.user">
         <MappingFragment StoreEntitySet="users">
           <ScalarProperty Name="users_id" ColumnName="users_id" />
           <ScalarProperty Name="users_name" ColumnName="users_name" />
@@ -150,7 +175,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserTypes">
-      <EntityTypeMapping TypeName="indgarmentsexpoModel.UserType">
+      <EntityTypeMapping TypeName="AA_IGEModel.UserType">
         <MappingFragment StoreEntitySet="UserType">
           <ScalarProperty Name="ut_id" ColumnName="ut_id" />
           <ScalarProperty Name="ut_code" ColumnName="ut_code" />
@@ -159,10 +184,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="usp_BusinessTypeDelete" FunctionName="indgarmentsexpoModel.Store.usp_BusinessTypeDelete" />
-    <FunctionImportMapping FunctionImportName="usp_BusinessTypeInsert" FunctionName="indgarmentsexpoModel.Store.usp_BusinessTypeInsert">
+    <FunctionImportMapping FunctionImportName="usp_BusinessTypeDelete" FunctionName="AA_IGEModel.Store.usp_BusinessTypeDelete" />
+    <FunctionImportMapping FunctionImportName="usp_BusinessTypeInsert" FunctionName="AA_IGEModel.Store.usp_BusinessTypeInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_BusinessTypeInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_BusinessTypeInsert_Result">
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
           <ScalarProperty Name="bt_name" ColumnName="bt_name" />
           <ScalarProperty Name="bt_cdate" ColumnName="bt_cdate" />
@@ -172,9 +197,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_BusinessTypeSelect" FunctionName="indgarmentsexpoModel.Store.usp_BusinessTypeSelect">
+    <FunctionImportMapping FunctionImportName="usp_BusinessTypeSelect" FunctionName="AA_IGEModel.Store.usp_BusinessTypeSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_BusinessTypeSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_BusinessTypeSelect_Result">
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
           <ScalarProperty Name="bt_name" ColumnName="bt_name" />
           <ScalarProperty Name="bt_cdate" ColumnName="bt_cdate" />
@@ -184,9 +209,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_BusinessTypeUpdate" FunctionName="indgarmentsexpoModel.Store.usp_BusinessTypeUpdate">
+    <FunctionImportMapping FunctionImportName="usp_BusinessTypeUpdate" FunctionName="AA_IGEModel.Store.usp_BusinessTypeUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_BusinessTypeUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_BusinessTypeUpdate_Result">
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
           <ScalarProperty Name="bt_name" ColumnName="bt_name" />
           <ScalarProperty Name="bt_cdate" ColumnName="bt_cdate" />
@@ -196,10 +221,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CityDelete" FunctionName="indgarmentsexpoModel.Store.usp_CityDelete" />
-    <FunctionImportMapping FunctionImportName="usp_CityInsert" FunctionName="indgarmentsexpoModel.Store.usp_CityInsert">
+    <FunctionImportMapping FunctionImportName="usp_CityDelete" FunctionName="AA_IGEModel.Store.usp_CityDelete" />
+    <FunctionImportMapping FunctionImportName="usp_CityInsert" FunctionName="AA_IGEModel.Store.usp_CityInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CityInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CityInsert_Result">
           <ScalarProperty Name="city_id" ColumnName="city_id" />
           <ScalarProperty Name="city_name" ColumnName="city_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
@@ -207,9 +232,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CitySelect" FunctionName="indgarmentsexpoModel.Store.usp_CitySelect">
+    <FunctionImportMapping FunctionImportName="usp_CitySelect" FunctionName="AA_IGEModel.Store.usp_CitySelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CitySelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CitySelect_Result">
           <ScalarProperty Name="city_id" ColumnName="city_id" />
           <ScalarProperty Name="city_name" ColumnName="city_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
@@ -217,9 +242,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CityUpdate" FunctionName="indgarmentsexpoModel.Store.usp_CityUpdate">
+    <FunctionImportMapping FunctionImportName="usp_CityUpdate" FunctionName="AA_IGEModel.Store.usp_CityUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CityUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CityUpdate_Result">
           <ScalarProperty Name="city_id" ColumnName="city_id" />
           <ScalarProperty Name="city_name" ColumnName="city_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
@@ -227,10 +252,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CompanyDelete" FunctionName="indgarmentsexpoModel.Store.usp_CompanyDelete" />
-    <FunctionImportMapping FunctionImportName="usp_CompanyInsert" FunctionName="indgarmentsexpoModel.Store.usp_CompanyInsert">
+    <FunctionImportMapping FunctionImportName="usp_CompanyDelete" FunctionName="AA_IGEModel.Store.usp_CompanyDelete" />
+    <FunctionImportMapping FunctionImportName="usp_CompanyInsert" FunctionName="AA_IGEModel.Store.usp_CompanyInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CompanyInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CompanyInsert_Result">
           <ScalarProperty Name="com_id" ColumnName="com_id" />
           <ScalarProperty Name="com_name" ColumnName="com_name" />
           <ScalarProperty Name="com_invoicename" ColumnName="com_invoicename" />
@@ -256,9 +281,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CompanySelect" FunctionName="indgarmentsexpoModel.Store.usp_CompanySelect">
+    <FunctionImportMapping FunctionImportName="usp_CompanySelect" FunctionName="AA_IGEModel.Store.usp_CompanySelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CompanySelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CompanySelect_Result">
           <ScalarProperty Name="com_id" ColumnName="com_id" />
           <ScalarProperty Name="com_name" ColumnName="com_name" />
           <ScalarProperty Name="com_invoicename" ColumnName="com_invoicename" />
@@ -284,9 +309,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CompanyUpdate" FunctionName="indgarmentsexpoModel.Store.usp_CompanyUpdate">
+    <FunctionImportMapping FunctionImportName="usp_CompanyUpdate" FunctionName="AA_IGEModel.Store.usp_CompanyUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CompanyUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CompanyUpdate_Result">
           <ScalarProperty Name="com_id" ColumnName="com_id" />
           <ScalarProperty Name="com_name" ColumnName="com_name" />
           <ScalarProperty Name="com_invoicename" ColumnName="com_invoicename" />
@@ -312,35 +337,111 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CountryDelete" FunctionName="indgarmentsexpoModel.Store.usp_CountryDelete" />
-    <FunctionImportMapping FunctionImportName="usp_CountryInsert" FunctionName="indgarmentsexpoModel.Store.usp_CountryInsert">
+    <FunctionImportMapping FunctionImportName="usp_CountryDelete" FunctionName="AA_IGEModel.Store.usp_CountryDelete" />
+    <FunctionImportMapping FunctionImportName="usp_CountryInsert" FunctionName="AA_IGEModel.Store.usp_CountryInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CountryInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CountryInsert_Result">
           <ScalarProperty Name="con_id" ColumnName="con_id" />
           <ScalarProperty Name="con_name" ColumnName="con_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CountrySelect" FunctionName="indgarmentsexpoModel.Store.usp_CountrySelect">
+    <FunctionImportMapping FunctionImportName="usp_CountrySelect" FunctionName="AA_IGEModel.Store.usp_CountrySelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CountrySelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CountrySelect_Result">
           <ScalarProperty Name="con_id" ColumnName="con_id" />
           <ScalarProperty Name="con_name" ColumnName="con_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_CountryUpdate" FunctionName="indgarmentsexpoModel.Store.usp_CountryUpdate">
+    <FunctionImportMapping FunctionImportName="usp_CountryUpdate" FunctionName="AA_IGEModel.Store.usp_CountryUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CountryUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CountryUpdate_Result">
           <ScalarProperty Name="con_id" ColumnName="con_id" />
           <ScalarProperty Name="con_name" ColumnName="con_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_farmDelete" FunctionName="indgarmentsexpoModel.Store.usp_farmDelete" />
-    <FunctionImportMapping FunctionImportName="usp_farmInsert" FunctionName="indgarmentsexpoModel.Store.usp_farmInsert">
+    <FunctionImportMapping FunctionImportName="usp_CustomerDelete" FunctionName="AA_IGEModel.Store.usp_CustomerDelete" />
+    <FunctionImportMapping FunctionImportName="usp_CustomerInsert" FunctionName="AA_IGEModel.Store.usp_CustomerInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_farmInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CustomerInsert_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_CustomerSelect" FunctionName="AA_IGEModel.Store.usp_CustomerSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CustomerSelect_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_CustomerUpdate" FunctionName="AA_IGEModel.Store.usp_CustomerUpdate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_CustomerUpdate_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_farmDelete" FunctionName="AA_IGEModel.Store.usp_farmDelete" />
+    <FunctionImportMapping FunctionImportName="usp_farmInsert" FunctionName="AA_IGEModel.Store.usp_farmInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_farmInsert_Result">
           <ScalarProperty Name="farm_id" ColumnName="farm_id" />
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="farm_name" ColumnName="farm_name" />
@@ -352,9 +453,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_farmSelect" FunctionName="indgarmentsexpoModel.Store.usp_farmSelect">
+    <FunctionImportMapping FunctionImportName="usp_farmSelect" FunctionName="AA_IGEModel.Store.usp_farmSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_farmSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_farmSelect_Result">
           <ScalarProperty Name="farm_id" ColumnName="farm_id" />
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="farm_name" ColumnName="farm_name" />
@@ -366,9 +467,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_farmUpdate" FunctionName="indgarmentsexpoModel.Store.usp_farmUpdate">
+    <FunctionImportMapping FunctionImportName="usp_farmUpdate" FunctionName="AA_IGEModel.Store.usp_farmUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_farmUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_farmUpdate_Result">
           <ScalarProperty Name="farm_id" ColumnName="farm_id" />
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="farm_name" ColumnName="farm_name" />
@@ -380,10 +481,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberDelete" FunctionName="indgarmentsexpoModel.Store.usp_MemberDelete" />
-    <FunctionImportMapping FunctionImportName="usp_MemberInsert" FunctionName="indgarmentsexpoModel.Store.usp_MemberInsert">
+    <FunctionImportMapping FunctionImportName="usp_MemberDelete" FunctionName="AA_IGEModel.Store.usp_MemberDelete" />
+    <FunctionImportMapping FunctionImportName="usp_MemberInsert" FunctionName="AA_IGEModel.Store.usp_MemberInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberInsert_Result">
           <ScalarProperty Name="mem_id" ColumnName="mem_id" />
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
@@ -413,9 +514,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberSelect" FunctionName="indgarmentsexpoModel.Store.usp_MemberSelect">
+    <FunctionImportMapping FunctionImportName="usp_MemberSelect" FunctionName="AA_IGEModel.Store.usp_MemberSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberSelect_Result">
           <ScalarProperty Name="mem_id" ColumnName="mem_id" />
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
@@ -445,10 +546,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberTypeDelete" FunctionName="indgarmentsexpoModel.Store.usp_MemberTypeDelete" />
-    <FunctionImportMapping FunctionImportName="usp_MemberTypeInsert" FunctionName="indgarmentsexpoModel.Store.usp_MemberTypeInsert">
+    <FunctionImportMapping FunctionImportName="usp_MemberTypeDelete" FunctionName="AA_IGEModel.Store.usp_MemberTypeDelete" />
+    <FunctionImportMapping FunctionImportName="usp_MemberTypeInsert" FunctionName="AA_IGEModel.Store.usp_MemberTypeInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberTypeInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberTypeInsert_Result">
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="mt_name" ColumnName="mt_name" />
           <ScalarProperty Name="mt_cdate" ColumnName="mt_cdate" />
@@ -458,9 +559,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberTypeSelect" FunctionName="indgarmentsexpoModel.Store.usp_MemberTypeSelect">
+    <FunctionImportMapping FunctionImportName="usp_MemberTypeSelect" FunctionName="AA_IGEModel.Store.usp_MemberTypeSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberTypeSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberTypeSelect_Result">
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="mt_name" ColumnName="mt_name" />
           <ScalarProperty Name="mt_cdate" ColumnName="mt_cdate" />
@@ -470,9 +571,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberTypeUpdate" FunctionName="indgarmentsexpoModel.Store.usp_MemberTypeUpdate">
+    <FunctionImportMapping FunctionImportName="usp_MemberTypeUpdate" FunctionName="AA_IGEModel.Store.usp_MemberTypeUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberTypeUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberTypeUpdate_Result">
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="mt_name" ColumnName="mt_name" />
           <ScalarProperty Name="mt_cdate" ColumnName="mt_cdate" />
@@ -482,9 +583,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_MemberUpdate" FunctionName="indgarmentsexpoModel.Store.usp_MemberUpdate">
+    <FunctionImportMapping FunctionImportName="usp_MemberUpdate" FunctionName="AA_IGEModel.Store.usp_MemberUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_MemberUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_MemberUpdate_Result">
           <ScalarProperty Name="mem_id" ColumnName="mem_id" />
           <ScalarProperty Name="mt_id" ColumnName="mt_id" />
           <ScalarProperty Name="bt_id" ColumnName="bt_id" />
@@ -514,36 +615,36 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_moduleDelete" FunctionName="indgarmentsexpoModel.Store.usp_moduleDelete" />
-    <FunctionImportMapping FunctionImportName="usp_moduleInsert" FunctionName="indgarmentsexpoModel.Store.usp_moduleInsert">
+    <FunctionImportMapping FunctionImportName="usp_moduleDelete" FunctionName="AA_IGEModel.Store.usp_moduleDelete" />
+    <FunctionImportMapping FunctionImportName="usp_moduleInsert" FunctionName="AA_IGEModel.Store.usp_moduleInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_moduleInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_moduleInsert_Result">
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="module_name" ColumnName="module_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_moduleSelect" FunctionName="indgarmentsexpoModel.Store.usp_moduleSelect">
+    <FunctionImportMapping FunctionImportName="usp_moduleSelect" FunctionName="AA_IGEModel.Store.usp_moduleSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_moduleSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_moduleSelect_Result">
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="module_name" ColumnName="module_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_moduleUpdate" FunctionName="indgarmentsexpoModel.Store.usp_moduleUpdate">
+    <FunctionImportMapping FunctionImportName="usp_moduleUpdate" FunctionName="AA_IGEModel.Store.usp_moduleUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_moduleUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_moduleUpdate_Result">
           <ScalarProperty Name="module_id" ColumnName="module_id" />
           <ScalarProperty Name="module_name" ColumnName="module_name" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_rightsDelete" FunctionName="indgarmentsexpoModel.Store.usp_rightsDelete" />
-    <FunctionImportMapping FunctionImportName="usp_rightsInsert" FunctionName="indgarmentsexpoModel.Store.usp_rightsInsert" />
-    <FunctionImportMapping FunctionImportName="usp_rightsSelect" FunctionName="indgarmentsexpoModel.Store.usp_rightsSelect">
+    <FunctionImportMapping FunctionImportName="usp_rightsDelete" FunctionName="AA_IGEModel.Store.usp_rightsDelete" />
+    <FunctionImportMapping FunctionImportName="usp_rightsInsert" FunctionName="AA_IGEModel.Store.usp_rightsInsert" />
+    <FunctionImportMapping FunctionImportName="usp_rightsSelect" FunctionName="AA_IGEModel.Store.usp_rightsSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_rightsSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_rightsSelect_Result">
           <ScalarProperty Name="module_name" ColumnName="module_name" />
           <ScalarProperty Name="farm_name" ColumnName="farm_name" />
           <ScalarProperty Name="farm_add" ColumnName="farm_add" />
@@ -561,38 +662,38 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_StatesDelete" FunctionName="indgarmentsexpoModel.Store.usp_StatesDelete" />
-    <FunctionImportMapping FunctionImportName="usp_StatesInsert" FunctionName="indgarmentsexpoModel.Store.usp_StatesInsert">
+    <FunctionImportMapping FunctionImportName="usp_StatesDelete" FunctionName="AA_IGEModel.Store.usp_StatesDelete" />
+    <FunctionImportMapping FunctionImportName="usp_StatesInsert" FunctionName="AA_IGEModel.Store.usp_StatesInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_StatesInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_StatesInsert_Result">
           <ScalarProperty Name="sta_id" ColumnName="sta_id" />
           <ScalarProperty Name="sta_name" ColumnName="sta_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_StatesSelect" FunctionName="indgarmentsexpoModel.Store.usp_StatesSelect">
+    <FunctionImportMapping FunctionImportName="usp_StatesSelect" FunctionName="AA_IGEModel.Store.usp_StatesSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_StatesSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_StatesSelect_Result">
           <ScalarProperty Name="sta_id" ColumnName="sta_id" />
           <ScalarProperty Name="sta_name" ColumnName="sta_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_StatesUpdate" FunctionName="indgarmentsexpoModel.Store.usp_StatesUpdate">
+    <FunctionImportMapping FunctionImportName="usp_StatesUpdate" FunctionName="AA_IGEModel.Store.usp_StatesUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_StatesUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_StatesUpdate_Result">
           <ScalarProperty Name="sta_id" ColumnName="sta_id" />
           <ScalarProperty Name="sta_name" ColumnName="sta_name" />
           <ScalarProperty Name="con_id" ColumnName="con_id" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_usersDelete" FunctionName="indgarmentsexpoModel.Store.usp_usersDelete" />
-    <FunctionImportMapping FunctionImportName="usp_usersInsert" FunctionName="indgarmentsexpoModel.Store.usp_usersInsert">
+    <FunctionImportMapping FunctionImportName="usp_usersDelete" FunctionName="AA_IGEModel.Store.usp_usersDelete" />
+    <FunctionImportMapping FunctionImportName="usp_usersInsert" FunctionName="AA_IGEModel.Store.usp_usersInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_usersInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_usersInsert_Result">
           <ScalarProperty Name="users_id" ColumnName="users_id" />
           <ScalarProperty Name="users_name" ColumnName="users_name" />
           <ScalarProperty Name="users_password" ColumnName="users_password" />
@@ -605,9 +706,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_usersSelect" FunctionName="indgarmentsexpoModel.Store.usp_usersSelect">
+    <FunctionImportMapping FunctionImportName="usp_usersSelect" FunctionName="AA_IGEModel.Store.usp_usersSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_usersSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_usersSelect_Result">
           <ScalarProperty Name="users_id" ColumnName="users_id" />
           <ScalarProperty Name="users_name" ColumnName="users_name" />
           <ScalarProperty Name="users_password" ColumnName="users_password" />
@@ -620,9 +721,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_usersUpdate" FunctionName="indgarmentsexpoModel.Store.usp_usersUpdate">
+    <FunctionImportMapping FunctionImportName="usp_usersUpdate" FunctionName="AA_IGEModel.Store.usp_usersUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_usersUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_usersUpdate_Result">
           <ScalarProperty Name="users_id" ColumnName="users_id" />
           <ScalarProperty Name="users_name" ColumnName="users_name" />
           <ScalarProperty Name="users_password" ColumnName="users_password" />
@@ -635,10 +736,10 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_UserTypeDelete" FunctionName="indgarmentsexpoModel.Store.usp_UserTypeDelete" />
-    <FunctionImportMapping FunctionImportName="usp_UserTypeInsert" FunctionName="indgarmentsexpoModel.Store.usp_UserTypeInsert">
+    <FunctionImportMapping FunctionImportName="usp_UserTypeDelete" FunctionName="AA_IGEModel.Store.usp_UserTypeDelete" />
+    <FunctionImportMapping FunctionImportName="usp_UserTypeInsert" FunctionName="AA_IGEModel.Store.usp_UserTypeInsert">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_UserTypeInsert_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_UserTypeInsert_Result">
           <ScalarProperty Name="ut_id" ColumnName="ut_id" />
           <ScalarProperty Name="ut_code" ColumnName="ut_code" />
           <ScalarProperty Name="ut_name" ColumnName="ut_name" />
@@ -646,9 +747,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_UserTypeSelect" FunctionName="indgarmentsexpoModel.Store.usp_UserTypeSelect">
+    <FunctionImportMapping FunctionImportName="usp_UserTypeSelect" FunctionName="AA_IGEModel.Store.usp_UserTypeSelect">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_UserTypeSelect_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_UserTypeSelect_Result">
           <ScalarProperty Name="ut_id" ColumnName="ut_id" />
           <ScalarProperty Name="ut_code" ColumnName="ut_code" />
           <ScalarProperty Name="ut_name" ColumnName="ut_name" />
@@ -656,9 +757,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="usp_UserTypeUpdate" FunctionName="indgarmentsexpoModel.Store.usp_UserTypeUpdate">
+    <FunctionImportMapping FunctionImportName="usp_UserTypeUpdate" FunctionName="AA_IGEModel.Store.usp_UserTypeUpdate">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_UserTypeUpdate_Result">
+        <ComplexTypeMapping TypeName="AA_IGEModel.usp_UserTypeUpdate_Result">
           <ScalarProperty Name="ut_id" ColumnName="ut_id" />
           <ScalarProperty Name="ut_code" ColumnName="ut_code" />
           <ScalarProperty Name="ut_name" ColumnName="ut_name" />

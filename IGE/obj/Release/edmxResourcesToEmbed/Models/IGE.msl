@@ -59,6 +59,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="indgarmentsexpoModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="farms">
       <EntityTypeMapping TypeName="indgarmentsexpoModel.farm">
         <MappingFragment StoreEntitySet="farm">
@@ -334,6 +359,82 @@
         <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CountryUpdate_Result">
           <ScalarProperty Name="con_id" ColumnName="con_id" />
           <ScalarProperty Name="con_name" ColumnName="con_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_CustomerDelete" FunctionName="indgarmentsexpoModel.Store.usp_CustomerDelete" />
+    <FunctionImportMapping FunctionImportName="usp_CustomerInsert" FunctionName="indgarmentsexpoModel.Store.usp_CustomerInsert">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CustomerInsert_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_CustomerSelect" FunctionName="indgarmentsexpoModel.Store.usp_CustomerSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CustomerSelect_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_CustomerUpdate" FunctionName="indgarmentsexpoModel.Store.usp_CustomerUpdate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="indgarmentsexpoModel.usp_CustomerUpdate_Result">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="cust_code" ColumnName="cust_code" />
+          <ScalarProperty Name="cust_type" ColumnName="cust_type" />
+          <ScalarProperty Name="cust_name" ColumnName="cust_name" />
+          <ScalarProperty Name="cust_brand" ColumnName="cust_brand" />
+          <ScalarProperty Name="cust_contactperson" ColumnName="cust_contactperson" />
+          <ScalarProperty Name="cust_address1" ColumnName="cust_address1" />
+          <ScalarProperty Name="cust_address2" ColumnName="cust_address2" />
+          <ScalarProperty Name="cust_address3" ColumnName="cust_address3" />
+          <ScalarProperty Name="cust_city" ColumnName="cust_city" />
+          <ScalarProperty Name="cust_district" ColumnName="cust_district" />
+          <ScalarProperty Name="cust_state" ColumnName="cust_state" />
+          <ScalarProperty Name="cust_pincode" ColumnName="cust_pincode" />
+          <ScalarProperty Name="cust_mobile" ColumnName="cust_mobile" />
+          <ScalarProperty Name="cust_phone" ColumnName="cust_phone" />
+          <ScalarProperty Name="cust_mobile2" ColumnName="cust_mobile2" />
+          <ScalarProperty Name="cust_email" ColumnName="cust_email" />
+          <ScalarProperty Name="cust_webbsite" ColumnName="cust_webbsite" />
+          <ScalarProperty Name="cust_gstno" ColumnName="cust_gstno" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

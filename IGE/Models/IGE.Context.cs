@@ -16,10 +16,10 @@ namespace IGE.Models
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class indgarmentsexpoEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public indgarmentsexpoEntities()
-            : base("name=indgarmentsexpoEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -32,6 +32,7 @@ namespace IGE.Models
         public DbSet<City> Cities { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<farm> farms { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<MemberType> MemberTypes { get; set; }
@@ -414,6 +415,182 @@ namespace IGE.Models
                 new ObjectParameter("con_name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CountryUpdate_Result>("usp_CountryUpdate", con_idParameter, con_nameParameter);
+        }
+    
+        public virtual int usp_CustomerDelete(Nullable<long> cust_id)
+        {
+            var cust_idParameter = cust_id.HasValue ?
+                new ObjectParameter("cust_id", cust_id) :
+                new ObjectParameter("cust_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_CustomerDelete", cust_idParameter);
+        }
+    
+        public virtual ObjectResult<usp_CustomerInsert_Result> usp_CustomerInsert(Nullable<long> cust_code, string cust_type, string cust_name, string cust_brand, string cust_contactperson, string cust_address1, string cust_address2, string cust_address3, string cust_city, string cust_district, string cust_state, string cust_pincode, string cust_mobile, string cust_phone, string cust_mobile2, string cust_email, string cust_webbsite, string cust_gstno)
+        {
+            var cust_codeParameter = cust_code.HasValue ?
+                new ObjectParameter("cust_code", cust_code) :
+                new ObjectParameter("cust_code", typeof(long));
+    
+            var cust_typeParameter = cust_type != null ?
+                new ObjectParameter("cust_type", cust_type) :
+                new ObjectParameter("cust_type", typeof(string));
+    
+            var cust_nameParameter = cust_name != null ?
+                new ObjectParameter("cust_name", cust_name) :
+                new ObjectParameter("cust_name", typeof(string));
+    
+            var cust_brandParameter = cust_brand != null ?
+                new ObjectParameter("cust_brand", cust_brand) :
+                new ObjectParameter("cust_brand", typeof(string));
+    
+            var cust_contactpersonParameter = cust_contactperson != null ?
+                new ObjectParameter("cust_contactperson", cust_contactperson) :
+                new ObjectParameter("cust_contactperson", typeof(string));
+    
+            var cust_address1Parameter = cust_address1 != null ?
+                new ObjectParameter("cust_address1", cust_address1) :
+                new ObjectParameter("cust_address1", typeof(string));
+    
+            var cust_address2Parameter = cust_address2 != null ?
+                new ObjectParameter("cust_address2", cust_address2) :
+                new ObjectParameter("cust_address2", typeof(string));
+    
+            var cust_address3Parameter = cust_address3 != null ?
+                new ObjectParameter("cust_address3", cust_address3) :
+                new ObjectParameter("cust_address3", typeof(string));
+    
+            var cust_cityParameter = cust_city != null ?
+                new ObjectParameter("cust_city", cust_city) :
+                new ObjectParameter("cust_city", typeof(string));
+    
+            var cust_districtParameter = cust_district != null ?
+                new ObjectParameter("cust_district", cust_district) :
+                new ObjectParameter("cust_district", typeof(string));
+    
+            var cust_stateParameter = cust_state != null ?
+                new ObjectParameter("cust_state", cust_state) :
+                new ObjectParameter("cust_state", typeof(string));
+    
+            var cust_pincodeParameter = cust_pincode != null ?
+                new ObjectParameter("cust_pincode", cust_pincode) :
+                new ObjectParameter("cust_pincode", typeof(string));
+    
+            var cust_mobileParameter = cust_mobile != null ?
+                new ObjectParameter("cust_mobile", cust_mobile) :
+                new ObjectParameter("cust_mobile", typeof(string));
+    
+            var cust_phoneParameter = cust_phone != null ?
+                new ObjectParameter("cust_phone", cust_phone) :
+                new ObjectParameter("cust_phone", typeof(string));
+    
+            var cust_mobile2Parameter = cust_mobile2 != null ?
+                new ObjectParameter("cust_mobile2", cust_mobile2) :
+                new ObjectParameter("cust_mobile2", typeof(string));
+    
+            var cust_emailParameter = cust_email != null ?
+                new ObjectParameter("cust_email", cust_email) :
+                new ObjectParameter("cust_email", typeof(string));
+    
+            var cust_webbsiteParameter = cust_webbsite != null ?
+                new ObjectParameter("cust_webbsite", cust_webbsite) :
+                new ObjectParameter("cust_webbsite", typeof(string));
+    
+            var cust_gstnoParameter = cust_gstno != null ?
+                new ObjectParameter("cust_gstno", cust_gstno) :
+                new ObjectParameter("cust_gstno", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CustomerInsert_Result>("usp_CustomerInsert", cust_codeParameter, cust_typeParameter, cust_nameParameter, cust_brandParameter, cust_contactpersonParameter, cust_address1Parameter, cust_address2Parameter, cust_address3Parameter, cust_cityParameter, cust_districtParameter, cust_stateParameter, cust_pincodeParameter, cust_mobileParameter, cust_phoneParameter, cust_mobile2Parameter, cust_emailParameter, cust_webbsiteParameter, cust_gstnoParameter);
+        }
+    
+        public virtual ObjectResult<usp_CustomerSelect_Result> usp_CustomerSelect(Nullable<long> cust_id)
+        {
+            var cust_idParameter = cust_id.HasValue ?
+                new ObjectParameter("cust_id", cust_id) :
+                new ObjectParameter("cust_id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CustomerSelect_Result>("usp_CustomerSelect", cust_idParameter);
+        }
+    
+        public virtual ObjectResult<usp_CustomerUpdate_Result> usp_CustomerUpdate(Nullable<long> cust_id, Nullable<long> cust_code, string cust_type, string cust_name, string cust_brand, string cust_contactperson, string cust_address1, string cust_address2, string cust_address3, string cust_city, string cust_district, string cust_state, string cust_pincode, string cust_mobile, string cust_phone, string cust_mobile2, string cust_email, string cust_webbsite, string cust_gstno)
+        {
+            var cust_idParameter = cust_id.HasValue ?
+                new ObjectParameter("cust_id", cust_id) :
+                new ObjectParameter("cust_id", typeof(long));
+    
+            var cust_codeParameter = cust_code.HasValue ?
+                new ObjectParameter("cust_code", cust_code) :
+                new ObjectParameter("cust_code", typeof(long));
+    
+            var cust_typeParameter = cust_type != null ?
+                new ObjectParameter("cust_type", cust_type) :
+                new ObjectParameter("cust_type", typeof(string));
+    
+            var cust_nameParameter = cust_name != null ?
+                new ObjectParameter("cust_name", cust_name) :
+                new ObjectParameter("cust_name", typeof(string));
+    
+            var cust_brandParameter = cust_brand != null ?
+                new ObjectParameter("cust_brand", cust_brand) :
+                new ObjectParameter("cust_brand", typeof(string));
+    
+            var cust_contactpersonParameter = cust_contactperson != null ?
+                new ObjectParameter("cust_contactperson", cust_contactperson) :
+                new ObjectParameter("cust_contactperson", typeof(string));
+    
+            var cust_address1Parameter = cust_address1 != null ?
+                new ObjectParameter("cust_address1", cust_address1) :
+                new ObjectParameter("cust_address1", typeof(string));
+    
+            var cust_address2Parameter = cust_address2 != null ?
+                new ObjectParameter("cust_address2", cust_address2) :
+                new ObjectParameter("cust_address2", typeof(string));
+    
+            var cust_address3Parameter = cust_address3 != null ?
+                new ObjectParameter("cust_address3", cust_address3) :
+                new ObjectParameter("cust_address3", typeof(string));
+    
+            var cust_cityParameter = cust_city != null ?
+                new ObjectParameter("cust_city", cust_city) :
+                new ObjectParameter("cust_city", typeof(string));
+    
+            var cust_districtParameter = cust_district != null ?
+                new ObjectParameter("cust_district", cust_district) :
+                new ObjectParameter("cust_district", typeof(string));
+    
+            var cust_stateParameter = cust_state != null ?
+                new ObjectParameter("cust_state", cust_state) :
+                new ObjectParameter("cust_state", typeof(string));
+    
+            var cust_pincodeParameter = cust_pincode != null ?
+                new ObjectParameter("cust_pincode", cust_pincode) :
+                new ObjectParameter("cust_pincode", typeof(string));
+    
+            var cust_mobileParameter = cust_mobile != null ?
+                new ObjectParameter("cust_mobile", cust_mobile) :
+                new ObjectParameter("cust_mobile", typeof(string));
+    
+            var cust_phoneParameter = cust_phone != null ?
+                new ObjectParameter("cust_phone", cust_phone) :
+                new ObjectParameter("cust_phone", typeof(string));
+    
+            var cust_mobile2Parameter = cust_mobile2 != null ?
+                new ObjectParameter("cust_mobile2", cust_mobile2) :
+                new ObjectParameter("cust_mobile2", typeof(string));
+    
+            var cust_emailParameter = cust_email != null ?
+                new ObjectParameter("cust_email", cust_email) :
+                new ObjectParameter("cust_email", typeof(string));
+    
+            var cust_webbsiteParameter = cust_webbsite != null ?
+                new ObjectParameter("cust_webbsite", cust_webbsite) :
+                new ObjectParameter("cust_webbsite", typeof(string));
+    
+            var cust_gstnoParameter = cust_gstno != null ?
+                new ObjectParameter("cust_gstno", cust_gstno) :
+                new ObjectParameter("cust_gstno", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_CustomerUpdate_Result>("usp_CustomerUpdate", cust_idParameter, cust_codeParameter, cust_typeParameter, cust_nameParameter, cust_brandParameter, cust_contactpersonParameter, cust_address1Parameter, cust_address2Parameter, cust_address3Parameter, cust_cityParameter, cust_districtParameter, cust_stateParameter, cust_pincodeParameter, cust_mobileParameter, cust_phoneParameter, cust_mobile2Parameter, cust_emailParameter, cust_webbsiteParameter, cust_gstnoParameter);
         }
     
         public virtual int usp_farmDelete(Nullable<long> farm_id)

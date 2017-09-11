@@ -1,98 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="indgarmentsexpoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="indgarmentsexpoModelStoreContainer">
-    <EntitySet Name="BusinessType" EntityType="indgarmentsexpoModel.Store.BusinessType" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="City" EntityType="indgarmentsexpoModel.Store.City" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="Company" EntityType="indgarmentsexpoModel.Store.Company" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="Country" EntityType="indgarmentsexpoModel.Store.Country" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="farm" EntityType="indgarmentsexpoModel.Store.farm" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="Member" EntityType="indgarmentsexpoModel.Store.Member" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="MemberType" EntityType="indgarmentsexpoModel.Store.MemberType" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="module" EntityType="indgarmentsexpoModel.Store.module" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="States" EntityType="indgarmentsexpoModel.Store.States" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="users" EntityType="indgarmentsexpoModel.Store.users" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <EntitySet Name="UserType" EntityType="indgarmentsexpoModel.Store.UserType" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_ci__5FB337D6">
+<Schema Namespace="AA_IGEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AA_IGEModelStoreContainer">
+    <EntitySet Name="BusinessType" EntityType="AA_IGEModel.Store.BusinessType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="City" EntityType="AA_IGEModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="AA_IGEModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country" EntityType="AA_IGEModel.Store.Country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customer" EntityType="AA_IGEModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="farm" EntityType="AA_IGEModel.Store.farm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Member" EntityType="AA_IGEModel.Store.Member" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MemberType" EntityType="AA_IGEModel.Store.MemberType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="module" EntityType="AA_IGEModel.Store.module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="States" EntityType="AA_IGEModel.Store.States" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="AA_IGEModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserType" EntityType="AA_IGEModel.Store.UserType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__BusinessT__bt_ci__656C112C" Association="AA_IGEModel.Store.FK__BusinessT__bt_ci__656C112C">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessType" />
     </AssociationSet>
-    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_mi__60A75C0F">
+    <AssociationSet Name="FK__BusinessT__bt_mi__66603565" Association="AA_IGEModel.Store.FK__BusinessT__bt_mi__66603565">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessType" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__con_id__182C9B23" Association="indgarmentsexpoModel.Store.FK__City__con_id__182C9B23">
+    <AssociationSet Name="FK__City__con_id__0CBAE877" Association="AA_IGEModel.Store.FK__City__con_id__0CBAE877">
       <End Role="Country" EntitySet="Country" />
       <End Role="City" EntitySet="City" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="indgarmentsexpoModel.Store.FK__City__sta_id__1920BF5C">
+    <AssociationSet Name="FK__City__sta_id__0DAF0CB0" Association="AA_IGEModel.Store.FK__City__sta_id__0DAF0CB0">
       <End Role="States" EntitySet="States" />
       <End Role="City" EntitySet="City" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="indgarmentsexpoModel.Store.FK__Company__city_id__21B6055D">
+    <AssociationSet Name="FK__Company__city_id__182C9B23" Association="AA_IGEModel.Store.FK__Company__city_id__182C9B23">
       <End Role="City" EntitySet="City" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="indgarmentsexpoModel.Store.FK__Company__con_id__239E4DCF">
+    <AssociationSet Name="FK__Company__con_id__1A14E395" Association="AA_IGEModel.Store.FK__Company__con_id__1A14E395">
       <End Role="Country" EntitySet="Country" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="indgarmentsexpoModel.Store.FK__Company__sta_id__22AA2996">
+    <AssociationSet Name="FK__Company__sta_id__1920BF5C" Association="AA_IGEModel.Store.FK__Company__sta_id__1920BF5C">
       <End Role="States" EntitySet="States" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="indgarmentsexpoModel.Store.FK__farm__module_id__4222D4EF">
+    <AssociationSet Name="FK__farm__module_id__403A8C7D" Association="AA_IGEModel.Store.FK__farm__module_id__403A8C7D">
       <End Role="module" EntitySet="module" />
       <End Role="farm" EntitySet="farm" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__bt_id__656C112C" Association="indgarmentsexpoModel.Store.FK__Member__bt_id__656C112C">
+    <AssociationSet Name="FK__Member__bt_id__6EF57B66" Association="AA_IGEModel.Store.FK__Member__bt_id__6EF57B66">
       <End Role="BusinessType" EntitySet="BusinessType" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__city_id__6D0D32F4" Association="indgarmentsexpoModel.Store.FK__Member__city_id__6D0D32F4">
+    <AssociationSet Name="FK__Member__city_id__76969D2E" Association="AA_IGEModel.Store.FK__Member__city_id__76969D2E">
       <End Role="City" EntitySet="City" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__con_id__6EF57B66" Association="indgarmentsexpoModel.Store.FK__Member__con_id__6EF57B66">
+    <AssociationSet Name="FK__Member__con_id__787EE5A0" Association="AA_IGEModel.Store.FK__Member__con_id__787EE5A0">
       <End Role="Country" EntitySet="Country" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_cid__7A672E12" Association="indgarmentsexpoModel.Store.FK__Member__mem_cid__7A672E12">
+    <AssociationSet Name="FK__Member__mem_cid__03F0984C" Association="AA_IGEModel.Store.FK__Member__mem_cid__03F0984C">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_mid__7B5B524B" Association="indgarmentsexpoModel.Store.FK__Member__mem_mid__7B5B524B">
+    <AssociationSet Name="FK__Member__mem_mid__04E4BC85" Association="AA_IGEModel.Store.FK__Member__mem_mid__04E4BC85">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mt_id__6477ECF3" Association="indgarmentsexpoModel.Store.FK__Member__mt_id__6477ECF3">
+    <AssociationSet Name="FK__Member__mt_id__6E01572D" Association="AA_IGEModel.Store.FK__Member__mt_id__6E01572D">
       <End Role="MemberType" EntitySet="MemberType" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__sta_id__6E01572D" Association="indgarmentsexpoModel.Store.FK__Member__sta_id__6E01572D">
+    <AssociationSet Name="FK__Member__sta_id__778AC167" Association="AA_IGEModel.Store.FK__Member__sta_id__778AC167">
       <End Role="States" EntitySet="States" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_ci__5812160E">
+    <AssociationSet Name="FK__MemberTyp__mt_ci__59FA5E80" Association="AA_IGEModel.Store.FK__MemberTyp__mt_ci__59FA5E80">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberType" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_mi__59063A47">
+    <AssociationSet Name="FK__MemberTyp__mt_mi__5AEE82B9" Association="AA_IGEModel.Store.FK__MemberTyp__mt_mi__5AEE82B9">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberType" />
     </AssociationSet>
-    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="indgarmentsexpoModel.Store.FK__States__con_id__145C0A3F">
+    <AssociationSet Name="FK__States__con_id__07020F21" Association="AA_IGEModel.Store.FK__States__con_id__07020F21">
       <End Role="Country" EntitySet="Country" />
       <End Role="States" EntitySet="States" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="indgarmentsexpoModel.Store.FK__users__com_id__3D5E1FD2">
+    <AssociationSet Name="FK__users__com_id__37A5467C" Association="AA_IGEModel.Store.FK__users__com_id__37A5467C">
       <End Role="Company" EntitySet="Company" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="indgarmentsexpoModel.Store.FK__users__ut_id__3C69FB99">
+    <AssociationSet Name="FK__users__ut_id__36B12243" Association="AA_IGEModel.Store.FK__users__ut_id__36B12243">
       <End Role="UserType" EntitySet="UserType" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="indgarmentsexpoModel.Store.FK__UserType__com_id__33D4B598">
+    <AssociationSet Name="FK__UserType__com_id__2C3393D0" Association="AA_IGEModel.Store.FK__UserType__com_id__2C3393D0">
       <End Role="Company" EntitySet="Company" />
       <End Role="UserType" EntitySet="UserType" />
     </AssociationSet>
@@ -150,6 +151,30 @@
     </Key>
     <Property Name="con_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="con_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cust_code" Type="bigint" />
+    <Property Name="cust_type" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_brand" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_contactperson" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_address1" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_address2" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_address3" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_city" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_district" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_state" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_pincode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_mobile" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_phone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_mobile2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_webbsite" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_gstno" Type="nvarchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="farm">
     <Key>
@@ -244,9 +269,9 @@
     <Property Name="ut_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="com_id" Type="bigint" />
   </EntityType>
-  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_ci__656C112C">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="AA_IGEModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -256,9 +281,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
+  <Association Name="FK__BusinessT__bt_mi__66603565">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="BusinessType" Type="AA_IGEModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -268,9 +293,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__con_id__182C9B23">
-    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
-    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
+  <Association Name="FK__City__con_id__0CBAE877">
+    <End Role="Country" Type="AA_IGEModel.Store.Country" Multiplicity="0..1" />
+    <End Role="City" Type="AA_IGEModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -280,9 +305,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__sta_id__1920BF5C">
-    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
-    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
+  <Association Name="FK__City__sta_id__0DAF0CB0">
+    <End Role="States" Type="AA_IGEModel.Store.States" Multiplicity="0..1" />
+    <End Role="City" Type="AA_IGEModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -292,9 +317,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__city_id__21B6055D">
-    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
+  <Association Name="FK__Company__city_id__182C9B23">
+    <End Role="City" Type="AA_IGEModel.Store.City" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -304,9 +329,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__con_id__239E4DCF">
-    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
+  <Association Name="FK__Company__con_id__1A14E395">
+    <End Role="Country" Type="AA_IGEModel.Store.Country" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -316,9 +341,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__sta_id__22AA2996">
-    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
-    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
+  <Association Name="FK__Company__sta_id__1920BF5C">
+    <End Role="States" Type="AA_IGEModel.Store.States" Multiplicity="0..1" />
+    <End Role="Company" Type="AA_IGEModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -328,9 +353,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__farm__module_id__4222D4EF">
-    <End Role="module" Type="indgarmentsexpoModel.Store.module" Multiplicity="0..1" />
-    <End Role="farm" Type="indgarmentsexpoModel.Store.farm" Multiplicity="*" />
+  <Association Name="FK__farm__module_id__403A8C7D">
+    <End Role="module" Type="AA_IGEModel.Store.module" Multiplicity="0..1" />
+    <End Role="farm" Type="AA_IGEModel.Store.farm" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="module">
         <PropertyRef Name="module_id" />
@@ -340,9 +365,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__bt_id__656C112C">
-    <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__bt_id__6EF57B66">
+    <End Role="BusinessType" Type="AA_IGEModel.Store.BusinessType" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BusinessType">
         <PropertyRef Name="bt_id" />
@@ -352,9 +377,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__city_id__6D0D32F4">
-    <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__city_id__76969D2E">
+    <End Role="City" Type="AA_IGEModel.Store.City" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="City">
         <PropertyRef Name="city_id" />
@@ -364,9 +389,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__con_id__6EF57B66">
-    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__con_id__787EE5A0">
+    <End Role="Country" Type="AA_IGEModel.Store.Country" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -376,9 +401,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_cid__7A672E12">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_cid__03F0984C">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -388,9 +413,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_mid__7B5B524B">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mem_mid__04E4BC85">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -400,9 +425,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mt_id__6477ECF3">
-    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__mt_id__6E01572D">
+    <End Role="MemberType" Type="AA_IGEModel.Store.MemberType" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MemberType">
         <PropertyRef Name="mt_id" />
@@ -412,9 +437,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__sta_id__6E01572D">
-    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
-    <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
+  <Association Name="FK__Member__sta_id__778AC167">
+    <End Role="States" Type="AA_IGEModel.Store.States" Multiplicity="0..1" />
+    <End Role="Member" Type="AA_IGEModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="States">
         <PropertyRef Name="sta_id" />
@@ -424,9 +449,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_ci__5812160E">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_ci__59FA5E80">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="AA_IGEModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -436,9 +461,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_mi__59063A47">
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
-    <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
+  <Association Name="FK__MemberTyp__mt_mi__5AEE82B9">
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="0..1" />
+    <End Role="MemberType" Type="AA_IGEModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="users_id" />
@@ -448,9 +473,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__States__con_id__145C0A3F">
-    <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
-    <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="*" />
+  <Association Name="FK__States__con_id__07020F21">
+    <End Role="Country" Type="AA_IGEModel.Store.Country" Multiplicity="0..1" />
+    <End Role="States" Type="AA_IGEModel.Store.States" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Country">
         <PropertyRef Name="con_id" />
@@ -460,9 +485,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__com_id__3D5E1FD2">
-    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
+  <Association Name="FK__users__com_id__37A5467C">
+    <End Role="Company" Type="AA_IGEModel.Store.Company" Multiplicity="0..1" />
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -472,9 +497,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__ut_id__3C69FB99">
-    <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="0..1" />
-    <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
+  <Association Name="FK__users__ut_id__36B12243">
+    <End Role="UserType" Type="AA_IGEModel.Store.UserType" Multiplicity="0..1" />
+    <End Role="users" Type="AA_IGEModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserType">
         <PropertyRef Name="ut_id" />
@@ -484,9 +509,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserType__com_id__33D4B598">
-    <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
-    <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="*" />
+  <Association Name="FK__UserType__com_id__2C3393D0">
+    <End Role="Company" Type="AA_IGEModel.Store.Company" Multiplicity="0..1" />
+    <End Role="UserType" Type="AA_IGEModel.Store.UserType" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Company">
         <PropertyRef Name="com_id" />
@@ -496,20 +521,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="usp_BusinessTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_BusinessTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="bt_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_BusinessTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_BusinessTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="bt_name" Type="nvarchar" Mode="In" />
     <Parameter Name="bt_cdate" Type="datetime" Mode="In" />
     <Parameter Name="bt_mdate" Type="datetime" Mode="In" />
     <Parameter Name="bt_cid" Type="bigint" Mode="In" />
     <Parameter Name="bt_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_BusinessTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_BusinessTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="bt_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_BusinessTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_BusinessTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="bt_id" Type="bigint" Mode="In" />
     <Parameter Name="bt_name" Type="nvarchar" Mode="In" />
     <Parameter Name="bt_cdate" Type="datetime" Mode="In" />
@@ -517,29 +542,29 @@
     <Parameter Name="bt_cid" Type="bigint" Mode="In" />
     <Parameter Name="bt_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CityDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CityDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CityInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CityInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_name" Type="nvarchar" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CitySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CitySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_id" Type="bigint" Mode="In" />
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CityUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CityUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="city_id" Type="bigint" Mode="In" />
     <Parameter Name="city_name" Type="nvarchar" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CompanyDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CompanyDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CompanyInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CompanyInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="com_name" Type="nvarchar" Mode="In" />
     <Parameter Name="com_invoicename" Type="nvarchar" Mode="In" />
     <Parameter Name="com_address1" Type="nvarchar" Mode="In" />
@@ -562,10 +587,10 @@
     <Parameter Name="com_isdefault" Type="bit" Mode="In" />
     <Parameter Name="com_logo" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_CompanySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CompanySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CompanyUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CompanyUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="com_id" Type="bigint" Mode="In" />
     <Parameter Name="com_name" Type="nvarchar" Mode="In" />
     <Parameter Name="com_invoicename" Type="nvarchar" Mode="In" />
@@ -589,23 +614,70 @@
     <Parameter Name="com_isdefault" Type="bit" Mode="In" />
     <Parameter Name="com_logo" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_CountryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CountryDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CountryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CountryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="con_name" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_CountrySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CountrySelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_CountryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CountryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="con_id" Type="bigint" Mode="In" />
     <Parameter Name="con_name" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_farmDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cust_code" Type="bigint" Mode="In" />
+    <Parameter Name="cust_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_brand" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_contactperson" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_city" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_state" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="cust_phone" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile2" Type="varchar" Mode="In" />
+    <Parameter Name="cust_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_gstno" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+    <Parameter Name="cust_code" Type="bigint" Mode="In" />
+    <Parameter Name="cust_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_brand" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_contactperson" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_city" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_state" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="cust_phone" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile2" Type="varchar" Mode="In" />
+    <Parameter Name="cust_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_gstno" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_farmDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="farm_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_farmInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_farmInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="farm_id" Type="bigint" Mode="In" />
     <Parameter Name="module_id" Type="bigint" Mode="In" />
     <Parameter Name="farm_name" Type="nvarchar" Mode="In" />
@@ -615,10 +687,10 @@
     <Parameter Name="farm_view" Type="char" Mode="In" />
     <Parameter Name="farm_print" Type="char" Mode="In" />
   </Function>
-  <Function Name="usp_farmSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_farmSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="farm_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_farmUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_farmUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="farm_id" Type="bigint" Mode="In" />
     <Parameter Name="module_id" Type="bigint" Mode="In" />
     <Parameter Name="farm_name" Type="nvarchar" Mode="In" />
@@ -628,10 +700,10 @@
     <Parameter Name="farm_view" Type="char" Mode="In" />
     <Parameter Name="farm_print" Type="char" Mode="In" />
   </Function>
-  <Function Name="usp_MemberDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mem_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mt_id" Type="bigint" Mode="In" />
     <Parameter Name="bt_id" Type="bigint" Mode="In" />
     <Parameter Name="mem_name" Type="nvarchar" Mode="In" />
@@ -658,23 +730,23 @@
     <Parameter Name="mem_cid" Type="bigint" Mode="In" />
     <Parameter Name="mem_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mem_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mt_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mt_name" Type="nvarchar" Mode="In" />
     <Parameter Name="mt_cdate" Type="datetime" Mode="In" />
     <Parameter Name="mt_mdate" Type="datetime" Mode="In" />
     <Parameter Name="mt_cid" Type="bigint" Mode="In" />
     <Parameter Name="mt_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mt_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mt_id" Type="bigint" Mode="In" />
     <Parameter Name="mt_name" Type="nvarchar" Mode="In" />
     <Parameter Name="mt_cdate" Type="datetime" Mode="In" />
@@ -682,7 +754,7 @@
     <Parameter Name="mt_cid" Type="bigint" Mode="In" />
     <Parameter Name="mt_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_MemberUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_MemberUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="mem_id" Type="bigint" Mode="In" />
     <Parameter Name="mt_id" Type="bigint" Mode="In" />
     <Parameter Name="bt_id" Type="bigint" Mode="In" />
@@ -710,24 +782,24 @@
     <Parameter Name="mem_cid" Type="bigint" Mode="In" />
     <Parameter Name="mem_mid" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_moduleDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_moduleDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="module_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_moduleInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
-    <Parameter Name="module_id" Type="bigint" Mode="In" />
-    <Parameter Name="module_name" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="usp_moduleSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
-    <Parameter Name="module_id" Type="bigint" Mode="In" />
-  </Function>
-  <Function Name="usp_moduleUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_moduleInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="module_id" Type="bigint" Mode="In" />
     <Parameter Name="module_name" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="usp_rightsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_moduleSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_moduleUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="module_id" Type="bigint" Mode="In" />
+    <Parameter Name="module_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_rightsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="users_id" Type="int" Mode="In" />
   </Function>
-  <Function Name="usp_rightsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_rightsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="farm_id" Type="int" Mode="In" />
     <Parameter Name="users_id" Type="int" Mode="In" />
     <Parameter Name="farm_add" Type="char" Mode="In" />
@@ -736,30 +808,30 @@
     <Parameter Name="farm_view" Type="char" Mode="In" />
     <Parameter Name="farm_print" Type="char" Mode="In" />
   </Function>
-  <Function Name="usp_rightsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_rightsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="rusers_id" Type="int" Mode="In" />
     <Parameter Name="users_id" Type="int" Mode="In" />
   </Function>
-  <Function Name="usp_StatesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_StatesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_StatesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_StatesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_name" Type="nvarchar" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="sta_id" Type="bigint" Mode="In" />
     <Parameter Name="sta_name" Type="nvarchar" Mode="In" />
     <Parameter Name="con_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_usersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_usersDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="users_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_usersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_usersInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="users_name" Type="nvarchar" Mode="In" />
     <Parameter Name="users_password" Type="nvarchar" Mode="In" />
     <Parameter Name="users_question" Type="nvarchar" Mode="In" />
@@ -769,10 +841,10 @@
     <Parameter Name="ut_id" Type="bigint" Mode="In" />
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_usersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_usersSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="users_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_usersUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_usersUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="users_id" Type="bigint" Mode="In" />
     <Parameter Name="users_name" Type="nvarchar" Mode="In" />
     <Parameter Name="users_password" Type="nvarchar" Mode="In" />
@@ -783,25 +855,25 @@
     <Parameter Name="ut_id" Type="bigint" Mode="In" />
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_UserTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_UserTypeDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ut_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_UserTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_UserTypeInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ut_code" Type="nvarchar" Mode="In" />
     <Parameter Name="ut_name" Type="nvarchar" Mode="In" />
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_UserTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_UserTypeSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ut_id" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="usp_UserTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+  <Function Name="usp_UserTypeUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ut_id" Type="bigint" Mode="In" />
     <Parameter Name="ut_code" Type="nvarchar" Mode="In" />
     <Parameter Name="ut_name" Type="nvarchar" Mode="In" />
     <Parameter Name="com_id" Type="bigint" Mode="In" />
   </Function>
   <!--Errors Found During Generation:
-      warning 6013: The table/view 'AA_IGE.indiangarmentsexpo.rights' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'AA_IGE.dbo.rights' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="rights">
         <Property Name="farm_id" Type="bigint" />

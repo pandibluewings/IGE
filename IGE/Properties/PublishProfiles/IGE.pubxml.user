@@ -1355,7 +1355,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/03/2017 12:44:42</publishTime>
     </File>
     <File Include="bin/IGE.dll">
-      <publishTime>09/08/2017 09:07:03</publishTime>
+      <publishTime>09/10/2017 23:01:49</publishTime>
     </File>
     <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
       <publishTime>09/03/2017 12:44:44</publishTime>
@@ -1682,13 +1682,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/03/2017 12:43:55</publishTime>
     </File>
     <File Include="Models/IGE.Context.tt">
-      <publishTime>09/08/2017 09:01:38</publishTime>
+      <publishTime>09/10/2017 23:00:42</publishTime>
     </File>
     <File Include="Models/IGE.edmx.diagram">
-      <publishTime>09/08/2017 09:01:47</publishTime>
+      <publishTime>09/10/2017 23:01:03</publishTime>
     </File>
     <File Include="Models/IGE.tt">
-      <publishTime>09/08/2017 09:01:39</publishTime>
+      <publishTime>09/10/2017 23:00:43</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>09/03/2017 12:44:50</publishTime>
@@ -1735,6 +1735,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/_references.js">
       <publishTime>09/03/2017 12:44:36</publishTime>
     </File>
+    <File Include="Views/Admin/CustomerList.cshtml">
+      <publishTime>09/10/2017 22:11:41</publishTime>
+    </File>
     <File Include="Views/Admin/Index.cshtml">
       <publishTime>09/07/2017 21:23:56</publishTime>
     </File>
@@ -1766,7 +1769,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2017 07:32:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2017 09:07:05</publishTime>
+      <publishTime>09/10/2017 23:01:51</publishTime>
     </File>
   </ItemGroup>
 </Project>

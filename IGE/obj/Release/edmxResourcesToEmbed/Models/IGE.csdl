@@ -5,6 +5,7 @@
     <EntitySet Name="Cities" EntityType="indgarmentsexpoModel.City" />
     <EntitySet Name="Companies" EntityType="indgarmentsexpoModel.Company" />
     <EntitySet Name="Countries" EntityType="indgarmentsexpoModel.Country" />
+    <EntitySet Name="Customers" EntityType="indgarmentsexpoModel.Customer" />
     <EntitySet Name="farms" EntityType="indgarmentsexpoModel.farm" />
     <EntitySet Name="Members" EntityType="indgarmentsexpoModel.Member" />
     <EntitySet Name="MemberTypes" EntityType="indgarmentsexpoModel.MemberType" />
@@ -12,87 +13,87 @@
     <EntitySet Name="States" EntityType="indgarmentsexpoModel.State" />
     <EntitySet Name="users" EntityType="indgarmentsexpoModel.user" />
     <EntitySet Name="UserTypes" EntityType="indgarmentsexpoModel.UserType" />
-    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6">
+    <AssociationSet Name="FK__BusinessT__bt_ci__1B9317B3" Association="indgarmentsexpoModel.FK__BusinessT__bt_ci__1B9317B3">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F">
+    <AssociationSet Name="FK__BusinessT__bt_mi__1C873BEC" Association="indgarmentsexpoModel.FK__BusinessT__bt_mi__1C873BEC">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__bt_id__656C112C" Association="indgarmentsexpoModel.FK__Member__bt_id__656C112C">
+    <AssociationSet Name="FK__Member__bt_id__214BF109" Association="indgarmentsexpoModel.FK__Member__bt_id__214BF109">
       <End Role="BusinessType" EntitySet="BusinessTypes" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__con_id__182C9B23" Association="indgarmentsexpoModel.FK__City__con_id__182C9B23">
+    <AssociationSet Name="FK__City__con_id__540C7B00" Association="indgarmentsexpoModel.FK__City__con_id__540C7B00">
       <End Role="Country" EntitySet="Countries" />
       <End Role="City" EntitySet="Cities" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="indgarmentsexpoModel.FK__City__sta_id__1920BF5C">
+    <AssociationSet Name="FK__City__sta_id__55009F39" Association="indgarmentsexpoModel.FK__City__sta_id__55009F39">
       <End Role="States" EntitySet="States" />
       <End Role="City" EntitySet="Cities" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="indgarmentsexpoModel.FK__Company__city_id__21B6055D">
+    <AssociationSet Name="FK__Company__city_id__5D95E53A" Association="indgarmentsexpoModel.FK__Company__city_id__5D95E53A">
       <End Role="City" EntitySet="Cities" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__city_id__6D0D32F4" Association="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4">
+    <AssociationSet Name="FK__Member__city_id__28ED12D1" Association="indgarmentsexpoModel.FK__Member__city_id__28ED12D1">
       <End Role="City" EntitySet="Cities" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="indgarmentsexpoModel.FK__Company__con_id__239E4DCF">
+    <AssociationSet Name="FK__Company__con_id__5F7E2DAC" Association="indgarmentsexpoModel.FK__Company__con_id__5F7E2DAC">
       <End Role="Country" EntitySet="Countries" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="indgarmentsexpoModel.FK__Company__sta_id__22AA2996">
+    <AssociationSet Name="FK__Company__sta_id__5E8A0973" Association="indgarmentsexpoModel.FK__Company__sta_id__5E8A0973">
       <End Role="States" EntitySet="States" />
       <End Role="Company" EntitySet="Companies" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2">
+    <AssociationSet Name="FK__users__com_id__793DFFAF" Association="indgarmentsexpoModel.FK__users__com_id__793DFFAF">
       <End Role="Company" EntitySet="Companies" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="indgarmentsexpoModel.FK__UserType__com_id__33D4B598">
+    <AssociationSet Name="FK__UserType__com_id__6FB49575" Association="indgarmentsexpoModel.FK__UserType__com_id__6FB49575">
       <End Role="Company" EntitySet="Companies" />
       <End Role="UserType" EntitySet="UserTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__con_id__6EF57B66" Association="indgarmentsexpoModel.FK__Member__con_id__6EF57B66">
+    <AssociationSet Name="FK__Member__con_id__2AD55B43" Association="indgarmentsexpoModel.FK__Member__con_id__2AD55B43">
       <End Role="Country" EntitySet="Countries" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="indgarmentsexpoModel.FK__States__con_id__145C0A3F">
+    <AssociationSet Name="FK__States__con_id__503BEA1C" Association="indgarmentsexpoModel.FK__States__con_id__503BEA1C">
       <End Role="Country" EntitySet="Countries" />
       <End Role="States" EntitySet="States" />
     </AssociationSet>
-    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="indgarmentsexpoModel.FK__farm__module_id__4222D4EF">
+    <AssociationSet Name="FK__farm__module_id__7E02B4CC" Association="indgarmentsexpoModel.FK__farm__module_id__7E02B4CC">
       <End Role="module" EntitySet="modules" />
       <End Role="farm" EntitySet="farms" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_cid__7A672E12" Association="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12">
+    <AssociationSet Name="FK__Member__mem_cid__36470DEF" Association="indgarmentsexpoModel.FK__Member__mem_cid__36470DEF">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_mid__7B5B524B" Association="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B">
+    <AssociationSet Name="FK__Member__mem_mid__373B3228" Association="indgarmentsexpoModel.FK__Member__mem_mid__373B3228">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mt_id__6477ECF3" Association="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3">
+    <AssociationSet Name="FK__Member__mt_id__2057CCD0" Association="indgarmentsexpoModel.FK__Member__mt_id__2057CCD0">
       <End Role="MemberType" EntitySet="MemberTypes" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__sta_id__6E01572D" Association="indgarmentsexpoModel.FK__Member__sta_id__6E01572D">
+    <AssociationSet Name="FK__Member__sta_id__29E1370A" Association="indgarmentsexpoModel.FK__Member__sta_id__29E1370A">
       <End Role="States" EntitySet="States" />
       <End Role="Member" EntitySet="Members" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E">
+    <AssociationSet Name="FK__MemberTyp__mt_ci__13F1F5EB" Association="indgarmentsexpoModel.FK__MemberTyp__mt_ci__13F1F5EB">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47">
+    <AssociationSet Name="FK__MemberTyp__mt_mi__14E61A24" Association="indgarmentsexpoModel.FK__MemberTyp__mt_mi__14E61A24">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberTypes" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="indgarmentsexpoModel.FK__users__ut_id__3C69FB99">
+    <AssociationSet Name="FK__users__ut_id__7849DB76" Association="indgarmentsexpoModel.FK__users__ut_id__7849DB76">
       <End Role="UserType" EntitySet="UserTypes" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
@@ -201,6 +202,53 @@
     <FunctionImport Name="usp_CountryUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CountryUpdate_Result)">
       <Parameter Name="con_id" Mode="In" Type="Int64" />
       <Parameter Name="con_name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerDelete">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerInsert" ReturnType="Collection(indgarmentsexpoModel.usp_CustomerInsert_Result)">
+      <Parameter Name="cust_code" Mode="In" Type="Int64" />
+      <Parameter Name="cust_type" Mode="In" Type="String" />
+      <Parameter Name="cust_name" Mode="In" Type="String" />
+      <Parameter Name="cust_brand" Mode="In" Type="String" />
+      <Parameter Name="cust_contactperson" Mode="In" Type="String" />
+      <Parameter Name="cust_address1" Mode="In" Type="String" />
+      <Parameter Name="cust_address2" Mode="In" Type="String" />
+      <Parameter Name="cust_address3" Mode="In" Type="String" />
+      <Parameter Name="cust_city" Mode="In" Type="String" />
+      <Parameter Name="cust_district" Mode="In" Type="String" />
+      <Parameter Name="cust_state" Mode="In" Type="String" />
+      <Parameter Name="cust_pincode" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile" Mode="In" Type="String" />
+      <Parameter Name="cust_phone" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile2" Mode="In" Type="String" />
+      <Parameter Name="cust_email" Mode="In" Type="String" />
+      <Parameter Name="cust_webbsite" Mode="In" Type="String" />
+      <Parameter Name="cust_gstno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerSelect" ReturnType="Collection(indgarmentsexpoModel.usp_CustomerSelect_Result)">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_CustomerUpdate" ReturnType="Collection(indgarmentsexpoModel.usp_CustomerUpdate_Result)">
+      <Parameter Name="cust_id" Mode="In" Type="Int64" />
+      <Parameter Name="cust_code" Mode="In" Type="Int64" />
+      <Parameter Name="cust_type" Mode="In" Type="String" />
+      <Parameter Name="cust_name" Mode="In" Type="String" />
+      <Parameter Name="cust_brand" Mode="In" Type="String" />
+      <Parameter Name="cust_contactperson" Mode="In" Type="String" />
+      <Parameter Name="cust_address1" Mode="In" Type="String" />
+      <Parameter Name="cust_address2" Mode="In" Type="String" />
+      <Parameter Name="cust_address3" Mode="In" Type="String" />
+      <Parameter Name="cust_city" Mode="In" Type="String" />
+      <Parameter Name="cust_district" Mode="In" Type="String" />
+      <Parameter Name="cust_state" Mode="In" Type="String" />
+      <Parameter Name="cust_pincode" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile" Mode="In" Type="String" />
+      <Parameter Name="cust_phone" Mode="In" Type="String" />
+      <Parameter Name="cust_mobile2" Mode="In" Type="String" />
+      <Parameter Name="cust_email" Mode="In" Type="String" />
+      <Parameter Name="cust_webbsite" Mode="In" Type="String" />
+      <Parameter Name="cust_gstno" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="usp_farmDelete">
       <Parameter Name="farm_id" Mode="In" Type="Int64" />
@@ -411,9 +459,9 @@
     <Property Name="bt_mdate" Type="DateTime" Precision="3" />
     <Property Name="bt_cid" Type="Int64" />
     <Property Name="bt_mid" Type="Int64" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6" FromRole="BusinessType" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F" FromRole="BusinessType" ToRole="users" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__bt_id__656C112C" FromRole="BusinessType" ToRole="Member" />
+    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__1B9317B3" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__1C873BEC" FromRole="BusinessType" ToRole="users" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__bt_id__214BF109" FromRole="BusinessType" ToRole="Member" />
   </EntityType>
   <EntityType Name="City">
     <Key>
@@ -423,10 +471,10 @@
     <Property Name="city_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="con_id" Type="Int64" />
     <Property Name="sta_id" Type="Int64" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__City__con_id__182C9B23" FromRole="City" ToRole="Country" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__City__sta_id__1920BF5C" FromRole="City" ToRole="States" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__city_id__21B6055D" FromRole="City" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4" FromRole="City" ToRole="Member" />
+    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__City__con_id__540C7B00" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__City__sta_id__55009F39" FromRole="City" ToRole="States" />
+    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__city_id__5D95E53A" FromRole="City" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__city_id__28ED12D1" FromRole="City" ToRole="Member" />
   </EntityType>
   <EntityType Name="Company">
     <Key>
@@ -454,11 +502,11 @@
     <Property Name="com_servicetaxno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="com_isdefault" Type="Boolean" Nullable="false" />
     <Property Name="com_logo" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Company__city_id__21B6055D" FromRole="Company" ToRole="City" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Company__con_id__239E4DCF" FromRole="Company" ToRole="Country" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Company__sta_id__22AA2996" FromRole="Company" ToRole="States" />
-    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2" FromRole="Company" ToRole="users" />
-    <NavigationProperty Name="UserTypes" Relationship="indgarmentsexpoModel.FK__UserType__com_id__33D4B598" FromRole="Company" ToRole="UserType" />
+    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Company__city_id__5D95E53A" FromRole="Company" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Company__con_id__5F7E2DAC" FromRole="Company" ToRole="Country" />
+    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Company__sta_id__5E8A0973" FromRole="Company" ToRole="States" />
+    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__com_id__793DFFAF" FromRole="Company" ToRole="users" />
+    <NavigationProperty Name="UserTypes" Relationship="indgarmentsexpoModel.FK__UserType__com_id__6FB49575" FromRole="Company" ToRole="UserType" />
   </EntityType>
   <EntityType Name="Country">
     <Key>
@@ -466,10 +514,34 @@
     </Key>
     <Property Name="con_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="con_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__con_id__182C9B23" FromRole="Country" ToRole="City" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__con_id__239E4DCF" FromRole="Country" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__con_id__6EF57B66" FromRole="Country" ToRole="Member" />
-    <NavigationProperty Name="States" Relationship="indgarmentsexpoModel.FK__States__con_id__145C0A3F" FromRole="Country" ToRole="States" />
+    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__con_id__540C7B00" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__con_id__5F7E2DAC" FromRole="Country" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__con_id__2AD55B43" FromRole="Country" ToRole="Member" />
+    <NavigationProperty Name="States" Relationship="indgarmentsexpoModel.FK__States__con_id__503BEA1C" FromRole="Country" ToRole="States" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="cust_code" Type="Int64" />
+    <Property Name="cust_type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_brand" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_contactperson" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address1" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address2" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_address3" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="cust_city" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_district" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_state" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_pincode" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_mobile" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_phone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_mobile2" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cust_email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_webbsite" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="cust_gstno" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="farm">
     <Key>
@@ -483,7 +555,7 @@
     <Property Name="farm_delete" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
     <Property Name="farm_view" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
     <Property Name="farm_print" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-    <NavigationProperty Name="module" Relationship="indgarmentsexpoModel.FK__farm__module_id__4222D4EF" FromRole="farm" ToRole="module" />
+    <NavigationProperty Name="module" Relationship="indgarmentsexpoModel.FK__farm__module_id__7E02B4CC" FromRole="farm" ToRole="module" />
   </EntityType>
   <EntityType Name="Member">
     <Key>
@@ -515,13 +587,13 @@
     <Property Name="mem_mdate" Type="DateTime" Precision="3" />
     <Property Name="mem_cid" Type="Int64" />
     <Property Name="mem_mid" Type="Int64" />
-    <NavigationProperty Name="BusinessType" Relationship="indgarmentsexpoModel.FK__Member__bt_id__656C112C" FromRole="Member" ToRole="BusinessType" />
-    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Member__city_id__6D0D32F4" FromRole="Member" ToRole="City" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Member__con_id__6EF57B66" FromRole="Member" ToRole="Country" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12" FromRole="Member" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B" FromRole="Member" ToRole="users" />
-    <NavigationProperty Name="MemberType" Relationship="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3" FromRole="Member" ToRole="MemberType" />
-    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Member__sta_id__6E01572D" FromRole="Member" ToRole="States" />
+    <NavigationProperty Name="BusinessType" Relationship="indgarmentsexpoModel.FK__Member__bt_id__214BF109" FromRole="Member" ToRole="BusinessType" />
+    <NavigationProperty Name="City" Relationship="indgarmentsexpoModel.FK__Member__city_id__28ED12D1" FromRole="Member" ToRole="City" />
+    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__Member__con_id__2AD55B43" FromRole="Member" ToRole="Country" />
+    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__36470DEF" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__373B3228" FromRole="Member" ToRole="users" />
+    <NavigationProperty Name="MemberType" Relationship="indgarmentsexpoModel.FK__Member__mt_id__2057CCD0" FromRole="Member" ToRole="MemberType" />
+    <NavigationProperty Name="State" Relationship="indgarmentsexpoModel.FK__Member__sta_id__29E1370A" FromRole="Member" ToRole="States" />
   </EntityType>
   <EntityType Name="MemberType">
     <Key>
@@ -533,9 +605,9 @@
     <Property Name="mt_mdate" Type="DateTime" Precision="3" />
     <Property Name="mt_cid" Type="Int64" />
     <Property Name="mt_mid" Type="Int64" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mt_id__6477ECF3" FromRole="MemberType" ToRole="Member" />
-    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E" FromRole="MemberType" ToRole="users" />
-    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47" FromRole="MemberType" ToRole="users" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mt_id__2057CCD0" FromRole="MemberType" ToRole="Member" />
+    <NavigationProperty Name="user" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__13F1F5EB" FromRole="MemberType" ToRole="users" />
+    <NavigationProperty Name="user1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__14E61A24" FromRole="MemberType" ToRole="users" />
   </EntityType>
   <EntityType Name="module">
     <Key>
@@ -543,7 +615,7 @@
     </Key>
     <Property Name="module_id" Type="Int64" Nullable="false" />
     <Property Name="module_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <NavigationProperty Name="farms" Relationship="indgarmentsexpoModel.FK__farm__module_id__4222D4EF" FromRole="module" ToRole="farm" />
+    <NavigationProperty Name="farms" Relationship="indgarmentsexpoModel.FK__farm__module_id__7E02B4CC" FromRole="module" ToRole="farm" />
   </EntityType>
   <EntityType Name="State">
     <Key>
@@ -552,10 +624,10 @@
     <Property Name="sta_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
     <Property Name="sta_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="con_id" Type="Int64" />
-    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__sta_id__1920BF5C" FromRole="States" ToRole="City" />
-    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__sta_id__22AA2996" FromRole="States" ToRole="Company" />
-    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__States__con_id__145C0A3F" FromRole="States" ToRole="Country" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__sta_id__6E01572D" FromRole="States" ToRole="Member" />
+    <NavigationProperty Name="Cities" Relationship="indgarmentsexpoModel.FK__City__sta_id__55009F39" FromRole="States" ToRole="City" />
+    <NavigationProperty Name="Companies" Relationship="indgarmentsexpoModel.FK__Company__sta_id__5E8A0973" FromRole="States" ToRole="Company" />
+    <NavigationProperty Name="Country" Relationship="indgarmentsexpoModel.FK__States__con_id__503BEA1C" FromRole="States" ToRole="Country" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__sta_id__29E1370A" FromRole="States" ToRole="Member" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -570,14 +642,14 @@
     <Property Name="users_phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
     <Property Name="ut_id" Type="Int64" />
     <Property Name="com_id" Type="Int64" />
-    <NavigationProperty Name="BusinessTypes" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__5FB337D6" FromRole="users" ToRole="BusinessType" />
-    <NavigationProperty Name="BusinessTypes1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__60A75C0F" FromRole="users" ToRole="BusinessType" />
-    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__users__com_id__3D5E1FD2" FromRole="users" ToRole="Company" />
-    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__7A672E12" FromRole="users" ToRole="Member" />
-    <NavigationProperty Name="Members1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__7B5B524B" FromRole="users" ToRole="Member" />
-    <NavigationProperty Name="MemberTypes" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__5812160E" FromRole="users" ToRole="MemberType" />
-    <NavigationProperty Name="MemberTypes1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__59063A47" FromRole="users" ToRole="MemberType" />
-    <NavigationProperty Name="UserType" Relationship="indgarmentsexpoModel.FK__users__ut_id__3C69FB99" FromRole="users" ToRole="UserType" />
+    <NavigationProperty Name="BusinessTypes" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_ci__1B9317B3" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="BusinessTypes1" Relationship="indgarmentsexpoModel.FK__BusinessT__bt_mi__1C873BEC" FromRole="users" ToRole="BusinessType" />
+    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__users__com_id__793DFFAF" FromRole="users" ToRole="Company" />
+    <NavigationProperty Name="Members" Relationship="indgarmentsexpoModel.FK__Member__mem_cid__36470DEF" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="Members1" Relationship="indgarmentsexpoModel.FK__Member__mem_mid__373B3228" FromRole="users" ToRole="Member" />
+    <NavigationProperty Name="MemberTypes" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_ci__13F1F5EB" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="MemberTypes1" Relationship="indgarmentsexpoModel.FK__MemberTyp__mt_mi__14E61A24" FromRole="users" ToRole="MemberType" />
+    <NavigationProperty Name="UserType" Relationship="indgarmentsexpoModel.FK__users__ut_id__7849DB76" FromRole="users" ToRole="UserType" />
   </EntityType>
   <EntityType Name="UserType">
     <Key>
@@ -587,10 +659,10 @@
     <Property Name="ut_code" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="ut_name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
     <Property Name="com_id" Type="Int64" />
-    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__UserType__com_id__33D4B598" FromRole="UserType" ToRole="Company" />
-    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__ut_id__3C69FB99" FromRole="UserType" ToRole="users" />
+    <NavigationProperty Name="Company" Relationship="indgarmentsexpoModel.FK__UserType__com_id__6FB49575" FromRole="UserType" ToRole="Company" />
+    <NavigationProperty Name="users" Relationship="indgarmentsexpoModel.FK__users__ut_id__7849DB76" FromRole="UserType" ToRole="users" />
   </EntityType>
-  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
+  <Association Name="FK__BusinessT__bt_ci__1B9317B3">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -602,7 +674,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
+  <Association Name="FK__BusinessT__bt_mi__1C873BEC">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -614,7 +686,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__bt_id__656C112C">
+  <Association Name="FK__Member__bt_id__214BF109">
     <End Role="BusinessType" Type="indgarmentsexpoModel.BusinessType" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -626,7 +698,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__con_id__182C9B23">
+  <Association Name="FK__City__con_id__540C7B00">
     <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
     <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="*" />
     <ReferentialConstraint>
@@ -638,7 +710,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__sta_id__1920BF5C">
+  <Association Name="FK__City__sta_id__55009F39">
     <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
     <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="*" />
     <ReferentialConstraint>
@@ -650,7 +722,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__city_id__21B6055D">
+  <Association Name="FK__Company__city_id__5D95E53A">
     <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -662,7 +734,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__city_id__6D0D32F4">
+  <Association Name="FK__Member__city_id__28ED12D1">
     <End Role="City" Type="indgarmentsexpoModel.City" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -674,7 +746,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__con_id__239E4DCF">
+  <Association Name="FK__Company__con_id__5F7E2DAC">
     <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -686,7 +758,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__sta_id__22AA2996">
+  <Association Name="FK__Company__sta_id__5E8A0973">
     <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -698,7 +770,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__com_id__3D5E1FD2">
+  <Association Name="FK__users__com_id__793DFFAF">
     <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="0..1" />
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="*" />
     <ReferentialConstraint>
@@ -710,7 +782,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserType__com_id__33D4B598">
+  <Association Name="FK__UserType__com_id__6FB49575">
     <End Role="Company" Type="indgarmentsexpoModel.Company" Multiplicity="0..1" />
     <End Role="UserType" Type="indgarmentsexpoModel.UserType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -722,7 +794,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__con_id__6EF57B66">
+  <Association Name="FK__Member__con_id__2AD55B43">
     <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -734,7 +806,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__States__con_id__145C0A3F">
+  <Association Name="FK__States__con_id__503BEA1C">
     <End Role="Country" Type="indgarmentsexpoModel.Country" Multiplicity="0..1" />
     <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="*" />
     <ReferentialConstraint>
@@ -746,7 +818,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__farm__module_id__4222D4EF">
+  <Association Name="FK__farm__module_id__7E02B4CC">
     <End Role="module" Type="indgarmentsexpoModel.module" Multiplicity="0..1" />
     <End Role="farm" Type="indgarmentsexpoModel.farm" Multiplicity="*" />
     <ReferentialConstraint>
@@ -758,7 +830,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_cid__7A672E12">
+  <Association Name="FK__Member__mem_cid__36470DEF">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -770,7 +842,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_mid__7B5B524B">
+  <Association Name="FK__Member__mem_mid__373B3228">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -782,7 +854,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mt_id__6477ECF3">
+  <Association Name="FK__Member__mt_id__2057CCD0">
     <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -794,7 +866,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__sta_id__6E01572D">
+  <Association Name="FK__Member__sta_id__29E1370A">
     <End Role="States" Type="indgarmentsexpoModel.State" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -806,7 +878,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_ci__5812160E">
+  <Association Name="FK__MemberTyp__mt_ci__13F1F5EB">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -818,7 +890,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_mi__59063A47">
+  <Association Name="FK__MemberTyp__mt_mi__14E61A24">
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="0..1" />
     <End Role="MemberType" Type="indgarmentsexpoModel.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -830,7 +902,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__ut_id__3C69FB99">
+  <Association Name="FK__users__ut_id__7849DB76">
     <End Role="UserType" Type="indgarmentsexpoModel.UserType" Multiplicity="0..1" />
     <End Role="users" Type="indgarmentsexpoModel.user" Multiplicity="*" />
     <ReferentialConstraint>
@@ -967,6 +1039,69 @@
   <ComplexType Name="usp_CountryUpdate_Result">
     <Property Type="Int64" Name="con_id" Nullable="false" />
     <Property Type="String" Name="con_name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerInsert_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerSelect_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="usp_CustomerUpdate_Result">
+    <Property Type="Int64" Name="cust_id" Nullable="false" />
+    <Property Type="Int64" Name="cust_code" Nullable="true" />
+    <Property Type="String" Name="cust_type" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_brand" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_contactperson" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_address1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_address3" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="cust_city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_district" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_state" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_pincode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_phone" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_mobile2" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="cust_email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_webbsite" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="cust_gstno" Nullable="false" MaxLength="100" />
   </ComplexType>
   <ComplexType Name="usp_farmInsert_Result">
     <Property Type="Int64" Name="farm_id" Nullable="false" />

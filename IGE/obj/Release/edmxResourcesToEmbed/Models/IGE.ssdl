@@ -5,6 +5,7 @@
     <EntitySet Name="City" EntityType="indgarmentsexpoModel.Store.City" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="Company" EntityType="indgarmentsexpoModel.Store.Company" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="Country" EntityType="indgarmentsexpoModel.Store.Country" store:Type="Tables" Schema="indiangarmentsexpo" />
+    <EntitySet Name="Customer" EntityType="indgarmentsexpoModel.Store.Customer" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="farm" EntityType="indgarmentsexpoModel.Store.farm" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="Member" EntityType="indgarmentsexpoModel.Store.Member" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="MemberType" EntityType="indgarmentsexpoModel.Store.MemberType" store:Type="Tables" Schema="indiangarmentsexpo" />
@@ -12,87 +13,87 @@
     <EntitySet Name="States" EntityType="indgarmentsexpoModel.Store.States" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="users" EntityType="indgarmentsexpoModel.Store.users" store:Type="Tables" Schema="indiangarmentsexpo" />
     <EntitySet Name="UserType" EntityType="indgarmentsexpoModel.Store.UserType" store:Type="Tables" Schema="indiangarmentsexpo" />
-    <AssociationSet Name="FK__BusinessT__bt_ci__5FB337D6" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_ci__5FB337D6">
+    <AssociationSet Name="FK__BusinessT__bt_ci__1B9317B3" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_ci__1B9317B3">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessType" />
     </AssociationSet>
-    <AssociationSet Name="FK__BusinessT__bt_mi__60A75C0F" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_mi__60A75C0F">
+    <AssociationSet Name="FK__BusinessT__bt_mi__1C873BEC" Association="indgarmentsexpoModel.Store.FK__BusinessT__bt_mi__1C873BEC">
       <End Role="users" EntitySet="users" />
       <End Role="BusinessType" EntitySet="BusinessType" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__con_id__182C9B23" Association="indgarmentsexpoModel.Store.FK__City__con_id__182C9B23">
+    <AssociationSet Name="FK__City__con_id__540C7B00" Association="indgarmentsexpoModel.Store.FK__City__con_id__540C7B00">
       <End Role="Country" EntitySet="Country" />
       <End Role="City" EntitySet="City" />
     </AssociationSet>
-    <AssociationSet Name="FK__City__sta_id__1920BF5C" Association="indgarmentsexpoModel.Store.FK__City__sta_id__1920BF5C">
+    <AssociationSet Name="FK__City__sta_id__55009F39" Association="indgarmentsexpoModel.Store.FK__City__sta_id__55009F39">
       <End Role="States" EntitySet="States" />
       <End Role="City" EntitySet="City" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__city_id__21B6055D" Association="indgarmentsexpoModel.Store.FK__Company__city_id__21B6055D">
+    <AssociationSet Name="FK__Company__city_id__5D95E53A" Association="indgarmentsexpoModel.Store.FK__Company__city_id__5D95E53A">
       <End Role="City" EntitySet="City" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__con_id__239E4DCF" Association="indgarmentsexpoModel.Store.FK__Company__con_id__239E4DCF">
+    <AssociationSet Name="FK__Company__con_id__5F7E2DAC" Association="indgarmentsexpoModel.Store.FK__Company__con_id__5F7E2DAC">
       <End Role="Country" EntitySet="Country" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__Company__sta_id__22AA2996" Association="indgarmentsexpoModel.Store.FK__Company__sta_id__22AA2996">
+    <AssociationSet Name="FK__Company__sta_id__5E8A0973" Association="indgarmentsexpoModel.Store.FK__Company__sta_id__5E8A0973">
       <End Role="States" EntitySet="States" />
       <End Role="Company" EntitySet="Company" />
     </AssociationSet>
-    <AssociationSet Name="FK__farm__module_id__4222D4EF" Association="indgarmentsexpoModel.Store.FK__farm__module_id__4222D4EF">
+    <AssociationSet Name="FK__farm__module_id__7E02B4CC" Association="indgarmentsexpoModel.Store.FK__farm__module_id__7E02B4CC">
       <End Role="module" EntitySet="module" />
       <End Role="farm" EntitySet="farm" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__bt_id__656C112C" Association="indgarmentsexpoModel.Store.FK__Member__bt_id__656C112C">
+    <AssociationSet Name="FK__Member__bt_id__214BF109" Association="indgarmentsexpoModel.Store.FK__Member__bt_id__214BF109">
       <End Role="BusinessType" EntitySet="BusinessType" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__city_id__6D0D32F4" Association="indgarmentsexpoModel.Store.FK__Member__city_id__6D0D32F4">
+    <AssociationSet Name="FK__Member__city_id__28ED12D1" Association="indgarmentsexpoModel.Store.FK__Member__city_id__28ED12D1">
       <End Role="City" EntitySet="City" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__con_id__6EF57B66" Association="indgarmentsexpoModel.Store.FK__Member__con_id__6EF57B66">
+    <AssociationSet Name="FK__Member__con_id__2AD55B43" Association="indgarmentsexpoModel.Store.FK__Member__con_id__2AD55B43">
       <End Role="Country" EntitySet="Country" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_cid__7A672E12" Association="indgarmentsexpoModel.Store.FK__Member__mem_cid__7A672E12">
+    <AssociationSet Name="FK__Member__mem_cid__36470DEF" Association="indgarmentsexpoModel.Store.FK__Member__mem_cid__36470DEF">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mem_mid__7B5B524B" Association="indgarmentsexpoModel.Store.FK__Member__mem_mid__7B5B524B">
+    <AssociationSet Name="FK__Member__mem_mid__373B3228" Association="indgarmentsexpoModel.Store.FK__Member__mem_mid__373B3228">
       <End Role="users" EntitySet="users" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__mt_id__6477ECF3" Association="indgarmentsexpoModel.Store.FK__Member__mt_id__6477ECF3">
+    <AssociationSet Name="FK__Member__mt_id__2057CCD0" Association="indgarmentsexpoModel.Store.FK__Member__mt_id__2057CCD0">
       <End Role="MemberType" EntitySet="MemberType" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__Member__sta_id__6E01572D" Association="indgarmentsexpoModel.Store.FK__Member__sta_id__6E01572D">
+    <AssociationSet Name="FK__Member__sta_id__29E1370A" Association="indgarmentsexpoModel.Store.FK__Member__sta_id__29E1370A">
       <End Role="States" EntitySet="States" />
       <End Role="Member" EntitySet="Member" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_ci__5812160E" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_ci__5812160E">
+    <AssociationSet Name="FK__MemberTyp__mt_ci__13F1F5EB" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_ci__13F1F5EB">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberType" />
     </AssociationSet>
-    <AssociationSet Name="FK__MemberTyp__mt_mi__59063A47" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_mi__59063A47">
+    <AssociationSet Name="FK__MemberTyp__mt_mi__14E61A24" Association="indgarmentsexpoModel.Store.FK__MemberTyp__mt_mi__14E61A24">
       <End Role="users" EntitySet="users" />
       <End Role="MemberType" EntitySet="MemberType" />
     </AssociationSet>
-    <AssociationSet Name="FK__States__con_id__145C0A3F" Association="indgarmentsexpoModel.Store.FK__States__con_id__145C0A3F">
+    <AssociationSet Name="FK__States__con_id__503BEA1C" Association="indgarmentsexpoModel.Store.FK__States__con_id__503BEA1C">
       <End Role="Country" EntitySet="Country" />
       <End Role="States" EntitySet="States" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__com_id__3D5E1FD2" Association="indgarmentsexpoModel.Store.FK__users__com_id__3D5E1FD2">
+    <AssociationSet Name="FK__users__com_id__793DFFAF" Association="indgarmentsexpoModel.Store.FK__users__com_id__793DFFAF">
       <End Role="Company" EntitySet="Company" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__ut_id__3C69FB99" Association="indgarmentsexpoModel.Store.FK__users__ut_id__3C69FB99">
+    <AssociationSet Name="FK__users__ut_id__7849DB76" Association="indgarmentsexpoModel.Store.FK__users__ut_id__7849DB76">
       <End Role="UserType" EntitySet="UserType" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__UserType__com_id__33D4B598" Association="indgarmentsexpoModel.Store.FK__UserType__com_id__33D4B598">
+    <AssociationSet Name="FK__UserType__com_id__6FB49575" Association="indgarmentsexpoModel.Store.FK__UserType__com_id__6FB49575">
       <End Role="Company" EntitySet="Company" />
       <End Role="UserType" EntitySet="UserType" />
     </AssociationSet>
@@ -150,6 +151,30 @@
     </Key>
     <Property Name="con_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="con_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cust_code" Type="bigint" />
+    <Property Name="cust_type" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_brand" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_contactperson" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_address1" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_address2" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_address3" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="cust_city" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_district" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_state" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_pincode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_mobile" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_phone" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_mobile2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cust_email" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_webbsite" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="cust_gstno" Type="nvarchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="farm">
     <Key>
@@ -244,7 +269,7 @@
     <Property Name="ut_name" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="com_id" Type="bigint" />
   </EntityType>
-  <Association Name="FK__BusinessT__bt_ci__5FB337D6">
+  <Association Name="FK__BusinessT__bt_ci__1B9317B3">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -256,7 +281,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BusinessT__bt_mi__60A75C0F">
+  <Association Name="FK__BusinessT__bt_mi__1C873BEC">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -268,7 +293,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__con_id__182C9B23">
+  <Association Name="FK__City__con_id__540C7B00">
     <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
     <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
@@ -280,7 +305,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__City__sta_id__1920BF5C">
+  <Association Name="FK__City__sta_id__55009F39">
     <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
     <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="*" />
     <ReferentialConstraint>
@@ -292,7 +317,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__city_id__21B6055D">
+  <Association Name="FK__Company__city_id__5D95E53A">
     <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -304,7 +329,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__con_id__239E4DCF">
+  <Association Name="FK__Company__con_id__5F7E2DAC">
     <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -316,7 +341,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Company__sta_id__22AA2996">
+  <Association Name="FK__Company__sta_id__5E8A0973">
     <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
     <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="*" />
     <ReferentialConstraint>
@@ -328,7 +353,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__farm__module_id__4222D4EF">
+  <Association Name="FK__farm__module_id__7E02B4CC">
     <End Role="module" Type="indgarmentsexpoModel.Store.module" Multiplicity="0..1" />
     <End Role="farm" Type="indgarmentsexpoModel.Store.farm" Multiplicity="*" />
     <ReferentialConstraint>
@@ -340,7 +365,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__bt_id__656C112C">
+  <Association Name="FK__Member__bt_id__214BF109">
     <End Role="BusinessType" Type="indgarmentsexpoModel.Store.BusinessType" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -352,7 +377,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__city_id__6D0D32F4">
+  <Association Name="FK__Member__city_id__28ED12D1">
     <End Role="City" Type="indgarmentsexpoModel.Store.City" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -364,7 +389,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__con_id__6EF57B66">
+  <Association Name="FK__Member__con_id__2AD55B43">
     <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -376,7 +401,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_cid__7A672E12">
+  <Association Name="FK__Member__mem_cid__36470DEF">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -388,7 +413,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mem_mid__7B5B524B">
+  <Association Name="FK__Member__mem_mid__373B3228">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -400,7 +425,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__mt_id__6477ECF3">
+  <Association Name="FK__Member__mt_id__2057CCD0">
     <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -412,7 +437,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Member__sta_id__6E01572D">
+  <Association Name="FK__Member__sta_id__29E1370A">
     <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="0..1" />
     <End Role="Member" Type="indgarmentsexpoModel.Store.Member" Multiplicity="*" />
     <ReferentialConstraint>
@@ -424,7 +449,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_ci__5812160E">
+  <Association Name="FK__MemberTyp__mt_ci__13F1F5EB">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -436,7 +461,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__MemberTyp__mt_mi__59063A47">
+  <Association Name="FK__MemberTyp__mt_mi__14E61A24">
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="0..1" />
     <End Role="MemberType" Type="indgarmentsexpoModel.Store.MemberType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -448,7 +473,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__States__con_id__145C0A3F">
+  <Association Name="FK__States__con_id__503BEA1C">
     <End Role="Country" Type="indgarmentsexpoModel.Store.Country" Multiplicity="0..1" />
     <End Role="States" Type="indgarmentsexpoModel.Store.States" Multiplicity="*" />
     <ReferentialConstraint>
@@ -460,7 +485,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__com_id__3D5E1FD2">
+  <Association Name="FK__users__com_id__793DFFAF">
     <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -472,7 +497,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__ut_id__3C69FB99">
+  <Association Name="FK__users__ut_id__7849DB76">
     <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="0..1" />
     <End Role="users" Type="indgarmentsexpoModel.Store.users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -484,7 +509,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UserType__com_id__33D4B598">
+  <Association Name="FK__UserType__com_id__6FB49575">
     <End Role="Company" Type="indgarmentsexpoModel.Store.Company" Multiplicity="0..1" />
     <End Role="UserType" Type="indgarmentsexpoModel.Store.UserType" Multiplicity="*" />
     <ReferentialConstraint>
@@ -601,6 +626,53 @@
   <Function Name="usp_CountryUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
     <Parameter Name="con_id" Type="bigint" Mode="In" />
     <Parameter Name="con_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+    <Parameter Name="cust_code" Type="bigint" Mode="In" />
+    <Parameter Name="cust_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_brand" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_contactperson" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_city" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_state" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="cust_phone" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile2" Type="varchar" Mode="In" />
+    <Parameter Name="cust_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_gstno" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_CustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
+    <Parameter Name="cust_id" Type="bigint" Mode="In" />
+    <Parameter Name="cust_code" Type="bigint" Mode="In" />
+    <Parameter Name="cust_type" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_brand" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_contactperson" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address1" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address2" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_address3" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_city" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_district" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_state" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_pincode" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile" Type="varchar" Mode="In" />
+    <Parameter Name="cust_phone" Type="varchar" Mode="In" />
+    <Parameter Name="cust_mobile2" Type="varchar" Mode="In" />
+    <Parameter Name="cust_email" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_webbsite" Type="nvarchar" Mode="In" />
+    <Parameter Name="cust_gstno" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="usp_farmDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="indiangarmentsexpo">
     <Parameter Name="farm_id" Type="bigint" Mode="In" />

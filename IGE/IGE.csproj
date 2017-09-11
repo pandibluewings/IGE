@@ -147,6 +147,7 @@
     <Compile Include="API\BusinessTypeController.cs" />
     <Compile Include="API\CityController.cs" />
     <Compile Include="API\CountryController.cs" />
+    <Compile Include="API\CustomerController.cs" />
     <Compile Include="API\MemberController.cs" />
     <Compile Include="API\MemberTypeController.cs" />
     <Compile Include="API\StateController.cs" />
@@ -185,6 +186,9 @@
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Country.cs">
+      <DependentUpon>IGE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\farm.cs">
@@ -258,6 +262,15 @@
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\usp_CountryUpdate_Result.cs">
+      <DependentUpon>IGE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CustomerInsert_Result.cs">
+      <DependentUpon>IGE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CustomerSelect_Result.cs">
+      <DependentUpon>IGE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\usp_CustomerUpdate_Result.cs">
       <DependentUpon>IGE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\usp_farmInsert_Result.cs">
@@ -818,6 +831,8 @@
     <Content Include="Views\Admin\MemberList.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Admin\CustomerList.cshtml" />
+    <Content Include="Views\Admin\Customer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

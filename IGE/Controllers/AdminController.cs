@@ -24,6 +24,14 @@ namespace IGE.Controllers
         {
             return View();
         }
+        public ActionResult CustomerList()
+        {
+            return View();
+        }
 
+        public ActionResult Customer()
+        {
+            return View();
+        }
     }
 }

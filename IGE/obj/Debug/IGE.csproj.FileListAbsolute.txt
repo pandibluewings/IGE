@@ -138,3 +138,4 @@ D:\GIT\Projects\IGE\IGE\bin\zh-Hans\System.Spatial.resources.dll
 D:\GIT\Projects\IGE\IGE\bin\zh-Hant\System.Spatial.resources.dll
 D:\GIT\Projects\IGE\IGE\obj\Debug\IGE.dll
 D:\GIT\Projects\IGE\IGE\obj\Debug\IGE.pdb
+D:\GIT\Projects\IGE\IGE\obj\Debug\IGE.csprojResolveAssemblyReference.cache
