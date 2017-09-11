@@ -1,0 +1,200 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/asset/css/plugins/select2.min.css" />
+
+<div class="panel box-shadow-none content-header">
+    <div class="panel-body">
+        <div class="col-md-12">
+            <h3 class="animated fadeInLeft">Customer</h3>
+            <p class="animated fadeInDown">
+                Firm <span class="fa-angle-right fa"></span>Register your information
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 panel">
+    <div class="col-md-12 panel-heading">
+        <h4>Add New Customer</h4>
+    </div>
+    <div class="col-md-12 panel-body" style="padding-bottom: 30px;">
+        <div class="col-md-12">
+            <form class="cmxform" id="frmCustomer" method="get" action="" novalidate="novalidate">
+                <div class="col-md-6">
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <div class="form-group">
+                        <select class="select2-A" style="width: 100%  !important; height :40px" id="ddlType">
+                            @* <option value ="0">Select Party Type</option>*@
+                            <option value ="01">TamilNadu Suppliers</option>
+                            <option value ="02">Otherstate Suppliers</option>
+                            <option value ="03">TamilNadu Customers</option>
+                            <option value ="04">Otherstate Customers</option>
+                        </select>
+                    </div>
+                        <span class="bar"></span>
+                      @*  <label>Party Type</label>*@
+                    </div>
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtName" name="validate_Name" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Name</label>
+                    </div>
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtContactPerson" name="validate_ContactPerson" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Contact Person</label>
+                    </div>
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtBrand" name="validate_brand" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Brand</label>
+                    </div>
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtAddress1" name="validate_address1" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Address1</label>
+                    </div>
+
+                   <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtAddress2" name="validate_address2" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Address2</label>
+                    </div>
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtAddress3" name="validate_address3" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Address3</label>
+                    </div>
+                     <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtDistrict" name="validate_District" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>District</label>
+                    </div>
+                     <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtCity" name="validate_City" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>City</label>
+                    </div>
+
+                    
+
+                     
+                </div>
+
+                <div class="col-md-6">
+                    
+                    
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtState" name="validate_State" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>State</label>
+                    </div>
+
+                     <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtPincode" name="validate_Pincode" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Pin Code</label>
+                    </div>
+
+                     <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtPhone" name="validate_Phone" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Phone</label>
+                    </div>
+
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtMobile" name="validate_Mobile" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Mobile1</label>
+                    </div>
+
+
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtMobile2" name="validate_Mobile2" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Mobile2</label>
+                    </div>
+
+
+                    
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtEmail" name="validate_Email" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Email</label>
+                    </div>
+
+                    
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtWebsite" name="validate_Website" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>Website</label>
+                    </div>
+
+                    
+                    <div class="form-group form-animate-text" style="margin-top: 40px !important;">
+                        <input type="text" class="form-text" id="txtGSTNo" name="validate_GSTNo" required="" aria-required="true">
+                        <span class="bar"></span>
+                        <label>GST No</label>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    
+                    <input id="btnSave" class="submit btn btn-danger right" type="button" value="Save">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@*<script src="~/asset/js/plugins/moment.min.js"></script>*@
+<script src="~/asset/js/plugins/select2.full.min.js"></script>
+<script src="~/asset/js/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".select2-A").select2({
+            placeholder: "",
+            allowClear: true
+        });              
+    });
+   
+    $(function () {
+        $("#btnSave").click(function () {          
+            var tblCustomer = { cust_id: 0, cust_code: $("#ddlType option:selected").val(), cust_type: $("#ddlType option:selected").text(), cust_name: $("#txtName").val(), cust_brand: $("#txtBrand").val(), cust_contactperson: $("#txtContactPerson").val(), cust_address1: $("#txtAddress1").val(), cust_address2: $("#txtAddress2").val(), cust_address3: $("#txtAddress3").val(), cust_city: $("#txtCity").val(), cust_district: $("#txtDistrict").val(), cust_state: $("#txtState").val(), cust_pincode: $("#txtPincode").val(), cust_mobile: $("#txtMobile").val(), cust_phone: $("#txtPhone").val(), cust_mobile2: $("#txtMobile2").val(), cust_email: $("#txtEmail").val(), cust_webbsite: $("#txtWebsite").val(), cust_gstno: $("#txtGSTNo").val() };
+            $.ajax({
+
+                async: true,
+                crossDomain: true,
+                url: "../api/Customer",
+                method: "POST",
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                    //Authorization: AuthorisationKey
+                },
+                data: tblCustomer
+                ,
+                success: function (data) {
+                    debugger;
+
+                    alert(data);
+
+
+                },
+                error: function (e) {
+                    $('#divPleaseWaitModal').modal('hide')
+                    Common.ShowError(e.responseText, "Error")
+                }
+            });
+        });
+    });
+</script>
