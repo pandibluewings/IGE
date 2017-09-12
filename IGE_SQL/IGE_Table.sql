@@ -1844,6 +1844,7 @@ DBCC CHECKIDENT (BusinessType, reseed,-1)
 insert into BusinessType   (bt_id,[bt_name]) VALUES (0,'---Select---')
 SET IDENTITY_INSERT  BusinessType OFF
 GO
+
 IF OBJECT_ID(' [Member]') IS NOT NULL
 BEGIN 
     DROP TABLE  Member
@@ -1878,6 +1879,39 @@ mem_mdate datetime  default getdate(),
 mem_cid bigint Foreign Key References users (users_id) ,
 mem_mid bigint Foreign Key References users (users_id) ,
 )
+
+
+IF OBJECT_ID(' [MemberGallery]') IS NOT NULL
+BEGIN 
+    DROP TABLE  MemberGallery
+END
+GO
+create table MemberGallery
+(
+mg_id bigint identity primary key not null,
+mg_path nvarchar(500)  default '',
+mem_id bigint Foreign Key References Member(mem_id)
+)
+
+
+IF OBJECT_ID(' [MemberReview]') IS NOT NULL
+BEGIN 
+    DROP TABLE  MemberReview
+END
+GO
+create table MemberReview
+(
+mr_id bigint identity primary key not null,
+mr_reviewstar int not null default 0,
+mr_reviewfor bigint Foreign Key References Member(mem_id),
+mr_reviewedby bigint Foreign Key References Member(mem_id),
+mr_title nvarchar(250)  default '',
+mr_comment nvarchar(max)  default '',
+mr_date  datetime not null default getdate(),
+
+)
+
+
 
 IF OBJECT_ID(' [Customer]') IS NOT NULL
 BEGIN 

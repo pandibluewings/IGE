@@ -1290,3 +1290,173 @@ GO
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
 
+
+IF OBJECT_ID('[dbo].[usp_MemberGallerySelect]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberGallerySelect] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberGallerySelect] 
+    @mem_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+
+	BEGIN TRAN
+
+	SELECT [mg_id], [mg_path], [mem_id] 
+	FROM   [dbo].[MemberGallery] 
+	WHERE  ([mem_id] = @mem_id  OR @mem_id  IS NULL) 
+
+	COMMIT
+GO
+IF OBJECT_ID('[dbo].[usp_MemberGalleryInsert]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberGalleryInsert] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberGalleryInsert] 
+    @mg_path nvarchar(500) = NULL,
+    @mem_id bigint = NULL
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+	
+	INSERT INTO [dbo].[MemberGallery] ([mg_path], [mem_id])
+	SELECT @mg_path, @mem_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [mg_id], [mg_path], [mem_id]
+	FROM   [dbo].[MemberGallery]
+	WHERE  [mg_id] = SCOPE_IDENTITY()
+	-- End Return Select <- do not remove
+               
+	COMMIT
+GO
+IF OBJECT_ID('[dbo].[usp_MemberGalleryDelete]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberGalleryDelete] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberGalleryDelete] 
+    @mem_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	DELETE
+	FROM   [dbo].[MemberGallery]
+	WHERE  [mem_id] = @mem_id 
+
+	COMMIT
+GO
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+IF OBJECT_ID('[dbo].[usp_MemberReviewSelect]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberReviewSelect] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberReviewSelect] 
+    @mr_reviewfor bigint=null
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+
+	BEGIN TRAN
+
+	SELECT [mr_id], [mr_reviewstar], [mr_reviewfor], [mr_reviewedby], [mr_title], [mr_comment], [mr_date] 
+	FROM   [dbo].[MemberReview] 
+	WHERE  (mr_reviewfor = @mr_reviewfor OR @mr_reviewfor IS NULL) 
+
+	COMMIT
+GO
+IF OBJECT_ID('[dbo].[usp_MemberReviewInsert]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberReviewInsert] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberReviewInsert] 
+    @mr_reviewstar int,
+    @mr_reviewfor bigint = NULL,
+    @mr_reviewedby bigint = NULL,
+    @mr_title nvarchar(250) = NULL,
+    @mr_comment nvarchar(MAX) = NULL,
+    @mr_date datetime
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+	
+	INSERT INTO [dbo].[MemberReview] ([mr_reviewstar], [mr_reviewfor], [mr_reviewedby], [mr_title], [mr_comment], [mr_date])
+	SELECT @mr_reviewstar, @mr_reviewfor, @mr_reviewedby, @mr_title, @mr_comment, @mr_date
+	
+	-- Begin Return Select <- do not remove
+	SELECT [mr_id], [mr_reviewstar], [mr_reviewfor], [mr_reviewedby], [mr_title], [mr_comment], [mr_date]
+	FROM   [dbo].[MemberReview]
+	WHERE  [mr_id] = SCOPE_IDENTITY()
+	-- End Return Select <- do not remove
+               
+	COMMIT
+GO
+IF OBJECT_ID('[dbo].[usp_MemberReviewUpdate]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberReviewUpdate] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberReviewUpdate] 
+    @mr_id bigint,
+    @mr_reviewstar int,
+    @mr_reviewfor bigint = NULL,
+    @mr_reviewedby bigint = NULL,
+    @mr_title nvarchar(250) = NULL,
+    @mr_comment nvarchar(MAX) = NULL,
+    @mr_date datetime
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	UPDATE [dbo].[MemberReview]
+	SET    [mr_reviewstar] = @mr_reviewstar, [mr_reviewfor] = @mr_reviewfor, [mr_reviewedby] = @mr_reviewedby, [mr_title] = @mr_title, [mr_comment] = @mr_comment, [mr_date] = @mr_date
+	WHERE  [mr_id] = @mr_id
+	
+	-- Begin Return Select <- do not remove
+	SELECT [mr_id], [mr_reviewstar], [mr_reviewfor], [mr_reviewedby], [mr_title], [mr_comment], [mr_date]
+	FROM   [dbo].[MemberReview]
+	WHERE  [mr_id] = @mr_id	
+	-- End Return Select <- do not remove
+
+	COMMIT
+GO
+IF OBJECT_ID('[dbo].[usp_MemberReviewDelete]') IS NOT NULL
+BEGIN 
+    DROP PROC [dbo].[usp_MemberReviewDelete] 
+END 
+GO
+CREATE PROC [dbo].[usp_MemberReviewDelete] 
+    @mr_id bigint
+AS 
+	SET NOCOUNT ON 
+	SET XACT_ABORT ON  
+	
+	BEGIN TRAN
+
+	DELETE
+	FROM   [dbo].[MemberReview]
+	WHERE  [mr_id] = @mr_id
+
+	COMMIT
+GO
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
