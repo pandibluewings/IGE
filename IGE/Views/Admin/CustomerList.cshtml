@@ -80,11 +80,11 @@
 
         }).done(function (result) {
 
-            var dvheader = '<table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0"><thead><tr><th>Customer ID</th><th>Customer Name</th><th>City</th><th>State</th><th>Pincode</th><th>Mobile</th><th>Email</th><th>Edit</th><th>Delete</th></tr></thead><tbody>';
+            var dvheader = '<table id="datatables-example" class="table table-striped table-bordered" width="100%" cellspacing="0"><thead><tr><th>Customer ID</th><th>Customer Name</th><th>City</th><th>State</th><th>Pincode</th><th>Mobile</th><th>Email</th><th>Action</th></tr></thead><tbody>';
             var Customer = result;
             dv = '';
             $.each(Customer, function (idx, obj) {
-                dv = dv + '<tr><td>' + obj.cust_id + '</td><td>' + obj.cust_name + '</td><td>' + obj.cust_city + '</td><td>' + obj.cust_state + '</td><td>' + obj.cust_pincode + '</td><td>' + obj.cust_mobile + '</td><td>' + obj.cust_email + '</td><td><a onclick=>Edit</a></td><td><a onclick=Delete(' + obj.cust_id + ')>Delete</a></td></tr>';
+                dv = dv + '<tr><td>' + obj.cust_id + '</td><td>' + obj.cust_name + '</td><td>' + obj.cust_city + '</td><td>' + obj.cust_state + '</td><td>' + obj.cust_pincode + '</td><td>' + obj.cust_mobile + '</td><td>' + obj.cust_email + '</td><td><button  type="button" style="background:transparent;border:none; " tooltip="Edit" onclick="Edit(' + obj.cust_id + ')" ><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" ></i></button>|<button  type="button" style="background:transparent;border:none; " tooltip="Delete" onclick="Delele(' + obj.cust_id + ')" ><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button></td></tr>';
             });
             dv = dvheader + dv + '</tbody></table>'
             $('#dvTable').html('');
@@ -97,14 +97,14 @@
 
     }
 
-    function Delete(memberId) {
+    function Delete(Id) {
         $.ajax({
-            url: "../API/Customer/" + memberId,
-            type: "Delete",
+            url: "../API/Customer/" + Id,
+            method: "delete",
             //data: {id:10},
 
         }).done(function (result) {
-            LoadMembers();
+            LoadCustomers();
         }).fail(function (error) {
             errorMsg("Unable to load your Request. Please try again later.");
         });
